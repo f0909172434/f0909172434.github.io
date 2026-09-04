@@ -1,34 +1,17 @@
-# Chih-Kai Wang portfolio
+# Chih-Kai Wang — portfolio
 
-Personal site for Chih-Kai Wang, focused on AI for Mathematics, verifiable reasoning, and reproducible research engineering.
+A bilingual portfolio for software engineering and AI application internships. The central work sample lets visitors inspect Finite Witness, HonestCI and RigorGraph, then continue into the matching engineering case study.
 
-## Concept
+[Live portfolio](https://f0909172434.github.io/) · [Profile](https://github.com/f0909172434) · [CV](https://f0909172434.github.io/Chih-Kai-Wang-CV.pdf)
 
-The site is built as a **verification lens**. Visitors move through claim, evidence, and boundary layers instead of seeing a conventional project-card gallery. The lens responds to pointer, touch, keyboard, and scroll state; project filters expose the public work by role rather than popularity.
+## Local development
 
-Private repositories and unreleased evaluation artifacts are intentionally excluded.
+Use Node 24 and run `npm ci`, then `npm run dev`. Run `npm run build` for the production build and `npm run preview` to inspect it.
 
-## Run locally
+The sample device replays recorded examples or clearly labeled workflow illustrations. It does not call a backend or rerun project engines. A native range input, chapter buttons, vertex inspection and static-reading control work with keyboard and touch. The operating system's reduced-motion preference is honored by default.
 
-```bash
-npm ci
-npm run dev
-```
+## Updating content
 
-Production checks:
+Public project descriptions and sample copy are in `src/App.tsx`. The shared sample selection connects the first screen to its case study. Case-study sources and the CV source live in the profile repository. Copy a newly rendered CV to `public/Chih-Kai-Wang-CV.pdf` before building.
 
-```bash
-npm run check
-npm run build
-npm run preview
-```
-
-## Implementation
-
-- Preact, TypeScript, Vite, and self-hosted Geist Variable
-- Traditional Chinese and English with query-string locale state
-- Pointer, touch, and keyboard control for the core interaction
-- Mobile-specific composition and `prefers-reduced-motion` fallback
-- GitHub Pages workflow for the account-level `f0909172434.github.io` site
-
-The site uses no API key, remote runtime service, analytics, or external font request.
+The Pages workflow builds on pull requests and deploys the main branch only after a successful build. The September 2026 review verified desktop and 390px mobile layouts, both languages, sample selection, keyboard scrubbing, static reading, and source links.
