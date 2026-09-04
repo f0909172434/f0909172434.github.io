@@ -214,7 +214,7 @@ function SampleDevice({ locale, selected, onSelect }: { locale: Locale; selected
       {selected === 0 ? <svg viewBox="0 0 500 270" role="group" aria-label={locale === "en" ? "C4 graph; select a vertex to inspect its degree" : "四邊形 C4；選擇頂點檢查度數"}>
         <path className="graph-guide" d="M120 54H380V218H120Z M120 54L380 218 M380 54L120 218" />
         <path className="graph-edges" d="M120 54H380V218H120Z" pathLength="100" style={{ strokeDasharray: 100, strokeDashoffset: 100 - Math.min(100, progress * 1.7) }} />
-        {[[120,54], [380,54], [380,218], [120,218]].map(([x,y],i) => <g className="vertex" key={i} role="button" tabIndex={0} aria-label={`v${i + 1}, ${locale === 'en' ? 'degree 2' : '度數 2'}`} aria-pressed={inspection === i} onClick={() => setInspection(inspection === i ? null : i)} onKeyDown={e => {if(e.key === 'Enter' || e.key === ' ') {e.preventDefault(); setInspection(inspection === i ? null : i);}}}>
+        {[[120,54], [380,54], [380,218], [120,218]].map(([x,y],i) => <g className="vertex" key={i} role="button" tabindex={0} aria-label={`v${i + 1}, ${locale === 'en' ? 'degree 2' : '度數 2'}`} aria-pressed={inspection === i} onClick={() => setInspection(inspection === i ? null : i)} onKeyDown={e => {if(e.key === 'Enter' || e.key === ' ') {e.preventDefault(); setInspection(inspection === i ? null : i);}}}>
           <circle className="vertex-target" cx={x} cy={y} r="23" /><circle className={inspection === i ? 'selected-node' : ''} cx={x} cy={y} r="8" /><text x={x + (i === 0 || i === 3 ? -30 : 22)} y={y + 5}>v{i + 1}</text>
         </g>)}
         <text className="figure-big" x="250" y="132" textAnchor="middle">{progress < 50 ? '∀ ?' : 'C₄'}</text>
