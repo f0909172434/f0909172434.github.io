@@ -27,7 +27,7 @@ export default function SpecimenView({locale, selected, onInspect, reduced, play
       </g>)}
     </svg>
     <div className="specimen-instrument">
-      <span aria-live="polite">{selected === null ? (english ? 'Select a blue joint' : '選一個藍色頂點') : `v${selected+1} · ${english ? 'degree 2' : '度數 2'} · 0 triangles`}</span>
+      <span aria-live="polite">{selected === null ? (english ? 'Select a blue joint' : '選一個藍色頂點') : `v${selected+1} · ${english ? 'degree 2 · 0 triangles' : '度數 2 · 0 個三角形'}`}</span>
       <label><span>{english ? 'Rotate specimen' : '轉動標本'}</span><input type="range" min="0" max="100" value={displayedAngle} disabled={reduced || playing} onInput={e=>setAngle(Number(e.currentTarget.value))} aria-valuetext={`${Math.round(displayedAngle*.36-18)}°`} /></label>
     </div>
   </div>;
