@@ -1,3 +1,4 @@
+import SpecimenView from './SpecimenView';
 import { useEffect, useMemo, useState } from "preact/hooks";
 
 type Locale = "zh-Hant" | "en";
@@ -81,15 +82,15 @@ const copy = {
 
 const projectData = [
   { name: "Finite Witness", kind: "interfaces", status: "Live · WebMCP", descZh: "人與代理共享的有限圖論反例實驗室；搜尋最小反例、保存證據並測試修補後的主張。", descEn: "A shared finite-graph counterexample lab for people and agents: find a minimal witness, preserve it, and test repairs.", repo: "https://github.com/f0909172434/finite-witness-webmcp", live: LINKS.finite, mark: "FW", tone: "coral" },
-  { name: "RigorGraph", kind: "infrastructure", status: "v1.0.1 · Public beta", descZh: "本機優先的主張—證據圖、確定性稽核、離線報告與 GitHub Action。", descEn: "Local-first claim-evidence graphs, deterministic audit, offline reports, and a GitHub Action.", repo: "https://github.com/f0909172434/rigorgraph", mark: "RG", tone: "blue" },
+  { name: "RigorGraph", kind: "infrastructure", status: "v1.0.1 · Public beta", descZh: "本機優先的主張—證據圖、確定性稽核、離線報告與 GitHub Action。", descEn: "Local-first claim-evidence graphs, deterministic audit, offline reports, and a GitHub Action.", repo: "https://github.com/f0909172434/rigorgraph", live: "https://f0909172434.github.io/examples/rigorgraph/math.html", mark: "RG", tone: "blue" },
   { name: "ProofWeave Core", kind: "research", status: "Experimental · Core 2.0.0 / evidence v0.1.0", descZh: "把作者提供的結構化證明轉成可檢查的認證流程，並保持形式憑證與語意範圍分離。", descEn: "Turns author-supplied structured proofs into inspectable certification runs while separating formal validity from semantic scope.", repo: "https://github.com/f0909172434/proofweave-math-lab", mark: "PW", tone: "ink" },
   { name: "HonestCI", kind: "infrastructure", status: "v1.0.4 · npm", descZh: "檢查綠燈 CI 背後的 JUnit 證據是否新鮮、非空，且符合可信測試基線。", descEn: "Checks that the JUnit evidence behind green CI is fresh, non-empty, and consistent with a trusted baseline.", repo: "https://github.com/f0909172434/honest-ci", mark: "HC", tone: "acid" },
   { name: "Charlie Alpha 4B", kind: "research", status: "Experimental v0.3.0", descZh: "Apple Silicon 上的三語統計程序選擇模型；公開結果保留 DGP 改善與其他基準未改善的負面結論。", descEn: "A trilingual statistical procedure-selection model for Apple Silicon; its public result preserves both DGP gains and benchmark non-improvements.", repo: "https://github.com/f0909172434/Charlie-Alpha-4B", mark: "CA", tone: "violet" },
   { name: "Verified Search", kind: "infrastructure", status: "v0.1.1 stable", descZh: "為 DeepSeek Harness 提供限制範圍、保留來源與可見缺口的即時資訊檢索。", descEn: "Bounded current-source retrieval for DeepSeek Harness with retained sources and visible evidence gaps.", repo: "https://github.com/f0909172434/dsh-plugin-verified-search", mark: "VS", tone: "blue" },
   { name: "DeepSeek Girl / Harness", kind: "interfaces", status: "v0.2.0", descZh: "依 Session 狀態切換動畫、具 16 方向追視與減少動態支援的 Cordis 桌寵。", descEn: "A Cordis desktop pet with session-aware animation, 16-direction tracking, and reduced-motion support.", repo: "https://github.com/f0909172434/dsh-deepseek-girl-pet", mark: "DG", tone: "coral" },
-  { name: "DeepSeek Girl / Codex", kind: "interfaces", status: "Pet v2", descZh: "為 Codex Desktop 製作的開源動畫圖集與安裝工具，包含九種狀態與 16 個觀看方向。", descEn: "An open animated pet sheet and installer for Codex Desktop, with nine states and 16 viewing directions.", repo: "https://github.com/f0909172434/deepseek-girl-codex-pet", mark: "CD", tone: "violet" },
+  { name: "DeepSeek Girl / Codex", kind: "interfaces", status: "v0.1.0 · Pet schema v2", descZh: "為 Codex Desktop 製作的開源動畫圖集與安裝工具，包含九種狀態與 16 個觀看方向。", descEn: "An open animated pet sheet and installer for Codex Desktop, with nine states and 16 viewing directions.", repo: "https://github.com/f0909172434/deepseek-girl-codex-pet", mark: "CD", tone: "violet" },
   { name: "SAIR Proof Press", kind: "research", status: "Released-input evaluation", descZh: "Lean 檢查的等式蘊涵求解器公開伴隨站；收錄凍結產物、公開輸入評測與英文論文。", descEn: "Public companion to Lean-checked equational implication solvers, with frozen artifacts, released-input evaluation and an English paper.", repo: "https://github.com/f0909172434/sair-stage2-proof-press", live: "https://f0909172434.github.io/sair-stage2-proof-press/", mark: "SP", tone: "ink" },
-  { name: "MiniHarness", kind: "interfaces", status: "2 ready / 38 planned modules", descZh: "Python agent harness 教材與八步動手營，附可操作的循環示範；較廣的課程地圖仍在編寫。", descEn: "A Python agent-harness tutorial and eight-step workshop with an interactive loop demo; the broader curriculum is in progress.", repo: "https://github.com/f0909172434/miniharness", live: "https://f0909172434.github.io/miniharness/", mark: "MH", tone: "acid" },
+  { name: "MiniHarness", kind: "interfaces", status: "38 lessons · zh-TW", descZh: "38 課繁體中文教材、八步 harness 動手營、概念自測與作業驗收，附可訓練的迷你 Transformer。", descEn: "38 Traditional Chinese lessons, an eight-step harness workshop, quizzes and assignment checks, with a trainable tiny Transformer.", repo: "https://github.com/f0909172434/miniharness", live: "https://f0909172434.github.io/miniharness/", mark: "MH", tone: "acid" },
 ] as const;
 
 const samples = [
@@ -145,7 +146,7 @@ const samples = [
     name: "RigorGraph", mark: "RG", category: "Python / JSON Schema / Offline HTML",
     result: "Evidence changed → review", receipt: "Workflow integrity", slug: "rigorgraph",
     source: "https://github.com/f0909172434/rigorgraph",
-    link: "https://github.com/f0909172434/rigorgraph#quick-start-three-minutes",
+    link: "https://f0909172434.github.io/examples/rigorgraph/math.html",
     zh: {
       problem: "證據檔案改變後，舊的審查結論還適用嗎？",
       process: "把主張、證據檔案、內容雜湊與審查記錄連在一起，確定性地檢查狀態。",
@@ -178,6 +179,7 @@ function SampleDevice({ locale, selected, onSelect }: { locale: Locale; selected
   const [playing, setPlaying] = useState(false);
   const [inspection, setInspection] = useState<number | null>(null);
   const [detail, setDetail] = useState(false);
+  const [physical, setPhysical] = useState(true);
   const [reduced, setReduced] = useState(() => matchMedia('(prefers-reduced-motion: reduce)').matches);
   const sample = samples[selected];
   const t = locale === "en" ? sample.en : sample.zh;
@@ -211,7 +213,7 @@ function SampleDevice({ locale, selected, onSelect }: { locale: Locale; selected
     <SampleSelector selected={selected} onSelect={onSelect} />
     <div className={`sample-drawing sample-${sample.mark.toLowerCase()}`} style={{ "--scan": `${progress}%` }}>
       <div className="drawing-label"><span>{sample.mark} / {labels[stage]}</span><span>{locale === 'en' ? 'RECORDED EXAMPLE' : '記錄與示意'}</span></div>
-      {selected === 0 ? <svg viewBox="0 0 500 270" role="group" aria-label={locale === "en" ? "C4 graph; select a vertex to inspect its degree" : "四邊形 C4；選擇頂點檢查度數"}>
+      {selected === 0 && physical ? <SpecimenView locale={locale} selected={inspection} onInspect={setInspection} reduced={reduced} playing={playing} progress={progress}/> : selected === 0 ? <svg viewBox="0 0 500 270" role="group" aria-label={locale === "en" ? "C4 graph; select a vertex to inspect its degree" : "四邊形 C4；選擇頂點檢查度數"}>
         <path className="graph-guide" d="M120 54H380V218H120Z M120 54L380 218 M380 54L120 218" />
         <path className="graph-edges" d="M120 54H380V218H120Z" pathLength="100" style={{ strokeDasharray: 100, strokeDashoffset: 100 - Math.min(100, progress * 1.7) }} />
         {[[120,54], [380,54], [380,218], [120,218]].map(([x,y],i) => <g className="vertex" key={i} role="button" tabindex={0} aria-label={`v${i + 1}, ${locale === 'en' ? 'degree 2' : '度數 2'}`} aria-pressed={inspection === i} onClick={() => setInspection(inspection === i ? null : i)} onKeyDown={e => {if(e.key === 'Enter' || e.key === ' ') {e.preventDefault(); setInspection(inspection === i ? null : i);}}}>
@@ -236,6 +238,7 @@ function SampleDevice({ locale, selected, onSelect }: { locale: Locale; selected
       <div className="drawing-foot"><span>{progress < 50 ? 'INSPECTING' : sample.receipt}</span><span>{String(Math.round(progress)).padStart(3,'0')} / 100</span></div>
     </div>
     <div className="sample-controls">
+      {selected === 0 && <div className="specimen-mode"><button type="button" aria-pressed={physical} onClick={()=>setPhysical(!physical)}>{locale === 'en' ? (physical ? 'View the diagram ↗' : 'Return to the 3D specimen ↗') : (physical ? '切換成結構圖 ↗' : '回到立體標本 ↗')}</button><span>{locale === 'en' ? 'C₄ · a native Blender model' : 'C₄ · Blender 原生幾何模型'}</span></div>}
       <div className="sequence-stages" role="group" aria-label={locale === 'en' ? 'Sequence chapter' : '示範章節'}>{labels.map((label,i)=><button type="button" key={label} aria-pressed={stage === i} onClick={()=>seek(i === 3 ? 100 : i*25)}><span>0{i+1}</span>{label}</button>)}</div>
       <label className="sequence-range"><span>{locale === 'en' ? 'Scrub the example' : '拖曳檢查過程'}</span><input type="range" min="0" max="100" value={progress} onInput={e=>seek(Number(e.currentTarget.value))} aria-valuetext={`${Math.round(progress)}% · ${labels[stage]}`} /></label>
       <p className="sequence-caption" aria-live={playing ? 'off' : 'polite'}>{stageText}</p>
