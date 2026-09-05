@@ -15,3 +15,7 @@ The sample device replays recorded examples or clearly labeled workflow illustra
 Public project descriptions and sample copy are in `src/App.tsx`. The shared sample selection connects the first screen to its case study. Case-study sources and the CV source live in the profile repository. Copy a newly rendered CV to `public/Chih-Kai-Wang-CV.pdf` before building.
 
 The Pages workflow builds on pull requests and deploys the main branch only after a successful build. The September 2026 review verified desktop and 390px mobile layouts, both languages, sample selection, keyboard scrubbing, static reading, and source links.
+
+## Native specimen artwork
+
+The C₄ model was built and refined in Blender 4.5.9 LTS, then exported as seven lightweight views with matching vertex coordinates. See [art sources and reproduction](art/README.md). Normal builds use the checked-in WebP assets.
