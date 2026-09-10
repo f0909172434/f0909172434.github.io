@@ -1,8 +1,9 @@
+import catalog from "./data/projects.json";
 import SpecimenView from './SpecimenView';
 import { useEffect, useMemo, useState } from "preact/hooks";
 
 type Locale = "zh-Hant" | "en";
-type ProjectKind = "all" | "research" | "infrastructure" | "interfaces";
+type ProjectKind = "all" | "engineering" | "research" | "learning" | "other";
 
 const LINKS = {
   github: "https://github.com/f0909172434",
@@ -15,16 +16,16 @@ const copy = {
     navLabel: "主要導覽",
     heroKicker: "王治凱 · 尋找軟體工程與 AI 應用實習",
     heroTitle: "寫出工具，\n留下依據。",
-    heroBody: "我用 Python 與 TypeScript 製作開發工具和互動研究應用。從圖論反例搜尋到測試報告檢查，讓使用者看見結果，也能追查結果的依據。",
+    heroBody: catalog.positioning.zh,
     explore: "閱讀實作案例",
     github: "查看 GitHub",
     location: "台北，台灣",
     education: "國立臺北教育大學 · 2028 預計畢業",
     focus: "Python · TypeScript · AI research tools",
-    workKicker: "公開作品 / 10 個專案",
+    workKicker: "公開作品 / 三條路線",
     workTitle: "從實作，看到方法。",
-    workBody: "每個專案附上目前狀態與原始碼。先看上方三件代表作，再依你的興趣展開其他工作。",
-    filters: { all: "全部", research: "研究", infrastructure: "基礎設施", interfaces: "互動介面" },
+    workBody: "從可靠工程、數學推理與 AI 實作選擇入口。每件作品說明它檢查什麼、交付什麼，以及目前的範圍。",
+    filters: { all: "全部", engineering: "可靠工程與證據", research: "可驗證推理", learning: "AI 機制與實作", other: "其他開源工作" },
     openRepo: "開啟倉庫",
     openLive: "開啟實際網站",
     current: "目前狀態",
@@ -49,16 +50,16 @@ const copy = {
     navLabel: "Primary navigation",
     heroKicker: "CHIH-KAI WANG · OPEN TO SOFTWARE & AI INTERNSHIPS",
     heroTitle: "Make the work\ninspectable.",
-    heroBody: "I build developer tools and interactive research applications with Python and TypeScript. From graph counterexamples to test reports, I make results and their supporting evidence easy to inspect.",
+    heroBody: catalog.positioning.en,
     explore: "Read the case studies",
     github: "View GitHub",
     location: "Taipei, Taiwan",
     education: "National Taipei University of Education · Expected 2028",
     focus: "Python · TypeScript · AI research tools",
-    workKicker: "PUBLIC WORK / 10 PROJECTS",
+    workKicker: "PUBLIC WORK / THREE PATHS",
     workTitle: "Code, with a point of view.",
-    workBody: "Each project includes its current status and source. Start with the three selected samples above, then explore the rest by area.",
-    filters: { all: "All", research: "Research", infrastructure: "Infrastructure", interfaces: "Interfaces" },
+    workBody: "Choose a path through reliable engineering, mathematical reasoning, or AI mechanisms. Each project explains what it checks, what it produces, and its current scope.",
+    filters: { all: "All", engineering: "Engineering & evidence", research: "Verifiable reasoning", learning: "AI mechanisms", other: "Other open source" },
     openRepo: "Open repository",
     openLive: "Open live site",
     current: "Current state",
@@ -80,18 +81,7 @@ const copy = {
   },
 } as const;
 
-const projectData = [
-  { name: "Finite Witness", kind: "interfaces", status: "Live · WebMCP", descZh: "人與代理共享的有限圖論反例實驗室；搜尋最小反例、保存證據並測試修補後的主張。", descEn: "A shared finite-graph counterexample lab for people and agents: find a minimal witness, preserve it, and test repairs.", repo: "https://github.com/f0909172434/finite-witness-webmcp", live: LINKS.finite, mark: "FW", tone: "coral" },
-  { name: "RigorGraph", kind: "infrastructure", status: "v1.0.1 · Public beta", descZh: "本機優先的主張—證據圖、確定性稽核、離線報告與 GitHub Action。", descEn: "Local-first claim-evidence graphs, deterministic audit, offline reports, and a GitHub Action.", repo: "https://github.com/f0909172434/rigorgraph", live: "https://f0909172434.github.io/examples/rigorgraph/math.html", mark: "RG", tone: "blue" },
-  { name: "ProofWeave Core", kind: "research", status: "Experimental · Core 2.0.0 / evidence v0.1.0", descZh: "把作者提供的結構化證明轉成可檢查的認證流程，並保持形式憑證與語意範圍分離。", descEn: "Turns author-supplied structured proofs into inspectable certification runs while separating formal validity from semantic scope.", repo: "https://github.com/f0909172434/proofweave-math-lab", mark: "PW", tone: "ink" },
-  { name: "HonestCI", kind: "infrastructure", status: "v1.0.4 · npm", descZh: "檢查綠燈 CI 背後的 JUnit 證據是否新鮮、非空，且符合可信測試基線。", descEn: "Checks that the JUnit evidence behind green CI is fresh, non-empty, and consistent with a trusted baseline.", repo: "https://github.com/f0909172434/honest-ci", mark: "HC", tone: "acid" },
-  { name: "Charlie Alpha 4B", kind: "research", status: "Experimental v0.3.0", descZh: "Apple Silicon 上的三語統計程序選擇模型；公開結果保留 DGP 改善與其他基準未改善的負面結論。", descEn: "A trilingual statistical procedure-selection model for Apple Silicon; its public result preserves both DGP gains and benchmark non-improvements.", repo: "https://github.com/f0909172434/Charlie-Alpha-4B", mark: "CA", tone: "violet" },
-  { name: "Verified Search", kind: "infrastructure", status: "v0.1.1 stable", descZh: "為 DeepSeek Harness 提供限制範圍、保留來源與可見缺口的即時資訊檢索。", descEn: "Bounded current-source retrieval for DeepSeek Harness with retained sources and visible evidence gaps.", repo: "https://github.com/f0909172434/dsh-plugin-verified-search", mark: "VS", tone: "blue" },
-  { name: "DeepSeek Girl / Harness", kind: "interfaces", status: "v0.2.0", descZh: "依 Session 狀態切換動畫、具 16 方向追視與減少動態支援的 Cordis 桌寵。", descEn: "A Cordis desktop pet with session-aware animation, 16-direction tracking, and reduced-motion support.", repo: "https://github.com/f0909172434/dsh-deepseek-girl-pet", mark: "DG", tone: "coral" },
-  { name: "DeepSeek Girl / Codex", kind: "interfaces", status: "v0.1.0 · Pet schema v2", descZh: "為 Codex Desktop 製作的開源動畫圖集與安裝工具，包含九種狀態與 16 個觀看方向。", descEn: "An open animated pet sheet and installer for Codex Desktop, with nine states and 16 viewing directions.", repo: "https://github.com/f0909172434/deepseek-girl-codex-pet", mark: "CD", tone: "violet" },
-  { name: "SAIR Proof Press", kind: "research", status: "Released-input evaluation", descZh: "Lean 檢查的等式蘊涵求解器公開伴隨站；收錄凍結產物、公開輸入評測與英文論文。", descEn: "Public companion to Lean-checked equational implication solvers, with frozen artifacts, released-input evaluation and an English paper.", repo: "https://github.com/f0909172434/sair-stage2-proof-press", live: "https://f0909172434.github.io/sair-stage2-proof-press/", mark: "SP", tone: "ink" },
-  { name: "MiniHarness", kind: "interfaces", status: "38 lessons · zh-TW", descZh: "38 課繁體中文教材、八步 harness 動手營、概念自測與作業驗收，附可訓練的迷你 Transformer。", descEn: "38 Traditional Chinese lessons, an eight-step harness workshop, quizzes and assignment checks, with a trainable tiny Transformer.", repo: "https://github.com/f0909172434/miniharness", live: "https://f0909172434.github.io/miniharness/", mark: "MH", tone: "acid" },
-] as const;
+const projectData = catalog.projects;
 
 const samples = [
   {
@@ -272,16 +262,16 @@ function ProjectIndex({ locale }: { locale: Locale }) {
   return (
     <section id="work" className="work section-pad" aria-labelledby="work-title">
       <header className="work-heading"><p className="eyebrow">{t.workKicker}</p><h2 id="work-title">{t.workTitle}</h2><p>{t.workBody}</p></header>
-      <div className="project-filters" aria-label="Project filters">
+      <div className="project-filters" aria-label={locale === "zh-Hant" ? "作品分類" : "Project filters"}>
         {(Object.keys(t.filters) as ProjectKind[]).map((key) => <button type="button" className={kind === key ? "is-active" : ""} aria-pressed={kind === key} onClick={() => setKind(key)} key={key}>{t.filters[key]}</button>)}
       </div>
       <div className="project-index">
         {projects.map((project, index) => (
           <article className={`project-row tone-${project.tone}`} key={project.name}>
             <div className="project-number">{String(index + 1).padStart(2, "0")}</div><div className="project-mark" aria-hidden="true">{project.mark}</div>
-            <div className="project-copy"><h3>{project.name}</h3><p>{locale === "zh-Hant" ? project.descZh : project.descEn}</p></div>
+            <div className="project-copy"><span className="eyebrow">{t.filters[project.kind as Exclude<ProjectKind, "all">]}</span><h3>{project.name}</h3><p>{locale === "zh-Hant" ? project.descZh : project.descEn}</p></div>
             <div className="project-status"><span>{t.current}</span><strong>{project.status}</strong></div>
-            <div className="project-links">{"live" in project && project.live && <a href={project.live} target="_blank" rel="noreferrer">{t.openLive} ↗</a>}<a href={project.repo} target="_blank" rel="noreferrer">{t.openRepo} ↗</a></div>
+            <div className="project-links">{"live" in project && project.live && <a href={project.live} target="_blank" rel="noreferrer">{t.openLive} ↗</a>}<a href={project.repo} target="_blank" rel="noreferrer">{project.name === "DeepSeek Girl" ? "Codex" : t.openRepo} ↗</a>{project.links.map((link) => <a key={link.url} href={link.url} target="_blank" rel="noreferrer">{link.label} ↗</a>)}</div>
           </article>
         ))}
       </div>
