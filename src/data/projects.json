@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "positioning": {
+    "zh": "我用 Python 與 TypeScript，製作讓 AI 與數學研究結果可檢查、可重現的工具。",
+    "en": "I build Python and TypeScript tools that make AI and mathematical research results inspectable and reproducible."
+  },
+  "pinOrder": [
+    "honest-ci",
+    "finite-witness-webmcp",
+    "rigorgraph",
+    "proofweave-math-lab",
+    "sair-stage2-proof-press",
+    "tokenscope"
+  ],
+  "projects": [
+    {
+      "name": "HonestCI",
+      "kind": "engineering",
+      "status": "v1.0.4 · npm",
+      "descZh": "檢查綠燈 CI 背後的 JUnit 證據是否新鮮、非空，且符合可信測試基線。",
+      "descEn": "Checks that the JUnit evidence behind green CI is fresh, non-empty, and consistent with a trusted baseline.",
+      "repo": "https://github.com/f0909172434/honest-ci",
+      "mark": "HC",
+      "tone": "acid",
+      "links": []
+    },
+    {
+      "name": "RigorGraph",
+      "kind": "engineering",
+      "status": "v1.0.1 · Public beta",
+      "descZh": "把研究主張連到證據，檢查檔案是否改變與審查記錄是否一致，產生離線報告。",
+      "descEn": "Connect research claims to evidence, audit file integrity and review records, and generate an offline report.",
+      "repo": "https://github.com/f0909172434/rigorgraph",
+      "live": "https://f0909172434.github.io/examples/rigorgraph/math.html",
+      "mark": "RG",
+      "tone": "blue",
+      "links": []
+    },
+    {
+      "name": "Verified Search",
+      "kind": "engineering",
+      "status": "v0.1.1 · Stable search / experimental extensions",
+      "descZh": "為 Harness 保留檢索來源與缺口。穩定版提供 verified_search，其他四種擴充工具仍在實驗。",
+      "descEn": "Retains sources and gaps for Harness. The stable release provides verified_search; four additional tools remain experimental.",
+      "repo": "https://github.com/f0909172434/dsh-plugin-verified-search",
+      "mark": "VS",
+      "tone": "blue",
+      "links": []
+    },
+    {
+      "name": "Finite Witness",
+      "kind": "research",
+      "status": "v1.3.0 · WebMCP / Python checker",
+      "descZh": "在有限圖中搜尋反例，保存證書，再用獨立 Python 檢查器重播有限搜尋前綴。",
+      "descEn": "Search finite graphs for counterexamples, save certificates, and replay the finite search prefix with an independent Python checker.",
+      "repo": "https://github.com/f0909172434/finite-witness-webmcp",
+      "mark": "FW",
+      "tone": "coral",
+      "live": "https://f0909172434.github.io/finite-witness-webmcp/",
+      "links": []
+    },
+    {
+      "name": "ProofWeave Core",
+      "kind": "research",
+      "status": "Experimental · Core 2.0.0 / evidence v0.1.0",
+      "descZh": "把作者提供的結構化證明轉成可檢查的認證流程，並保持形式憑證與語意範圍分離。",
+      "descEn": "Turns author-supplied structured proofs into inspectable certification runs while separating formal validity from semantic scope.",
+      "repo": "https://github.com/f0909172434/proofweave-math-lab",
+      "mark": "PW",
+      "tone": "ink",
+      "links": []
+    },
+    {
+      "name": "SAIR Proof Press",
+      "kind": "research",
+      "status": "Released-input evaluation",
+      "descZh": "Lean 檢查的等式蘊涵求解器公開伴隨站；收錄凍結產物、公開輸入評測與英文論文。",
+      "descEn": "Public companion to Lean-checked equational implication solvers, with frozen artifacts, released-input evaluation and an English paper.",
+      "repo": "https://github.com/f0909172434/sair-stage2-proof-press",
+      "live": "https://f0909172434.github.io/sair-stage2-proof-press/",
+      "mark": "SP",
+      "tone": "ink",
+      "links": []
+    },
+    {
+      "name": "Charlie Alpha 4B",
+      "kind": "research",
+      "status": "Experimental v0.3.0",
+      "descZh": "Apple Silicon 上的三語統計程序選擇模型；公開結果保留 DGP 改善與其他基準未改善的負面結論。",
+      "descEn": "A trilingual statistical procedure-selection model for Apple Silicon; its public result preserves both DGP gains and benchmark non-improvements.",
+      "repo": "https://github.com/f0909172434/Charlie-Alpha-4B",
+      "mark": "CA",
+      "tone": "violet",
+      "links": []
+    },
+    {
+      "name": "TokenScope",
+      "kind": "learning",
+      "status": "v0.2.0 · Bilingual browser lab",
+      "descZh": "調整 attention、取樣與 BPE 的條件，查看實際數值，匯出並重播實驗。",
+      "descEn": "Change attention, sampling, and BPE controls, inspect the arithmetic, and export or replay an experiment.",
+      "repo": "https://github.com/f0909172434/tokenscope",
+      "live": "https://f0909172434.github.io/tokenscope/?lang=zh-Hant",
+      "mark": "TS",
+      "tone": "acid",
+      "links": []
+    },
+    {
+      "name": "MiniHarness",
+      "kind": "learning",
+      "status": "8-step workshop · zh-TW curriculum",
+      "descZh": "八步完成一個 Python agent harness，練習工具、錯誤處理與評測。附繁體中文先備課程與 TokenScope 實驗路線。",
+      "descEn": "Build a Python agent harness in eight steps: tools, recovery, and evaluation. Includes a Traditional Chinese prerequisite curriculum and a TokenScope lab route.",
+      "repo": "https://github.com/f0909172434/miniharness",
+      "live": "https://f0909172434.github.io/miniharness/",
+      "mark": "MH",
+      "tone": "acid",
+      "links": []
+    },
+    {
+      "name": "DeepSeek Girl",
+      "kind": "other",
+      "status": "Codex v0.1.0 · Harness v0.2.0",
+      "descZh": "共用動畫圖集的兩個宿主版本：Codex 圖集與安裝工具，以及回應 Session 狀態的 Harness 外掛。",
+      "descEn": "One animation atlas, two host packages: Codex assets and installers, and a session-aware Harness plugin.",
+      "repo": "https://github.com/f0909172434/deepseek-girl-codex-pet",
+      "mark": "DG",
+      "tone": "violet",
+      "links": [
+        {
+          "label": "Harness",
+          "url": "https://github.com/f0909172434/dsh-deepseek-girl-pet"
+        }
+      ]
+    }
+  ]
+}

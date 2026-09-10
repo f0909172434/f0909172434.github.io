@@ -12,7 +12,9 @@ The sample device replays recorded examples or clearly labeled workflow illustra
 
 ## Updating content
 
-Public project descriptions and sample copy are in `src/App.tsx`. The shared sample selection connects the first screen to its case study. Case-study sources and the CV source live in the profile repository. Copy a newly rendered CV to `public/Chih-Kai-Wang-CV.pdf` before building.
+Public project descriptions, paths, status labels and six profile pins live in `src/data/projects.json`. Sample copy remains in `src/App.tsx`. Run `node scripts/render-profile.mjs` after editing the catalog; the build checks that `public/profile-README.md` is current. Copy that generated file into the profile repository's `README.md` in the same delivery. This creates no cross-repository write permissions or automatic pushes.
+
+The shared sample selection connects the first screen to its case study. Case-study sources and the CV source live in the profile repository. Copy a newly rendered CV to `public/Chih-Kai-Wang-CV.pdf` before building and compare its SHA-256 with the source copy. The two desktop-pet host packages share one portfolio entry while retaining their own installation links.
 
 The Pages workflow builds on pull requests and deploys the main branch only after a successful build. The September 2026 review verified desktop and 390px mobile layouts, both languages, sample selection, keyboard scrubbing, static reading, and source links.
 
