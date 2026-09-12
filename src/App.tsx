@@ -72,7 +72,7 @@ const copy = {
       ["Research engineering", "Local-first tools, deterministic reports, workflows, and safety boundaries"],
     ],
     aboutTitle: "Chih-Kai Wang",
-    aboutBody: "B.S. student in the Mathematics Education Division at National Taipei University of Education, expected 2028. I am seeking software engineering and AI application internships, and developing my skills in Lean 4 and formal methods through research projects.",
+    aboutBody: "B.S. student in the Mathematics Division, Department of Mathematics and Information Education at National Taipei University of Education, expected 2028. I am seeking software engineering and AI application internships, and developing my skills in Lean 4 and formal methods through research projects.",
     contact: "Internships & collaboration",
     cv: "CV PDF",
     back: "Back to top",

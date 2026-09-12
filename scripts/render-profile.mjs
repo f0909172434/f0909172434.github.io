@@ -15,7 +15,7 @@ const markdown = `# Chih-Kai Wang | 王治凱
 
 ${catalog.positioning.en}
 
-I am a B.S. student in the Mathematics Education Division at National Taipei University of Education, expected 2028. Based in Taipei; open to software engineering and AI application internships.
+I am a B.S. student in the Mathematics Division, Department of Mathematics and Information Education at National Taipei University of Education, expected 2028. Based in Taipei; open to software engineering and AI application internships.
 
 [Portfolio](https://f0909172434.github.io/) · [CV](https://f0909172434.github.io/Chih-Kai-Wang-CV.pdf) · [Email](mailto:f0909172434@gmail.com)
 
