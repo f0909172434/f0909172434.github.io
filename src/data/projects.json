@@ -1,18 +1,52 @@
 {
   "schemaVersion": 1,
   "positioning": {
-    "zh": "我用 Python 與 TypeScript，製作讓 AI 與數學研究結果可檢查、可重現的工具。",
-    "en": "I build Python and TypeScript tools that make AI and mathematical research results inspectable and reproducible."
+    "zh": "致力於打造可驗證的自主 Agent 架構、內核沙盒執行環境與形式化數學證明系統。",
+    "en": "Building verifiable agent systems, sandboxed execution runtimes, and formal mathematics tools."
   },
   "pinOrder": [
+    "dsh-architecture-lab",
+    "ruleshift",
     "honest-ci",
-    "finite-witness-webmcp",
-    "rigorgraph",
     "proofweave-math-lab",
-    "sair-stage2-proof-press",
-    "tokenscope"
+    "tokenscope",
+    "finite-witness-webmcp"
   ],
   "projects": [
+    {
+      "name": "DSH Architecture Lab",
+      "kind": "engineering",
+      "status": "v0.1.0-dev.9 · Quartet verified",
+      "descZh": "針對 DeepSeek Harness 的自主 Agent 評測實驗室；Lima 虛擬機內核隔離、Token 微費用審計與不可變加密協定。",
+      "descEn": "Production-grade autonomous agent research laboratory for DeepSeek Harness with Lima VM isolation and micro-cent token broker metering.",
+      "repo": "https://github.com/f0909172434/dsh-architecture-lab",
+      "mark": "DL",
+      "tone": "blue",
+      "links": []
+    },
+    {
+      "name": "RuleShift",
+      "kind": "research",
+      "status": "Live · 800 tasks verified",
+      "descZh": "評估 Agent 記憶在動態規則變更下適應能力的本機測試床；800 次任務配對實驗與確定性實體狀態驗證。",
+      "descEn": "A reproducible local testbed for agent memory under changing rules: 800 paired tasks and deterministic state verification.",
+      "repo": "https://github.com/f0909172434/ruleshift",
+      "mark": "RS",
+      "tone": "acid",
+      "live": "https://f0909172434.github.io/ruleshift/",
+      "links": []
+    },
+    {
+      "name": "Second Agent Kit",
+      "kind": "engineering",
+      "status": "v0.1.4 · macOS Seatbelt",
+      "descZh": "DeepSeek Harness 的 macOS 縱深防禦套件：Seatbelt 內核沙盒、防死鎖熔斷保護與記憶動態隔離。",
+      "descEn": "Defense-in-depth security suite for DeepSeek Harness: macOS Seatbelt sandbox, circuit breakers, and project memory isolation.",
+      "repo": "https://github.com/f0909172434/dsh-second-agent-kit",
+      "mark": "SA",
+      "tone": "coral",
+      "links": []
+    },
     {
       "name": "HonestCI",
       "kind": "engineering",

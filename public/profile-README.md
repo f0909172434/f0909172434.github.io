@@ -1,6 +1,6 @@
 # Chih-Kai Wang | 王治凱
 
-I build Python and TypeScript tools that make AI and mathematical research results inspectable and reproducible.
+Building verifiable agent systems, sandboxed execution runtimes, and formal mathematics tools.
 
 I am a B.S. student in the Mathematics Division, Department of Mathematics and Information Education at National Taipei University of Education, expected 2028. Based in Taipei; open to software engineering and AI application internships.
 
@@ -10,12 +10,12 @@ I am a B.S. student in the Mathematics Division, Department of Mathematics and I
 
 | Project | What it does | Explore |
 |---|---|---|
+| **[DSH Architecture Lab](https://github.com/f0909172434/dsh-architecture-lab)** | Production-grade autonomous agent research laboratory for DeepSeek Harness with Lima VM isolation and micro-cent token broker metering. | [Source](https://github.com/f0909172434/dsh-architecture-lab) |
+| **[RuleShift](https://github.com/f0909172434/ruleshift)** | A reproducible local testbed for agent memory under changing rules: 800 paired tasks and deterministic state verification. | [Try it](https://f0909172434.github.io/ruleshift/) |
 | **[HonestCI](https://github.com/f0909172434/honest-ci)** | Checks that the JUnit evidence behind green CI is fresh, non-empty, and consistent with a trusted baseline. | [Source](https://github.com/f0909172434/honest-ci) |
-| **[Finite Witness](https://github.com/f0909172434/finite-witness-webmcp)** | Search finite graphs for counterexamples, save certificates, and replay the finite search prefix with an independent Python checker. | [Try it](https://f0909172434.github.io/finite-witness-webmcp/) |
-| **[RigorGraph](https://github.com/f0909172434/rigorgraph)** | Connect research claims to evidence, audit file integrity and review records, and generate an offline report. | [Try it](https://f0909172434.github.io/examples/rigorgraph/math.html) |
 | **[ProofWeave Core](https://github.com/f0909172434/proofweave-math-lab)** | Turns author-supplied structured proofs into inspectable certification runs while separating formal validity from semantic scope. | [Source](https://github.com/f0909172434/proofweave-math-lab) |
-| **[SAIR Proof Press](https://github.com/f0909172434/sair-stage2-proof-press)** | Public companion to Lean-checked equational implication solvers, with frozen artifacts, released-input evaluation and an English paper. | [Try it](https://f0909172434.github.io/sair-stage2-proof-press/) |
 | **[TokenScope](https://github.com/f0909172434/tokenscope)** | Change attention, sampling, and BPE controls, inspect the arithmetic, and export or replay an experiment. | [Try it](https://f0909172434.github.io/tokenscope/?lang=en) |
+| **[Finite Witness](https://github.com/f0909172434/finite-witness-webmcp)** | Search finite graphs for counterexamples, save certificates, and replay the finite search prefix with an independent Python checker. | [Try it](https://f0909172434.github.io/finite-witness-webmcp/) |
 
 HonestCI checks test-execution evidence. RigorGraph audits evidence and review records. ProofWeave checks an explicit formal target with Lean; semantic alignment remains a separate question.
 
