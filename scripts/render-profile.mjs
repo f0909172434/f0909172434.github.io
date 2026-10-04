@@ -151,7 +151,7 @@ export function renderHero(theme) {
 <text x="56" y="240" font-family='${SANS}' font-size="17" fill="${c.muted}">Inspectable AI and mathematical research tools · Python &amp; TypeScript</text>
 <text x="56" y="282" font-family='${MONO}' font-size="11" letter-spacing="1.2" fill="${c.muted}">CLAIM → EVIDENCE → BOUNDARY · NEGATIVE RESULTS KEPT · BUILT WITH CLAUDE CODE AND CODEX</text>
 <path d="M938 56L1082 200M1082 56L938 200" stroke="${c.line}" stroke-width="1" stroke-dasharray="3 6"/>
-<path d="M938 56H1082V200H938Z" fill="none" stroke="${c.accent}" stroke-width="3" stroke-linejoin="round" stroke-dasharray="576" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" from="576" to="0" dur="1.4s" begin="0s" fill="freeze" calcMode="spline" keySplines="0.2 0.7 0.2 1" keyTimes="0;1"/></path>
+<path d="M938 56H1082V200H938Z" fill="none" stroke="${c.accent}" stroke-width="3" stroke-linejoin="round"/>
 ${V.map(([x, y], i) => `<circle cx="${x}" cy="${y}" r="9" fill="${c.accent}"/><text x="${x + off[i][0]}" y="${y + off[i][1]}" font-family='${MONO}' font-size="12" fill="${c.muted}" text-anchor="${off[i][0] < 0 ? 'end' : 'start'}">v${i + 1}</text>`).join('\n')}
 <text x="1010" y="232" font-family='${MONO}' font-size="12" fill="${c.muted}" text-anchor="middle">C₄ · candidate 39 · min degree 2 · 0 triangles</text>
 <text x="1010" y="248" font-family='${MONO}' font-size="11" fill="${c.muted}" text-anchor="middle">one counterexample disproves a universal claim</text>
