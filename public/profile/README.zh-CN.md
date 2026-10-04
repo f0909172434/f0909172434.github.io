@@ -9,7 +9,7 @@
 
 用 Python 与 TypeScript 做可检查的 AI 与数学研究工具：主张附上证据、负面结果留着、边界说清楚。
 
-国立台北教育大学 数学暨信息教育学系 数学组 · 预计 2028 年毕业。台北，台湾。Python · TypeScript · 寻找软件与 AI 实习。
+国立台北教育大学 数学暨资讯教育学系 数学组 · 预计 2028 年毕业。台北，台湾。Python · TypeScript · 寻找软件与 AI 实习。
 
 [作品集](https://f0909172434.github.io/?lang=zh-Hant) · [履历 PDF](https://f0909172434.github.io/Chih-Kai-Wang-CV.pdf) · [Email](mailto:f0909172434@gmail.com)
 

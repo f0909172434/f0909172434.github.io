@@ -1,6 +1,6 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import * as OpenCC from 'opencc-js';
+import { toZhCn as toCn } from './zh-cn.mjs';
 
 const root = new URL('../', import.meta.url);
 const outDir = new URL('public/profile/', root);
@@ -161,7 +161,6 @@ ${V.map(([x, y], i) => `<circle cx="${x}" cy="${y}" r="9" fill="${c.accent}"/><t
 
 // ---------- outputs ----------
 // zh-CN is derived from the zh-TW render (phrase-level twp -> cn); the language line is restated explicitly.
-const toCn = OpenCC.Converter({ from: 'twp', to: 'cn' });
 const zhTw = renderReadme(STRINGS.zh);
 const zhCn = toCn(zhTw).replace(toCn(STRINGS.zh.other), '[English](README.md) · [繁體中文](README.zh-TW.md) · 简体中文');
 if (!zhCn.includes('· 简体中文\n')) throw new Error('zh-CN language line was not substituted');
