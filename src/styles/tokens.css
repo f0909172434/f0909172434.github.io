@@ -1,0 +1,72 @@
+:root {
+  color-scheme: light dark;
+
+  /* colour: light */
+  --bg: #f6f3ec;
+  --bg-raised: #fcfaf5;
+  --bg-sunken: #ece8de;
+  --ink: #1c1b17;
+  --ink-2: #4d4a42;
+  --muted: #6b675e;
+  --line: #d9d4c8;
+  --line-strong: #1c1b17;
+  --accent: #a8471f;
+  --accent-ink: #fdfbf6;
+  --accent-soft: #f1dfd3;
+  --focus: #a8471f;
+
+  /* type */
+  --font-display: "Newsreader Variable", "Noto Serif TC Variable", "Songti TC", "Noto Serif CJK TC", Georgia, serif;
+  --font-body: "Geist Variable", -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: clamp(1.75rem, 1.2rem + 1.8vw, 2.5rem);
+  --fs-3xl: clamp(2.25rem, 1.4rem + 3vw, 3.75rem);
+  --fs-hero: clamp(2.5rem, 1.6rem + 3.4vw, 4.25rem);
+  --lh-body: 1.6;
+  --lh-tight: 1.15;
+  --measure: 64ch;
+
+  /* spacing (4px base) */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-6: 24px; --s-8: 32px;
+  --s-12: 48px; --s-16: 64px; --s-24: 96px;
+  --section-gap: clamp(64px, 9vw, 120px);
+  --container: 1120px;
+  --gutter: clamp(20px, 4vw, 48px);
+  --margin-col: 176px;
+
+  /* radii */
+  --r-1: 3px;
+  --r-2: 6px;
+
+  /* motion */
+  --ease: cubic-bezier(.2,.7,.2,1);
+  --t-fast: 140ms;
+  --t-base: 220ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171613;
+    --bg-raised: #1f1e1a;
+    --bg-sunken: #111110;
+    --ink: #ebe6da;
+    --ink-2: #c3bdb1;
+    --muted: #948f84;
+    --line: #35332d;
+    --line-strong: #ebe6da;
+    --accent: #e0865c;
+    --accent-ink: #171613;
+    --accent-soft: #3a2a21;
+    --focus: #e0865c;
+  }
+}
+
+html[lang="zh-Hans"] {
+  --font-display: "Newsreader Variable", "Noto Serif SC Variable", "Songti SC", serif;
+  --font-body: "Geist Variable", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+}

@@ -5,6 +5,7 @@ import * as OpenCC from 'opencc-js';
 const convert = OpenCC.Converter({ from: 'twp', to: 'cn' });
 const PROTECTED = [
   ['数学暨信息教育学系', '数学暨资讯教育学系'],
+  ['帐册', '账册'],   // 帳冊 (ledger): 账 is the Mainland form for account books
 ];
 
 export function toZhCn(text) {
