@@ -1,6 +1,7 @@
 import type { Locale, UI } from "../locale";
 import { pick } from "../locale";
 import { caseStudiesFor, caseStudyUrl, type Catalog } from "../catalog";
+import { Phrases } from "./Phrases";
 
 export function CaseStudies({ ui, locale, catalog }: { ui: UI; locale: Locale; catalog: Catalog }) {
   const studies = caseStudiesFor(locale);
@@ -8,7 +9,7 @@ export function CaseStudies({ ui, locale, catalog }: { ui: UI; locale: Locale; c
     <section id="cases" class="section container" aria-labelledby="cases-title">
       <div class="section-margin"><p class="label">{ui.cases.label}</p></div>
       <div class="section-body">
-        <h2 id="cases-title">{ui.cases.title}</h2>
+        <h2 id="cases-title"><Phrases text={ui.cases.title} locale={locale} /></h2>
         <p class="lede">{ui.cases.intro}</p>
         <ol class="cases">
           {studies.map((s) => {
@@ -16,7 +17,7 @@ export function CaseStudies({ ui, locale, catalog }: { ui: UI; locale: Locale; c
             const source = s.url ?? project?.repo;
             return (
               <li key={s.slug}>
-                <h3><a href={caseStudyUrl(s.slug)} target="_blank" rel="noreferrer">{pick(s.title, locale)}</a></h3>
+                <h3><a href={caseStudyUrl(s.slug)} target="_blank" rel="noreferrer"><Phrases text={pick(s.title, locale)} locale={locale} /></a></h3>
                 <p>{pick(s.summary, locale)}</p>
                 <p class="links mono">
                   <a href={caseStudyUrl(s.slug)} target="_blank" rel="noreferrer">{ui.cases.read} ↗</a>

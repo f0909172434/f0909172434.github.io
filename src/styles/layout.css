@@ -5,7 +5,7 @@
 .nav-links a { text-decoration: none; color: var(--ink-2); padding-block: var(--s-2); text-decoration-line: underline; text-decoration-color: transparent; }
 .nav-links a:hover { color: var(--ink); text-decoration-color: var(--accent); }
 .locale { display: inline-flex; gap: var(--s-1); }
-.locale button { min-width: 40px; min-height: 36px; padding: 0 var(--s-2); border: 1px solid transparent; border-radius: var(--r-1); background: transparent; color: var(--ink-2); font-family: var(--font-mono); font-size: var(--fs-sm); cursor: pointer; transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease); }
+.locale button { min-width: 40px; min-height: 36px; padding: 0 var(--s-2); border: 1px solid transparent; border-radius: var(--r-1); background: transparent; color: var(--ink-2); font-family: var(--font-mono); font-size: var(--fs-sm); cursor: pointer; }
 .locale button:hover { color: var(--ink); }
 .locale button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
 
@@ -17,7 +17,9 @@
 .facts { display: grid; gap: var(--s-2); font-size: var(--fs-sm); color: var(--ink-2); max-width: 56ch; }
 .facts li { display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); }
 .facts .mono { color: var(--muted); font-size: var(--fs-xs); padding-top: 0.2em; }
-.actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3) var(--s-6); }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-6); }
+.action-row { display: flex; align-items: center; gap: var(--s-3) var(--s-6); }
+.action-row:first-child { gap: var(--s-3); }
 .actions .text-link { font-size: var(--fs-sm); display: inline-flex; align-items: center; min-height: 44px; }
 .hero-updated { margin: 0; color: var(--muted); }
 
@@ -56,9 +58,9 @@ html[lang^="zh"] .links { font-family: var(--font-mono); }
 /* ---------- films ---------- */
 .film-grid { display: grid; gap: var(--s-4); }
 .card { background: var(--bg-raised); border: 1px solid var(--line); border-radius: var(--r-2); padding: var(--s-6); display: grid; gap: var(--s-3); align-content: start; }
-.card .made { color: var(--muted); font-size: var(--fs-xs); overflow-wrap: anywhere; line-height: 1.5; }
+.card p.made { color: var(--muted); font-size: var(--fs-xs); overflow-wrap: anywhere; line-height: 1.5; }
 .card p { font-size: var(--fs-sm); color: var(--ink-2); }
-.card .links { align-self: end; padding-top: var(--s-2); }
+.card .links { align-self: end; }
 
 /* ---------- log ---------- */
 .log { display: grid; }

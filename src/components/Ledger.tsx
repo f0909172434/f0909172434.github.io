@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "preact/hooks";
 import type { Locale, UI } from "../locale";
 import { fmt, pick } from "../locale";
 import { META, lineUrl, rawRecord, slug, type Catalog, type Kind, type Project } from "../catalog";
+import { Phrases } from "./Phrases";
 
 type Filter = "all" | Kind;
 const FILTERS: Filter[] = ["all", "tool", "research", "learning", "creative", "other"];
@@ -83,7 +84,7 @@ export function Ledger({ ui, locale, catalog }: { ui: UI; locale: Locale; catalo
     <section id="work" class="section container" aria-labelledby="work-title">
       <div class="section-margin"><p class="label">{ui.ledger.label}</p><p class="mono muted">{countText}</p></div>
       <div class="section-body">
-        <h2 id="work-title">{ui.ledger.title}</h2>
+        <h2 id="work-title"><Phrases text={ui.ledger.title} locale={locale} /></h2>
         <p class="lede">{ui.ledger.intro}</p>
         <LedgerFilters ui={ui} filter={filter} onFilter={setFilter} />
         <p class="sr-only" aria-live="polite">{countText}</p>

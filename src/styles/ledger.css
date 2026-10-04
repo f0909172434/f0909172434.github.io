@@ -8,7 +8,12 @@ html[lang^="zh"] .record-dl > div:has(.num) { flex-direction: row-reverse; justi
 .record-dl dd { font-family: var(--font-mono); font-size: var(--fs-sm); }
 .record-dl .num { font-family: var(--font-display); font-size: var(--fs-2xl); line-height: 1; font-weight: 500; font-variant-numeric: lining-nums; }
 .record-dl code, .record-verify code { font-size: var(--fs-sm); overflow-wrap: anywhere; }
-.record-hash dd { min-width: 0; }
+.record-hash dd { min-width: 0; white-space: nowrap; }
+.hash-short { display: none; }
+@media (max-width: 480px) {
+  .hash-long { display: none; }
+  .hash-short { display: inline; }
+}
 .record-verify { margin: 0; line-height: 1.9; font-size: var(--fs-sm); }
 .record-verify code { font-size: var(--fs-xs); color: var(--muted); }
 
@@ -44,9 +49,9 @@ details[open] > .record-summary { background: var(--bg-sunken); }
   .record-body { padding-left: calc(40px + 2 * var(--s-3)); }
 }
 @media (min-width: 1024px) {
-  .record-summary { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto auto 20px 20px; align-items: center; column-gap: var(--s-4); }
+  .record-summary { display: grid; grid-template-columns: 40px minmax(0, 1fr) 96px 240px 16px 20px; align-items: center; column-gap: var(--s-4); }
   .record-summary::before { display: none; }
   .record-index, .record-name, .record-kind, .record-status, .record-neg, .record-toggle { order: 0; flex: none; }
-  .record-kind { min-width: 7ch; }
-  .record-status { max-width: 26ch; text-align: right; padding-left: 0; }
+  .record-status { text-align: right; padding-left: 0; }
+  .record-neg { text-align: center; }
 }

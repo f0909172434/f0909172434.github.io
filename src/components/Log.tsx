@@ -1,6 +1,7 @@
 import type { Locale, UI } from "../locale";
 import { formatDate, formatMonth, pick } from "../locale";
 import { caseStudyUrl, type Catalog } from "../catalog";
+import { Phrases } from "./Phrases";
 
 export function Log({ ui, locale, catalog }: { ui: UI; locale: Locale; catalog: Catalog }) {
   const { now, contributions } = catalog.profile;
@@ -9,7 +10,7 @@ export function Log({ ui, locale, catalog }: { ui: UI; locale: Locale; catalog: 
     <section id="log" class="section container" aria-labelledby="log-title">
       <div class="section-margin"><p class="label">{ui.log.label}</p><p class="mono muted">{formatMonth(now.asOf, locale)}</p></div>
       <div class="section-body">
-        <h2 id="log-title">{ui.log.title}</h2>
+        <h2 id="log-title"><Phrases text={ui.log.title} locale={locale} /></h2>
         <ol class="log">
           {now.items.map((it, i) => (
             <li key={`now-${i}`}>

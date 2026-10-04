@@ -33,9 +33,9 @@
       "merged": "merged upstream",
       "films": "films made as code",
       "asOf": "as of",
-      "hash": "projects.json sha256",
-      "source": "View source",
-      "raw": "Raw file"
+      "hash": "SHA-256",
+      "source": "View on GitHub",
+      "raw": "Raw JSON"
     },
     "ledger": {
       "label": "LEDGER",
@@ -136,9 +136,9 @@
       "merged": "個已合併的上游貢獻",
       "films": "支以程式完成的影片",
       "asOf": "截至",
-      "hash": "projects.json sha256",
-      "source": "查看原始檔",
-      "raw": "原始檔案"
+      "hash": "SHA-256",
+      "source": "在 GitHub 查看",
+      "raw": "原始 JSON"
     },
     "ledger": {
       "label": "帳冊",

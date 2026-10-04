@@ -11,6 +11,7 @@ h2 { font-size: var(--fs-2xl); }
 html[lang^="zh"] h1, html[lang^="zh"] h2 { font-weight: 600; letter-spacing: 0; }
 h3 { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-xl); letter-spacing: -0.015em; line-height: 1.25; margin: 0; text-wrap: balance; }
 html[lang^="zh"] h3 { letter-spacing: 0; line-height: 1.4; }
+:is(h1, h2, h3):lang(zh) { word-break: auto-phrase; }
 p { margin: 0; text-wrap: pretty; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 dl, dd { margin: 0; }
@@ -47,3 +48,5 @@ a:hover { text-decoration-color: var(--accent); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+
+.ph { display: inline-block; max-width: 100%; }

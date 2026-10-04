@@ -13,7 +13,7 @@ export function RecordCard({ ui, locale, catalog }: { ui: UI; locale: Locale; ca
         <div><dt>{ui.record.merged}</dt><dd><span class="num">{counts.merged}</span></dd></div>
         <div><dt>{ui.record.films}</dt><dd><span class="num">{counts.films}</span></dd></div>
         <div><dt>{ui.record.asOf}</dt><dd><time datetime={asOf}>{formatMonth(asOf, locale)}</time></dd></div>
-        <div class="record-hash"><dt>{ui.record.hash}</dt><dd><code title={META.sha256}>{META.sha256.slice(0, 16)}…</code></dd></div>
+        <div class="record-hash"><dt>{ui.record.hash}</dt><dd><code class="hash-long" title={META.sha256}>{META.sha256.slice(0, 16)}…</code><code class="hash-short" title={META.sha256}>{META.sha256.slice(0, 12)}…</code></dd></div>
       </dl>
       <p class="record-verify mono">
         <a href={SOURCE_URL} target="_blank" rel="noreferrer">{ui.record.source} ↗</a> ·{" "}

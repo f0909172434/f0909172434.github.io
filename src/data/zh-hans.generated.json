@@ -10,14 +10,14 @@
       "work": "账册",
       "cases": "案例",
       "method": "我怎么工作",
-      "films": "视频",
+      "films": "影片",
       "log": "日志",
       "about": "关于",
       "language": "语言",
-      "main": "主要导览"
+      "main": "主要导航"
     },
     "common": {
-      "cv": "履历 PDF",
+      "cv": "简历 PDF",
       "email": "Email",
       "github": "GitHub"
     },
@@ -32,30 +32,30 @@
       "projects": "笔记录",
       "negatives": "笔留下的负面结果",
       "merged": "个已合并的上游贡献",
-      "films": "支以程序完成的视频",
+      "films": "支以程序完成的影片",
       "asOf": "截至",
-      "hash": "projects.json sha256",
-      "source": "查看源文件",
-      "raw": "源文件案"
+      "hash": "SHA-256",
+      "source": "在 GitHub 查看",
+      "raw": "原始 JSON"
     },
     "ledger": {
       "label": "账册",
       "title": "每个项目，都是一笔记录。",
-      "intro": "这个页面由一份目录档产生。打开任何一笔记录可以读到它的原始内容、沿着行号链接进仓库，并把文件的哈希值和这里印出的比对。",
+      "intro": "这个页面由一份目录文件产生。打开任何一笔记录可以读到它的原始内容、沿着行号链接进仓库，并把文件的哈希值和这里显示的比对。",
       "filterLabel": "依类型筛选记录",
       "filters": {
         "all": "全部",
         "tool": "工具",
         "research": "研究",
         "learning": "学习",
-        "creative": "视频",
+        "creative": "影片",
         "other": "其他"
       },
       "kinds": {
         "tool": "工具",
         "research": "研究",
         "learning": "学习",
-        "creative": "视频",
+        "creative": "影片",
         "other": "其他"
       },
       "count": "显示 {n} / {total} 笔记录",
@@ -65,7 +65,7 @@
       "source": "源代码",
       "rawHeading": "原始记录",
       "origin": "第 {i} 笔，共 {total} 笔",
-      "canonicalNote": "原始记录以繁体中文来源档显示"
+      "canonicalNote": "原始记录以繁体中文来源文件显示"
     },
     "negatives": {
       "label": "留下来的负面结果"
@@ -78,18 +78,18 @@
     },
     "method": {
       "label": "我怎么工作",
-      "title": "人设置框架，agent 运行，证据决定。",
+      "title": "人设定框架，agent 运行，证据决定。",
       "tools": "Claude Code · Codex · Codex Cloud · GitHub Actions · pytest / vitest · Lean 4"
     },
     "films": {
-      "label": "以程序完成的视频",
+      "label": "以程序完成的影片",
       "title": "每一格画面，都是时间的函数。"
     },
     "log": {
       "label": "日志",
       "title": "近况，以及已合并到上游的贡献。",
       "caseStudy": "案例",
-      "note": "只列出已合并的 pull request。日期来自目录档，不是这个页面。"
+      "note": "只列出已合并的 pull request。日期来自目录文件，不是这个页面。"
     },
     "about": {
       "label": "关于",
@@ -99,7 +99,7 @@
     },
     "footer": {
       "top": "回到顶端",
-      "colophon": "Preact · Vite · 自架字体 Newsreader、Geist、Noto Serif TC/SC · 没有分析工具、没有第三方请求 · 本页、个人页 README 与横幅图片由同一份目录档产生；不一致时建置会失败",
+      "colophon": "Preact · Vite · 自架字体 Newsreader、Geist、Noto Serif TC/SC · 没有分析工具、没有第三方请求 · 本页、个人页 README 与横幅图片由同一份目录文件产生；不一致时构建会失败",
       "source": "源代码"
     }
   },
@@ -134,17 +134,17 @@
       ],
       "about": {
         "en": "I am a B.S. student in the Mathematics Division of the Department of Mathematics and Information Education at National Taipei University of Education, expected 2028, based in Taipei. I build small tools that make a claim checkable: a CI check that reads the test report instead of the exit code, an audit that ties a research claim to the bytes of its evidence, a search that returns the counterexample and the range it searched.",
-        "zh": "我是国立台北教育大学数学暨资讯教育学系数学组的学士生，预计 2028 年毕业，住在台北。我做的是让主张可以被检查的小工具：读测试报告而不是只看退出码的 CI 检查、把研究主张绑到证据字节的审核、回传反例和它搜索范围的搜索器。"
+        "zh": "我是国立台北教育大学数学暨资讯教育学系数学组的学士生，预计 2028 年毕业，住在台北。我做的是让主张可以被检查的小工具：读测试报告而不是只看退出码的 CI 检查、把研究主张绑到证据字节的审核、返回反例和它搜索范围的搜索器。"
       },
       "learning": {
         "en": "Currently learning Lean 4 and Mathlib through ProofWeave and the SAIR solver work, and reading about formal methods. I am looking for a software engineering or AI internship where tests and evidence decide what ships.",
-        "zh": "目前透过 ProofWeave 与 SAIR 求解器的工作学 Lean 4 与 Mathlib，也在读形式化方法。我在找一个由测试与证据决定什么能出货的软件工程或 AI 实习。"
+        "zh": "目前通过 ProofWeave 与 SAIR 求解器的工作学 Lean 4 与 Mathlib，也在读形式化方法。我在找一个由测试与证据决定什么能出货的软件工程或 AI 实习。"
       },
       "method": [
         {
           "title": {
             "en": "Frame",
-            "zh": "设置框架"
+            "zh": "设定框架"
           },
           "body": {
             "en": "I write the question, the boundary, and what would count as done: which tests, which replay, which hash.",
@@ -174,7 +174,7 @@
       ],
       "methodNote": {
         "en": "This site and the GitHub profile README are generated from one catalog file; the build fails if they drift.",
-        "zh": "这个网站与 GitHub 个人页 README 由同一份目录档产生；两者不一致时，建置会失败。"
+        "zh": "这个网站与 GitHub 个人页 README 由同一份目录文件产生；两者不一致时，构建会失败。"
       },
       "filmsIntro": {
         "en": "Three works from October 2026 where the film, the music and the cut are all source code. Each repository documents its pipeline and its limits.",
@@ -201,7 +201,7 @@
           },
           {
             "en": "Learning Lean 4 / Mathlib through ProofWeave and SAIR.",
-            "zh": "透过 ProofWeave 与 SAIR 学 Lean 4 / Mathlib。"
+            "zh": "通过 ProofWeave 与 SAIR 学 Lean 4 / Mathlib。"
           }
         ]
       },
@@ -241,7 +241,7 @@
         "name": "HonestCI",
         "kind": "tool",
         "status": "v1.0.4 · npm / GitHub Marketplace",
-        "descZh": "CLI 与 GitHub Action：检查 JUnit 报告存在、新鲜，且测试数不低于可信基线。不判断测试品质。",
+        "descZh": "CLI 与 GitHub Action：检查 JUnit 报告存在、新鲜，且测试数不低于可信基线。不判断测试质量。",
         "descEn": "CLI and GitHub Action that checks JUnit reports are present, fresh, and not below a trusted test-count baseline. It does not judge test quality.",
         "repo": "https://github.com/f0909172434/honest-ci",
         "links": []
@@ -250,7 +250,7 @@
         "name": "RigorGraph",
         "kind": "tool",
         "status": "PyPI 1.0.1 · public beta",
-        "descZh": "本机优先的 Python CLI：把研究主张连到证据文件与独立审查记录，检查 SHA-256 哈希，输出脱机审核报告。VERIFIED 表示通过记录的流程，不表示结论为真。",
+        "descZh": "本机优先的 Python CLI：把研究主张连到证据文件与独立审查记录，检查 SHA-256 哈希，输出离线审核报告。VERIFIED 表示通过记录的流程，不表示结论为真。",
         "descEn": "Local-first Python CLI that links research claims to evidence files and independent review records, checks SHA-256 hashes, and writes offline audit reports. VERIFIED means accepted by the recorded workflow, not true.",
         "repo": "https://github.com/f0909172434/rigorgraph",
         "live": "https://f0909172434.github.io/examples/rigorgraph/math.html",
@@ -260,7 +260,7 @@
         "name": "Verified Search",
         "kind": "tool",
         "status": "v0.1.1 · stable search / experimental extensions",
-        "descZh": "DeepSeek Harness 检索插件：保留引用片段，让证据缺口可见。只有 verified_search 是稳定版，四个扩充工具仍属实验。250 个测试；尚无独立验证。",
+        "descZh": "DeepSeek Harness 检索插件：保留引用片段，让证据缺口可见。只有 verified_search 是稳定版，四个扩展工具仍属实验。250 个测试；尚无独立验证。",
         "descEn": "DeepSeek Harness search plugin that retains citation excerpts and keeps evidence gaps visible. Only verified_search is stable; four extensions are experimental. 250 tests; no independent validation.",
         "repo": "https://github.com/f0909172434/dsh-plugin-verified-search",
         "links": []
@@ -269,7 +269,7 @@
         "name": "Second Agent Kit",
         "kind": "tool",
         "status": "v0.1.4 · macOS only · experimental parts",
-        "descZh": "DeepSeek Harness 的 macOS 修补：shell 进程的 Seatbelt 限制、输入调用上限、以项目为单位的记忆隔离。缺口都有记录；它不是万用防火墙。",
+        "descZh": "DeepSeek Harness 的 macOS 修补：shell 进程的 Seatbelt 限制、输入调用上限、以项目为单位的记忆隔离。缺口都有记录；它不是通用防火墙。",
         "descEn": "Patches for DeepSeek Harness on macOS: Seatbelt confinement for shell processes, input-call limits, and per-project memory isolation. Gaps are documented; it is not a universal firewall.",
         "repo": "https://github.com/f0909172434/dsh-second-agent-kit",
         "links": []
@@ -307,7 +307,7 @@
         "name": "ProofWeave Core",
         "kind": "research",
         "status": "experimental · Core 2",
-        "descZh": "把作者手写的结构化 Markdown 证明交给固定版本的 Lean 4 / Mathlib 检查，并把「已认证」与「人工确认语意对齐」分开回报。不做自然语言翻译。",
+        "descZh": "把作者手写的结构化 Markdown 证明交给固定版本的 Lean 4 / Mathlib 检查，并把「已认证」与「人工确认语义对齐」分开回报。不做自然语言翻译。",
         "descEn": "Checks author-written structured Markdown proofs against pinned Lean 4 / Mathlib, and reports certification separately from human-confirmed statement alignment. No natural-language translation.",
         "repo": "https://github.com/f0909172434/proofweave-math-lab",
         "links": []
@@ -342,12 +342,12 @@
         "name": "RuleDiff negative result",
         "kind": "research",
         "status": "negative result · technical report",
-        "descZh": "四页技术报告：词汇式政策影响预测器在开发集的 macro-F1 是 0.99，在一组保留数据上掉到 0.67。未经同侪审查。",
+        "descZh": "四页技术报告：词汇式政策影响预测器在开发集的 macro-F1 是 0.99，在一组保留数据上掉到 0.67。未经同行评审。",
         "descEn": "Four-page technical report: a lexical policy-impact predictor scored 0.99 macro-F1 on development data and 0.67 on one held-out packet. Not peer reviewed.",
         "repo": "https://github.com/f0909172434/rulediff-negative-result",
         "negative": {
           "en": "0.99 on development, 0.67 held out; the full-paper follow-up was stopped under its preregistered rule and frozen as this report.",
-          "zh": "开发集 0.99、保留集 0.67；完整论文的后续依预先登录的规则停止，冻结成这份报告。"
+          "zh": "开发集 0.99、保留集 0.67；完整论文的后续依预先注册的规则停止，冻结成这份报告。"
         },
         "links": []
       },
@@ -355,7 +355,7 @@
         "name": "Charlie Alpha 4B",
         "kind": "research",
         "status": "experimental v0.3.0 · mixed results",
-        "descZh": "实验性的 Qwen3.5-4B MLX 微调，在本机挑选统计进程。在模拟基准有改善（DGP-Regret −34%），在 P-Bench 与 StatQA 没有。",
+        "descZh": "实验性的 Qwen3.5-4B MLX 微调，在本机挑选统计程序。在模拟基准有改善（DGP-Regret −34%），在 P-Bench 与 StatQA 没有。",
         "descEn": "Experimental Qwen3.5-4B MLX fine-tune that picks statistical procedures locally. Improves on a simulator benchmark (DGP-Regret −34%) but not on P-Bench or StatQA.",
         "repo": "https://github.com/f0909172434/Charlie-Alpha-4B",
         "negative": {
@@ -368,7 +368,7 @@
         "name": "TokenScope",
         "kind": "learning",
         "status": "educational browser lab",
-        "descZh": "双语浏览器实验室：手动设置的单头 5×5 注意力玩具、采样控制（temperature、top-k、top-p）、逐步 BPE 合并示范，数值可导出。",
+        "descZh": "双语浏览器实验室：手动设置的单头 5×5 注意力玩具、采样控制（temperature、top-k、top-p）、逐步 BPE 合并演示，数值可导出。",
         "descEn": "Bilingual in-browser lab: a hand-set one-head 5×5 attention toy, sampling controls (temperature, top-k, top-p), a step-by-step BPE merge demo, and exportable numbers.",
         "repo": "https://github.com/f0909172434/tokenscope",
         "live": "https://f0909172434.github.io/tokenscope/?lang=zh-Hant",
@@ -378,7 +378,7 @@
         "name": "MiniHarness",
         "kind": "learning",
         "status": "8-step workshop · zh-TW curriculum",
-        "descZh": "Python 工作坊：八步做出一个小型 agent harness，脱机使用脚本化的模拟模型，附 38 个模块的繁体中文课程。不是生产环境用的。",
+        "descZh": "Python 工作坊：八步做出一个小型 agent harness，离线使用脚本化的模拟模型，附 38 个模块的繁体中文课程。不是生产环境用的。",
         "descEn": "Python workshop where learners build a small agent harness in eight steps, offline with a scripted mock model, backed by a 38-module Traditional Chinese curriculum. Not production.",
         "repo": "https://github.com/f0909172434/miniharness",
         "live": "https://f0909172434.github.io/miniharness/",
@@ -410,7 +410,7 @@
         "name": "world.execute(me); · Claude Code",
         "kind": "creative",
         "status": "fan PV · Oct 2026",
-        "descZh": "把 Mili 的 world.execute(me); 演成一场 Claude Code 会话，直接在终端机里实时播放。纯 Node、零依赖；每一格画面都是歌曲时间的函数。非官方同人作品，承接 MisakaZentai 的 DeepSeek Harness 版；不含歌曲音档。",
+        "descZh": "把 Mili 的 world.execute(me); 演成一场 Claude Code 会话，直接在终端里实时播放。纯 Node、零依赖；每一格画面都是歌曲时间的函数。非官方同人作品，承接 MisakaZentai 的 DeepSeek Harness 版；不含歌曲音频文件。",
         "descEn": "Mili's world.execute(me); staged as a Claude Code session and played live in the terminal. Pure Node, no dependencies; every frame is a function of song time. Unofficial fan work after MisakaZentai's DeepSeek Harness version; the song is not included.",
         "repo": "https://github.com/f0909172434/world-execute-me-claude-code",
         "watch": "https://youtu.be/iEsGiRECytY",
@@ -421,7 +421,7 @@
         "name": "DeepSeek Girl",
         "kind": "other",
         "status": "Codex v0.1.0 · Harness v0.2.0 · unofficial",
-        "descZh": "同一份动画图集、两个非官方宿主套件：Codex Desktop 的 16 方向动画宠物，以及回应 Session 状态的 DeepSeek Harness 插件，脱机运作。",
+        "descZh": "同一份动画图集、两个非官方宿主套件：Codex Desktop 的 16 方向动画宠物，以及回应 Session 状态的 DeepSeek Harness 插件，离线运作。",
         "descEn": "One animation atlas, two unofficial host packages: a 16-direction animated pet for Codex Desktop, and a DeepSeek Harness plugin that reacts to session state, offline.",
         "repo": "https://github.com/f0909172434/deepseek-girl-codex-pet",
         "links": [
@@ -479,7 +479,7 @@
       },
       "summary": {
         "en": "Lean certified one obligation; statement alignment stayed UNCONFIRMED. Formal validity and semantic alignment are separate axes and stay separate.",
-        "zh": "Lean 认证了一个义务；语意对齐仍是 UNCONFIRMED。形式有效性与语意对齐是两个轴，而且保持分开。"
+        "zh": "Lean 认证了一个义务；语义对齐仍是 UNCONFIRMED。形式有效性与语义对齐是两个轴，而且保持分开。"
       }
     },
     {
@@ -499,7 +499,7 @@
       "project": "miniharness",
       "title": {
         "en": "MiniHarness: turn a curriculum outline into executable lessons",
-        "zh": "MiniHarness：把课纲做成可运行的课程"
+        "zh": "MiniHarness：把课程大纲做成可运行的课程"
       },
       "summary": {
         "en": "38 Traditional Chinese modules, fixed checker contracts, and a kept negative result: adaptation improved a dev score while worsening held-out perplexity.",
