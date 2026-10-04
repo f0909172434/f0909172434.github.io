@@ -1,5 +1,6 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import * as OpenCC from 'opencc-js';
 
 const root = new URL('../', import.meta.url);
 const outDir = new URL('public/profile/', root);
@@ -68,7 +69,7 @@ const SOURCE = 'https://github.com/f0909172434/f0909172434.github.io/blob/main/s
 const STRINGS = {
   en: {
     key: 'en',
-    other: 'English · [繁體中文](README.zh-TW.md)',
+    other: 'English · [繁體中文](README.zh-TW.md) · [简体中文](README.zh-CN.md)',
     links: `[Portfolio](${SITE}?lang=en) · [CV (PDF)](${SITE}Chih-Kai-Wang-CV.pdf) · [Email](mailto:f0909172434@gmail.com)`,
     now: `Now · ${formatMonth(profile.now.asOf, 'en')}`,
     selected: 'Selected work', head: '| Project | What it does | Status | Open |',
@@ -82,7 +83,7 @@ const STRINGS = {
   },
   zh: {
     key: 'zh',
-    other: '[English](README.md) · 繁體中文',
+    other: '[English](README.md) · 繁體中文 · [简体中文](README.zh-CN.md)',
     links: `[作品集](${SITE}?lang=zh-Hant) · [履歷 PDF](${SITE}Chih-Kai-Wang-CV.pdf) · [Email](mailto:f0909172434@gmail.com)`,
     now: `近況 · ${formatMonth(profile.now.asOf, 'zh')}`,
     selected: '精選作品', head: '| 專案 | 做什麼 | 狀態 | 開啟 |',
@@ -159,9 +160,15 @@ ${V.map(([x, y], i) => `<circle cx="${x}" cy="${y}" r="9" fill="${c.accent}"/><t
 }
 
 // ---------- outputs ----------
+// zh-CN is derived from the zh-TW render (phrase-level twp -> cn); the language line is restated explicitly.
+const toCn = OpenCC.Converter({ from: 'twp', to: 'cn' });
+const zhTw = renderReadme(STRINGS.zh);
+const zhCn = toCn(zhTw).replace(toCn(STRINGS.zh.other), '[English](README.md) · [繁體中文](README.zh-TW.md) · 简体中文');
+if (!zhCn.includes('· 简体中文\n')) throw new Error('zh-CN language line was not substituted');
 const outputs = {
   'README.md': renderReadme(STRINGS.en),
-  'README.zh-TW.md': renderReadme(STRINGS.zh),
+  'README.zh-TW.md': zhTw,
+  'README.zh-CN.md': zhCn,
   'profile-hero.svg': renderHero('light'),
   'profile-hero-dark.svg': renderHero('dark'),
 };

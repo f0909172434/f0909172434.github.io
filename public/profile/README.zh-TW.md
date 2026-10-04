@@ -3,7 +3,7 @@
   <img src="assets/profile-hero.svg" alt="Chih-Kai Wang — claims, with the evidence attached. A four-cycle C4: four vertices of degree 2, zero triangles." width="100%">
 </picture>
 
-[English](README.md) · 繁體中文
+[English](README.md) · 繁體中文 · [简体中文](README.zh-CN.md)
 
 # Chih-Kai Wang 王治凱
 

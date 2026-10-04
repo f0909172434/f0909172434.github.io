@@ -12,6 +12,7 @@ const destination = resolve(target);
 const files = [
   ['README.md', 'README.md'],
   ['README.zh-TW.md', 'README.zh-TW.md'],
+  ['README.zh-CN.md', 'README.zh-CN.md'],
   ['profile-hero.svg', 'assets/profile-hero.svg'],
   ['profile-hero-dark.svg', 'assets/profile-hero-dark.svg'],
 ];
