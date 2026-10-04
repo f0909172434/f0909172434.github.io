@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "node scripts/render-profile.mjs --check && tsc -b && vite build",
     "preview": "vite preview",
+    "profile": "node scripts/render-profile.mjs",
+    "profile:sync": "node scripts/sync-profile.mjs",
     "check": "node scripts/render-profile.mjs --check && tsc -b --pretty false"
   },
   "dependencies": {
