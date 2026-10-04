@@ -139,22 +139,22 @@ const SERIF = 'Georgia, "Times New Roman", "Songti TC", serif';
 const SANS = '-apple-system, "Segoe UI", "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei", sans-serif';
 export function renderHero(theme) {
   const c = HERO_PALETTE[theme];
-  const V = [[900, 70], [1120, 70], [1120, 230], [900, 230]];
-  const off = [[-16, -14], [16, -14], [16, 30], [-16, 30]];
+  const V = [[938, 56], [1082, 56], [1082, 200], [938, 200]];
+  const off = [[-18, 4], [18, 4], [18, 4], [-18, 4]];
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="t d">
 <title id="t">Chih-Kai Wang — claims, with the evidence attached</title>
 <desc id="d">A four-cycle C4 drawn as a counterexample: four vertices of degree two and no triangle.</desc>
 <rect width="1200" height="300" fill="${c.bg}"/>
-<path d="M56 252H1144" stroke="${c.line}" stroke-width="1"/>
+<path d="M56 256H1144" stroke="${c.line}" stroke-width="1"/>
 <text x="56" y="72" font-family='${MONO}' font-size="13" letter-spacing="2" fill="${c.muted}">CHIH-KAI WANG · 王治凱 · TAIPEI · NTUE 2028</text>
 <text font-family='${SERIF}' font-size="60" fill="${c.ink}"><tspan x="56" y="140">Claims, with the</tspan><tspan x="56" y="206">evidence attached.</tspan></text>
 <text x="56" y="240" font-family='${SANS}' font-size="17" fill="${c.muted}">Inspectable AI and mathematical research tools · Python &amp; TypeScript</text>
 <text x="56" y="282" font-family='${MONO}' font-size="11" letter-spacing="1.2" fill="${c.muted}">CLAIM → EVIDENCE → BOUNDARY · NEGATIVE RESULTS KEPT · BUILT WITH CLAUDE CODE AND CODEX</text>
-<path d="M900 70L1120 230M1120 70L900 230" stroke="${c.line}" stroke-width="1" stroke-dasharray="3 6"/>
-<path d="M900 70H1120V230H900Z" fill="none" stroke="${c.accent}" stroke-width="3" stroke-linejoin="round" stroke-dasharray="880" stroke-dashoffset="880"><animate attributeName="stroke-dashoffset" from="880" to="0" dur="1.4s" begin="0s" fill="freeze" calcMode="spline" keySplines="0.2 0.7 0.2 1" keyTimes="0;1"/></path>
+<path d="M938 56L1082 200M1082 56L938 200" stroke="${c.line}" stroke-width="1" stroke-dasharray="3 6"/>
+<path d="M938 56H1082V200H938Z" fill="none" stroke="${c.accent}" stroke-width="3" stroke-linejoin="round" stroke-dasharray="576" stroke-dashoffset="576"><animate attributeName="stroke-dashoffset" from="576" to="0" dur="1.4s" begin="0s" fill="freeze" calcMode="spline" keySplines="0.2 0.7 0.2 1" keyTimes="0;1"/></path>
 ${V.map(([x, y], i) => `<circle cx="${x}" cy="${y}" r="9" fill="${c.accent}"/><text x="${x + off[i][0]}" y="${y + off[i][1]}" font-family='${MONO}' font-size="12" fill="${c.muted}" text-anchor="${off[i][0] < 0 ? 'end' : 'start'}">v${i + 1}</text>`).join('\n')}
-<text x="1010" y="262" font-family='${MONO}' font-size="12" fill="${c.muted}" text-anchor="middle">C₄ · candidate 39 · min degree 2 · 0 triangles</text>
-<text x="1010" y="282" font-family='${MONO}' font-size="11" fill="${c.muted}" text-anchor="middle">one counterexample disproves a universal claim</text>
+<text x="1010" y="232" font-family='${MONO}' font-size="12" fill="${c.muted}" text-anchor="middle">C₄ · candidate 39 · min degree 2 · 0 triangles</text>
+<text x="1010" y="248" font-family='${MONO}' font-size="11" fill="${c.muted}" text-anchor="middle">one counterexample disproves a universal claim</text>
 </svg>
 `;
 }
