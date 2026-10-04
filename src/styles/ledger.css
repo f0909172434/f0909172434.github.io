@@ -26,8 +26,8 @@ html[lang^="zh"] .record-dl > div:has(.num) { flex-direction: row-reverse; justi
 .record-toggle::before { content: "+"; }
 details[open] > .record-summary .record-toggle::before { content: "\2212"; }
 .record-kind { order: 5; }
-.record-status { order: 6; color: var(--muted); font-size: var(--fs-xs); overflow-wrap: anywhere; }
-.record-neg { order: 7; color: var(--accent); }
+.record-neg { order: 6; color: var(--accent); }
+.record-status { order: 7; flex: 1 1 100%; padding-left: calc(40px + var(--s-3)); color: var(--muted); font-size: var(--fs-xs); overflow-wrap: anywhere; }
 details[open] > .record-summary { background: var(--bg-sunken); }
 .record-summary:focus-visible { outline-offset: -2px; }
 
@@ -48,5 +48,5 @@ details[open] > .record-summary { background: var(--bg-sunken); }
   .record-summary::before { display: none; }
   .record-index, .record-name, .record-kind, .record-status, .record-neg, .record-toggle { order: 0; flex: none; }
   .record-kind { min-width: 7ch; }
-  .record-status { max-width: 26ch; text-align: right; }
+  .record-status { max-width: 26ch; text-align: right; padding-left: 0; }
 }

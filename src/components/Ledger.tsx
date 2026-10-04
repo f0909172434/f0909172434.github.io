@@ -66,14 +66,13 @@ export function Ledger({ ui, locale, catalog }: { ui: UI; locale: Locale; catalo
     const open = () => {
       const id = decodeURIComponent(location.hash.slice(1));
       if (!id.startsWith("rec-")) return;
-      setFilter("all");
-      requestAnimationFrame(() => {
-        const el = document.getElementById(id);
-        if (el instanceof HTMLDetailsElement && olRef.current?.contains(el)) {
-          el.open = true;
-          el.scrollIntoView();
-        }
-      });
+      const el = document.getElementById(id);
+      if (!(el instanceof HTMLDetailsElement) || !olRef.current?.contains(el)) return;
+      el.open = true;
+      if (el.parentElement?.hidden) {            // filtered out: show everything, then scroll once it renders
+        setFilter("all");
+        setTimeout(() => el.scrollIntoView(), 50);
+      }
     };
     open();
     addEventListener("hashchange", open);
