@@ -1,23 +1,42 @@
 # Chih-Kai Wang — portfolio
 
-A bilingual portfolio for software engineering and AI application internships. The central work sample lets visitors inspect Finite Witness, HonestCI and RigorGraph, then continue into the matching engineering case study.
+A portfolio for software engineering and AI internships, built around one idea: claims with the evidence attached. The page is rendered from a single catalog file, `src/data/projects.json`, and shows every record of that file in a Ledger a visitor can inspect.
 
 [Live portfolio](https://f0909172434.github.io/) · [Profile](https://github.com/f0909172434) · [CV](https://f0909172434.github.io/Chih-Kai-Wang-CV.pdf)
 
 ## Local development
 
-Use Node 24 and run `npm ci`, then `npm run dev`. Run `npm run build` for the production build and `npm run preview` to inspect it.
+Use Node 24. Run `npm ci`, then `npm run dev`. `npm run build` checks the generated files, type-checks, and writes the prerendered site to `dist/`; `npm run preview` serves it. `npm run check` runs the same checks without building.
 
-The sample device replays recorded examples or clearly labeled workflow illustrations. It does not call a backend or rerun project engines. A native range input, chapter buttons, vertex inspection and static-reading control work with keyboard and touch. The operating system's reduced-motion preference is honored by default.
+Stack: Preact, Vite, TypeScript and plain CSS with custom properties (no CSS framework). The page follows `prefers-color-scheme`; there is no theme toggle.
 
-## Updating content
+## Content: one catalog, several outputs
 
-Public project descriptions, paths, status labels and six profile pins live in `src/data/projects.json`. Sample copy remains in `src/App.tsx`. Run `node scripts/render-profile.mjs` after editing the catalog; the build checks that `public/profile-README.md` is current. Copy that generated file into the profile repository's `README.md` in the same delivery. This creates no cross-repository write permissions or automatic pushes.
+Project records, status labels, the profile text and the six profile pins live in `src/data/projects.json` (schema version 2). Edit that file only, then run:
 
-The shared sample selection connects the first screen to its case study. Case-study sources and the CV source live in the profile repository. Copy a newly rendered CV to `public/Chih-Kai-Wang-CV.pdf` before building and compare its SHA-256 with the source copy. The two desktop-pet host packages share one portfolio entry while retaining their own installation links.
+- `npm run locale` — regenerates `src/data/zh-hans.generated.json`.
+- `npm run profile` — regenerates `public/profile/` (the profile README in three languages and the two hero images).
+- `npm run profile:sync -- --to ../profile` — copies those five files into a checkout of the profile repository and prints their SHA-256.
 
-The Pages workflow builds on pull requests and deploys the main branch only after a successful build. The September 2026 review verified desktop and 390px mobile layouts, both languages, sample selection, keyboard scrubbing, static reading, and source links.
+`npm run build` fails if either generated output is stale. UI strings live in `src/data/ui.json` and the case-study summaries in `src/data/case-studies.json`; both have English and Traditional Chinese text. Case-study sources and the CV source live in the profile repository; copy a newly rendered CV to `public/Chih-Kai-Wang-CV.pdf` and compare its SHA-256 with the source copy.
 
-## Native specimen artwork
+## Locales
 
-The C₄ model was built and refined in Blender 4.5.9 LTS, then exported as seven lightweight views with matching vertex coordinates. See [art sources and reproduction](art/README.md). Normal builds use the checked-in WebP assets.
+English, Traditional Chinese (the source of truth) and Simplified Chinese. The Simplified text is generated at build time from the Traditional text with opencc-js through `scripts/zh-cn.mjs` — the same module that produces the profile's `README.zh-CN.md` — and committed as `src/data/zh-hans.generated.json`. It is never edited by hand: fix the Traditional source and run `npm run locale`. `status` and `made` strings, product names, code and the raw records stay as written. Use `?lang=en`, `?lang=zh-Hant` or `?lang=zh-Hans`; otherwise the browser language decides.
+
+## Verifying the catalog hash
+
+The Record Card in the hero and the footer print the SHA-256 of `src/data/projects.json`, computed over the file's bytes at build time. Each Ledger record shows its raw entry, sliced verbatim from the same file, with a link to the exact lines on GitHub. To check:
+
+```sh
+git clone https://github.com/f0909172434/f0909172434.github.io && cd f0909172434.github.io
+shasum -a 256 src/data/projects.json
+```
+
+The output should begin with the hash shown on the page.
+
+## Prerendering and requests
+
+`vite build` prerenders the English page into `dist/index.html` (through `@preact/preset-vite`), so the content, the Ledger's `<details>` records and every link work without JavaScript; filters and the language switch need JavaScript and are hidden without it. The client hydrates and then applies the visitor's locale. Fonts (Newsreader, Geist, Geist Mono, Noto Serif TC and SC) are self-hosted through Fontsource; the page makes no third-party requests and has no analytics.
+
+The Pages workflow builds on pull requests and deploys the main branch only after a successful build. `public/examples/rigorgraph/` is the static example linked from the RigorGraph record and its case study.
