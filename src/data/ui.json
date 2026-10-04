@@ -1,0 +1,208 @@
+{
+  "en": {
+    "meta": {
+      "title": "Chih-Kai Wang | Inspectable AI and mathematical research tools",
+      "description": "Python and TypeScript tools for inspectable AI and mathematical research: claims with evidence attached, negative results kept, boundaries stated. Chih-Kai Wang, Taipei; open to software and AI internships."
+    },
+    "nav": {
+      "skip": "Skip to the ledger",
+      "work": "Ledger",
+      "cases": "Case studies",
+      "method": "How I work",
+      "films": "Films",
+      "log": "Log",
+      "about": "About",
+      "language": "Language",
+      "main": "Primary navigation"
+    },
+    "common": {
+      "cv": "CV (PDF)",
+      "email": "Email",
+      "github": "GitHub"
+    },
+    "hero": {
+      "kicker": "CHIH-KAI WANG · TAIPEI",
+      "title": "Claims, with the evidence attached.",
+      "primary": "Open the ledger",
+      "updated": "Catalog updated {date}"
+    },
+    "record": {
+      "title": "CATALOG RECORD",
+      "projects": "records",
+      "negatives": "negative results kept",
+      "merged": "merged upstream",
+      "films": "films made as code",
+      "asOf": "as of",
+      "hash": "projects.json sha256",
+      "source": "View source",
+      "raw": "Raw file"
+    },
+    "ledger": {
+      "label": "LEDGER",
+      "title": "Every project, as a record.",
+      "intro": "This page is rendered from one catalog file. Open a record to read its raw entry, follow the line link into the repository, and compare the file's hash with the one printed here.",
+      "filterLabel": "Filter records by kind",
+      "filters": {
+        "all": "All",
+        "tool": "Tools",
+        "research": "Research",
+        "learning": "Learning",
+        "creative": "Films",
+        "other": "Other"
+      },
+      "kinds": {
+        "tool": "Tool",
+        "research": "Research",
+        "learning": "Learning",
+        "creative": "Film",
+        "other": "Other"
+      },
+      "count": "{n} of {total} records",
+      "hasNegative": "Has a negative result",
+      "live": "Live",
+      "watch": "Watch",
+      "source": "Source",
+      "rawHeading": "RAW RECORD",
+      "origin": "record {i} of {total}",
+      "canonicalNote": "raw records are shown from the Traditional Chinese source file"
+    },
+    "negatives": {
+      "label": "NEGATIVE RESULTS, KEPT"
+    },
+    "cases": {
+      "label": "CASE STUDIES",
+      "title": "The decisions behind seven results.",
+      "intro": "Longer write-ups kept as Markdown in the profile repository: the problem, the observable result, the engineering decisions, and what the result does not show.",
+      "read": "Read the case study"
+    },
+    "method": {
+      "label": "HOW I WORK",
+      "title": "The human frames; agents execute; evidence decides.",
+      "tools": "Claude Code · Codex · Codex Cloud · GitHub Actions · pytest / vitest · Lean 4"
+    },
+    "films": {
+      "label": "FILMS MADE AS CODE",
+      "title": "Every frame a function of time."
+    },
+    "log": {
+      "label": "LOG",
+      "title": "Now, and what was merged upstream.",
+      "caseStudy": "Case study",
+      "note": "Only merged pull requests are listed. Dates come from the catalog, not from this page."
+    },
+    "about": {
+      "label": "ABOUT",
+      "name": "Chih-Kai Wang",
+      "contact": "INTERNSHIPS & COLLABORATION",
+      "readme": "Profile README"
+    },
+    "footer": {
+      "top": "Back to top",
+      "colophon": "Preact · Vite · Newsreader, Geist, Noto Serif TC/SC, self-hosted · no analytics, no third-party requests · page, profile README and hero image are generated from one catalog; the build fails if they drift",
+      "source": "Source"
+    }
+  },
+  "zh-Hant": {
+    "meta": {
+      "title": "王治凱｜可檢查的 AI 與數學研究工具",
+      "description": "用 Python 與 TypeScript 做可檢查的 AI 與數學研究工具：主張附上證據、負面結果留著、邊界說清楚。王治凱，台北；尋找軟體與 AI 實習。"
+    },
+    "nav": {
+      "skip": "跳到帳冊",
+      "work": "帳冊",
+      "cases": "案例",
+      "method": "我怎麼工作",
+      "films": "影片",
+      "log": "日誌",
+      "about": "關於",
+      "language": "語言",
+      "main": "主要導覽"
+    },
+    "common": {
+      "cv": "履歷 PDF",
+      "email": "Email",
+      "github": "GitHub"
+    },
+    "hero": {
+      "kicker": "王治凱 · 台北",
+      "title": "主張，附上證據。",
+      "primary": "打開帳冊",
+      "updated": "目錄更新於 {date}"
+    },
+    "record": {
+      "title": "目錄記錄",
+      "projects": "筆記錄",
+      "negatives": "筆留下的負面結果",
+      "merged": "個已合併的上游貢獻",
+      "films": "支以程式完成的影片",
+      "asOf": "截至",
+      "hash": "projects.json sha256",
+      "source": "查看原始檔",
+      "raw": "原始檔案"
+    },
+    "ledger": {
+      "label": "帳冊",
+      "title": "每個專案，都是一筆記錄。",
+      "intro": "這個頁面由一份目錄檔產生。打開任何一筆記錄可以讀到它的原始內容、沿著行號連結進倉庫，並把檔案的雜湊值和這裡印出的比對。",
+      "filterLabel": "依類型篩選記錄",
+      "filters": {
+        "all": "全部",
+        "tool": "工具",
+        "research": "研究",
+        "learning": "學習",
+        "creative": "影片",
+        "other": "其他"
+      },
+      "kinds": {
+        "tool": "工具",
+        "research": "研究",
+        "learning": "學習",
+        "creative": "影片",
+        "other": "其他"
+      },
+      "count": "顯示 {n} / {total} 筆記錄",
+      "hasNegative": "附有負面結果",
+      "live": "實際網站",
+      "watch": "觀看",
+      "source": "原始碼",
+      "rawHeading": "原始記錄",
+      "origin": "第 {i} 筆，共 {total} 筆",
+      "canonicalNote": "原始記錄以繁體中文來源檔顯示"
+    },
+    "negatives": {
+      "label": "留下來的負面結果"
+    },
+    "cases": {
+      "label": "案例",
+      "title": "七個結果背後的選擇。",
+      "intro": "放在個人頁倉庫裡的 Markdown 長文：問題、可觀察的結果、工程上的選擇，以及這個結果沒有證明的事。",
+      "read": "閱讀案例"
+    },
+    "method": {
+      "label": "我怎麼工作",
+      "title": "人設定框架，agent 執行，證據決定。",
+      "tools": "Claude Code · Codex · Codex Cloud · GitHub Actions · pytest / vitest · Lean 4"
+    },
+    "films": {
+      "label": "以程式完成的影片",
+      "title": "每一格畫面，都是時間的函數。"
+    },
+    "log": {
+      "label": "日誌",
+      "title": "近況，以及已合併到上游的貢獻。",
+      "caseStudy": "案例",
+      "note": "只列出已合併的 pull request。日期來自目錄檔，不是這個頁面。"
+    },
+    "about": {
+      "label": "關於",
+      "name": "王治凱",
+      "contact": "實習與合作",
+      "readme": "個人頁 README"
+    },
+    "footer": {
+      "top": "回到頂端",
+      "colophon": "Preact · Vite · 自架字型 Newsreader、Geist、Noto Serif TC/SC · 沒有分析工具、沒有第三方請求 · 本頁、個人頁 README 與橫幅圖片由同一份目錄檔產生；不一致時建置會失敗",
+      "source": "原始碼"
+    }
+  }
+}

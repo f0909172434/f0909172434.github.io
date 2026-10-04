@@ -1,0 +1,87 @@
+[
+  {
+    "slug": "honest-ci",
+    "project": "honest-ci",
+    "title": {
+      "en": "HonestCI: a green process can contain zero tests",
+      "zh": "HonestCI：綠燈的流程可能一個測試都沒跑"
+    },
+    "summary": {
+      "en": "A runner exits 0 while its JUnit report records zero tests; HCI004_ZERO_TESTS blocks it. Why exit codes and test counts are different signals.",
+      "zh": "執行器退出碼 0，JUnit 報告卻記錄零個測試；HCI004_ZERO_TESTS 把它擋下來。為什麼退出碼與測試數是兩個不同的訊號。"
+    }
+  },
+  {
+    "slug": "rigorgraph",
+    "project": "rigorgraph",
+    "title": {
+      "en": "RigorGraph: keep claims connected to their evidence",
+      "zh": "RigorGraph：讓主張和證據連在一起"
+    },
+    "summary": {
+      "en": "Changed evidence bytes surface as RG_HASH_MISMATCH; a changed claim invalidates its old acceptance. A hash answers identity, not sufficiency.",
+      "zh": "證據位元組改變會以 RG_HASH_MISMATCH 浮現；主張改變會讓舊的接受失效。雜湊回答的是同一性，不是充分性。"
+    }
+  },
+  {
+    "slug": "finite-witness",
+    "project": "finite-witness-webmcp",
+    "title": {
+      "en": "Finite Witness: make a counterexample inspectable",
+      "zh": "Finite Witness：讓反例可以被檢查"
+    },
+    "summary": {
+      "en": "Candidate 39 is C₄. The certificate records the prefix actually searched, not the range requested; people and WebMCP agents inspect the same engine.",
+      "zh": "第 39 個候選是 C₄。憑證記錄的是實際搜尋過的前綴，不是請求的範圍；人和 WebMCP agent 檢查同一個引擎。"
+    }
+  },
+  {
+    "slug": "proofweave",
+    "project": "proofweave-math-lab",
+    "title": {
+      "en": "ProofWeave: certify a formal target without overstating its meaning",
+      "zh": "ProofWeave：認證形式目標，但不誇大它的意義"
+    },
+    "summary": {
+      "en": "Lean certified one obligation; statement alignment stayed UNCONFIRMED. Formal validity and semantic alignment are separate axes and stay separate.",
+      "zh": "Lean 認證了一個義務；語意對齊仍是 UNCONFIRMED。形式有效性與語意對齊是兩個軸，而且保持分開。"
+    }
+  },
+  {
+    "slug": "sair-proof-press",
+    "project": "sair-stage2-proof-press",
+    "title": {
+      "en": "SAIR Proof Press: retain a checkable answer through bounded search",
+      "zh": "SAIR Proof Press：在有限搜尋中保住可檢查的答案"
+    },
+    "summary": {
+      "en": "Search routes propose candidates; Lean decides. Released-input results are bound to an evaluator commit, and the claim boundaries say what they do not show.",
+      "zh": "搜尋路線提出候選，由 Lean 決定。公開輸入的結果綁定到評測器的 commit，主張邊界說明它們沒有證明的事。"
+    }
+  },
+  {
+    "slug": "miniharness",
+    "project": "miniharness",
+    "title": {
+      "en": "MiniHarness: turn a curriculum outline into executable lessons",
+      "zh": "MiniHarness：把課綱做成可執行的課程"
+    },
+    "summary": {
+      "en": "38 Traditional Chinese modules, fixed checker contracts, and a kept negative result: adaptation improved a dev score while worsening held-out perplexity.",
+      "zh": "38 個繁體中文模組、固定的檢查器契約，以及一個留下來的負面結果：微調讓開發分數上升，卻讓保留集的 perplexity 變差。"
+    }
+  },
+  {
+    "slug": "windows-contribution",
+    "project": null,
+    "url": "https://github.com/EmiyaKatuz/Codex-Dream-Skin-Needy-Girl-Overdose/pull/10",
+    "title": {
+      "en": "External contribution: keep Windows verification failures distinguishable",
+      "zh": "外部貢獻：讓 Windows 驗證失敗可區分"
+    },
+    "summary": {
+      "en": "A merged fix that narrows a native-window fallback so unrelated errors stay failures, and repairs standalone helper loading.",
+      "zh": "已合併的修正：縮小原生視窗的降級判斷，讓不相關的錯誤仍然是失敗，並修好獨立執行時的輔助模組載入。"
+    }
+  }
+]
