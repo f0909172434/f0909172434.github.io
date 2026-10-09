@@ -38,7 +38,7 @@ export default function App() {
     setLocale(detectLocale());
     setReady(true);
     const id = location.hash.slice(1);       // the locale switch reflows the page; land on the linked section afterwards
-    if ((SECTIONS as readonly string[]).includes(id)) setTimeout(() => document.getElementById(id)?.scrollIntoView({ block: "start" }), 80);
+    if ((SECTIONS as readonly string[]).includes(id)) setTimeout(() => document.getElementById(id)?.scrollIntoView({ block: "start", behavior: "instant" }), 80);
     try { const t = localStorage.getItem(THEME_KEY); if (t === "dark" || t === "light") applyTheme(t); } catch { /* ignore */ }
   }, []);
 
