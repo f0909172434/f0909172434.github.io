@@ -1,35 +1,40 @@
 import type { Locale, UI } from "../locale";
-import { formatDate, formatMonth, pick } from "../locale";
+import { formatMonth, pick } from "../locale";
 import { caseStudyUrl, type Catalog } from "../catalog";
-import { Phrases } from "./Phrases";
+import { Section } from "./Section";
 
 export function Log({ ui, locale, catalog }: { ui: UI; locale: Locale; catalog: Catalog }) {
   const { now, contributions } = catalog.profile;
   const merged = [...contributions].sort((a, b) => b.merged.localeCompare(a.merged));
+  let i = 2;
   return (
-    <section id="log" class="section container" aria-labelledby="log-title">
-      <div class="section-margin"><p class="label">{ui.log.label}</p><p class="mono muted">{formatMonth(now.asOf, locale)}</p></div>
-      <div class="section-body">
-        <h2 id="log-title"><Phrases text={ui.log.title} locale={locale} /></h2>
-        <ol class="log">
-          {now.items.map((it, i) => (
-            <li key={`now-${i}`}>
-              <time dateTime={now.asOf}>{formatMonth(now.asOf, locale)}</time>
-              <p class="log-text">{pick(it, locale)}</p>
-            </li>
-          ))}
-          {merged.map((c) => (
-            <li key={c.url}>
-              <time dateTime={c.merged}>{formatDate(c.merged)}</time>
-              <p class="log-text">
-                <span class="mono">{c.repo}</span> — {pick(c.title, locale)} — <a href={c.url} target="_blank" rel="noreferrer">PR ↗</a>
-                {c.caseStudy && <> — <a href={caseStudyUrl(c.caseStudy)} target="_blank" rel="noreferrer">{ui.log.caseStudy} ↗</a></>}
+    <Section id="log" num="06" cwd="~" cmd="ckw log --now --merged" title={ui.log.title}>
+      <ol class="log">
+        {now.items.map((it, k) => (
+          <li class="log-row ln" style={{ "--i": i++ }} key={`now-${k}`}>
+            <span class="log-node" aria-hidden="true">●</span>
+            <time dateTime={now.asOf}>{formatMonth(now.asOf, locale)}</time>
+            <span class="tag tag-amber">{ui.log.now}</span>
+            <p>{pick(it, locale)}</p>
+          </li>
+        ))}
+        {merged.map((c) => {
+          const pr = c.url.match(/\/pull\/(\d+)/)?.[1];
+          return (
+            <li class="log-row ln" style={{ "--i": i++ }} key={c.url}>
+              <span class="log-node g" aria-hidden="true">●</span>
+              <time dateTime={c.merged}>{c.merged}</time>
+              <span class="tag tag-green">{ui.log.merged}</span>
+              <p>
+                <a class="log-ref" href={c.url} target="_blank" rel="noreferrer">{c.repo}{pr && <span class="violet">#{pr}</span>}</a>
+                <span> {pick(c.title, locale)}</span>
+                {c.caseStudy && <> <a class="log-case" href={caseStudyUrl(c.caseStudy)} target="_blank" rel="noreferrer">{ui.log.caseStudy} ↗</a></>}
               </p>
             </li>
-          ))}
-        </ol>
-        <p class="mono muted">{ui.log.note}</p>
-      </div>
-    </section>
+          );
+        })}
+      </ol>
+      <p class="log-note ln" style={{ "--i": i }}><span class="hash" aria-hidden="true"># </span>{ui.log.note}</p>
+    </Section>
   );
 }

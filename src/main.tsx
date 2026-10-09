@@ -1,13 +1,9 @@
 import { hydrate, prerender as ssr } from "preact-iso";
-import "@fontsource-variable/geist";
-import "@fontsource-variable/geist-mono";
-import "@fontsource-variable/newsreader";
-import "@fontsource-variable/noto-serif-tc";
-import "@fontsource-variable/noto-serif-sc";
+import "@fontsource-variable/noto-sans-tc";
+import "@fontsource-variable/noto-sans-sc";
 import "./styles/tokens.css";
 import "./styles/base.css";
-import "./styles/layout.css";
-import "./styles/ledger.css";
+import "./styles/site.css";
 import App from "./App";
 import { uiFor } from "./locale";
 

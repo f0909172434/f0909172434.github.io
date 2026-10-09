@@ -1,70 +1,68 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/profile-hero-dark.svg">
-  <img src="assets/profile-hero.svg" alt="Chih-Kai Wang — claims, with the evidence attached. A four-cycle C4: four vertices of degree 2, zero triangles." width="100%">
-</picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/hero-zh-TW-dark.svg"><img src="assets/hero-zh-TW-light.svg" alt="王治凱 — 一段終端機會話，印出簡短的自我介紹：台北；做可檢查的 AI 與數學研究工具（Python 與 TypeScript）；尋找軟體與 AI 實習。" width="100%"></picture>
 
-[English](README.md) · 繁體中文 · [简体中文](README.zh-CN.md)
+<p><a href="README.md">English</a> · <b>繁體中文</b> · <a href="README.zh-CN.md">简体中文</a> &nbsp;│&nbsp; <a href="https://f0909172434.github.io/?lang=zh-Hant">作品集</a> · <a href="https://f0909172434.github.io/Chih-Kai-Wang-CV.pdf">履歷 PDF</a> · <a href="mailto:f0909172434@gmail.com">Email</a></p>
 
-# Chih-Kai Wang 王治凱
+## 精選作品 &nbsp;<sub><code>ls -l --pinned</code></sub>
 
-用 Python 與 TypeScript 做可檢查的 AI 與數學研究工具：主張附上證據、負面結果留著、邊界說清楚。
+<p>
+<a href="https://github.com/f0909172434/honest-ci"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-honest-ci-zh-TW-dark.svg"><img src="assets/card-honest-ci-zh-TW-light.svg" alt="HonestCI — 讓 CI 的綠燈代表：該跑的測試真的跑了。" width="49%"></picture></a>
+<a href="https://f0909172434.github.io/examples/rigorgraph/math.html"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-rigorgraph-zh-TW-dark.svg"><img src="assets/card-rigorgraph-zh-TW-light.svg" alt="RigorGraph — 把每個主張綁到證據的位元組；改動一個位元組，稽核就失敗。" width="49%"></picture></a>
+<a href="https://f0909172434.github.io/finite-witness-webmcp/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-finite-witness-webmcp-zh-TW-dark.svg"><img src="assets/card-finite-witness-webmcp-zh-TW-light.svg" alt="Finite Witness — 在小圖上窮舉反例，輸出任何人都能重播的憑證。" width="49%"></picture></a>
+<a href="https://f0909172434.github.io/sair-stage2-proof-press/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-sair-stage2-proof-press-zh-TW-dark.svg"><img src="assets/card-sair-stage2-proof-press-zh-TW-light.svg" alt="SAIR Proof Press — 輸出 Lean 檢查的證明或有限反模型；1,669 / 1,669 個公開輸入通過。" width="49%"></picture></a>
+<a href="https://youtu.be/kQH1PZRkn00"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-ORACLE-zh-TW-dark.svg"><img src="assets/card-ORACLE-zh-TW-light.svg" alt="卜 ORACLE — 完全由程式渲染的 4 分 30 秒短片：凌晨三點，有人問 AI 一個問題。" width="49%"></picture></a>
+<a href="https://github.com/f0909172434/rulediff-negative-result"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-rulediff-negative-result-zh-TW-dark.svg"><img src="assets/card-rulediff-negative-result-zh-TW-light.svg" alt="RuleDiff negative result — 開發集 0.99，保留集 0.67。結果沒有撐住，所以凍結並公開。" width="49%"></picture></a>
+</p>
 
-國立臺北教育大學 數學暨資訊教育學系 數學組 · 預計 2028 年畢業。台北，台灣。Python · TypeScript · 尋找軟體與 AI 實習。
+<sub>每個終端機畫面都重播一次對指定 commit 的真實執行；輸出是複製的，不是寫出來的。</sub>
 
-[作品集](https://f0909172434.github.io/?lang=zh-Hant) · [履歷 PDF](https://f0909172434.github.io/Chih-Kai-Wang-CV.pdf) · [Email](mailto:f0909172434@gmail.com)
+## 以程式完成的影片 &nbsp;<sub><code>ckw play --loop *</code></sub>
 
-## 近況 · 2026 年 10 月
+2026 年 10 月的三件作品：畫面、音樂與剪接全部是原始碼。每個倉庫都記錄了流程與限制。
+
+<p>
+<a href="https://youtu.be/kQH1PZRkn00"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/film-oracle-dark.svg"><img src="assets/film-oracle-light.svg" alt="卜 ORACLE" width="32%"></picture></a>
+<a href="https://youtu.be/ha-ANfqri6g"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/film-disease-dark.svg"><img src="assets/film-disease-light.svg" alt="病名為AI · The Disease Called AI" width="32%"></picture></a>
+<a href="https://youtu.be/iEsGiRECytY"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/film-world-dark.svg"><img src="assets/film-world-light.svg" alt="world.execute(me); · Claude Code" width="32%"></picture></a>
+</p>
+
+- **[卜 ORACLE](https://github.com/f0909172434/ORACLE)** — 4 分 30 秒短片：凌晨三點，有人問 AI「她會好起來嗎？」Three.js 在無頭 Chromium 裡只用 CPU 渲染，配樂與音效用 Python 合成。README 為片中的史料註明出處，並標示哪些是重建。 `Three.js r169 · SwiftShader (CPU) · numpy/scipy score` · [▶ 觀看](https://youtu.be/kQH1PZRkn00)
+- **[病名為AI · The Disease Called AI](https://github.com/f0909172434/The-Disease-Called-AI)** — 原創歌曲與手繪水彩 MV，3 分 35 秒，67 個鏡頭。樂譜是一支 Python 程式；DiffSinger 歌聲用固定種子逐位元重現；用 Whisper 聽寫檢查咬字。 `p5.js + p5.brush · DiffSinger · Kokoro · Whisper QA` · [▶ 觀看](https://youtu.be/ha-ANfqri6g)
+- **[world.execute(me); · Claude Code](https://github.com/f0909172434/world-execute-me-claude-code)** — 把 Mili 的 world.execute(me); 演成一場 Claude Code 會話，直接在終端機裡即時播放。純 Node、零依賴；每一格畫面都是歌曲時間的函數。非官方同人作品，承接 MisakaZentai 的 DeepSeek Harness 版；不含歌曲音檔。 `Node 20, zero dependencies · 24-bit ANSI · braille/sextant canvases` · [▶ 觀看](https://youtu.be/iEsGiRECytY)
+
+## 留下來的負面結果 &nbsp;<sub><code>ckw verify --keep-negatives</code></sub>
+
+沒有照期望走的結果也公開，和成功的結果一樣附上凍結的產物。
+
+- ✗ **[RuleShift](https://github.com/f0909172434/ruleshift)** — 簡單檢索與較複雜的記憶策略表現相當；複雜度沒有換到成效。
+- ✗ **[RuleShift-Web](https://github.com/f0909172434/ruleshift-web)** — 在凍結的保留矩陣上，不用 LLM 的控制器勝過兩個模型。
+- ✗ **[RuleDiff negative result](https://github.com/f0909172434/rulediff-negative-result)** — 開發集 0.99、保留集 0.67；完整論文的後續依預先登錄的規則停止，凍結成這份報告。
+- ✗ **[Charlie Alpha 4B](https://github.com/f0909172434/Charlie-Alpha-4B)** — P-Bench 與 StatQA 沒有改善；只有模擬基準有變化。
+
+## 我怎麼工作 &nbsp;<sub><code>git log --graph</code></sub>
+
+**`01` 設定框架。** 我寫下問題、邊界，以及什麼才算完成：哪些測試、哪個重播、哪個雜湊。
+
+**`02` 執行。** Claude Code 與 Codex（含 Codex Cloud）在我審閱的分支上寫大部分的程式、測試與文件。這些倉庫裡大多數的行是 agent 打出來的；每一個主張都由我負責。
+
+**`03` 決定。** 由證據決定，不由信心決定：測試、獨立的重播檢查器、內容雜湊。負面結果和正面結果一樣，用同樣的標準留下來。
+
+這個網站與 GitHub 個人頁 README 由同一份目錄檔產生；兩者不一致時，建置會失敗。
+
+## 近況 · 2026 年 10 月 &nbsp;<sub><code>ckw log --now</code></sub>
 
 - 發布三件全部以程式完成的作品：卜 ORACLE、病名為AI、world.execute(me)。
 - 把 RuleDiff 的負面結果凍結成技術報告；RuleShift-Web 的論文仍在投稿前。
 - 兩個上游修正已合併：DeepSeek Harness Desktop 與 dsh-engram。
 - 透過 ProofWeave 與 SAIR 學 Lean 4 / Mathlib。
 
-## 精選作品
+## 已合併的上游貢獻 &nbsp;<sub><code>gh pr list --state merged</code></sub>
 
-| 專案 | 做什麼 | 狀態 | 開啟 |
-|---|---|---|---|
-| **[HonestCI](https://github.com/f0909172434/honest-ci)** | CLI 與 GitHub Action：檢查 JUnit 報告存在、新鮮，且測試數不低於可信基線。不判斷測試品質。 | v1.0.4 · npm / GitHub Marketplace | [原始碼](https://github.com/f0909172434/honest-ci) |
-| **[RigorGraph](https://github.com/f0909172434/rigorgraph)** | 本機優先的 Python CLI：把研究主張連到證據檔案與獨立審查記錄，檢查 SHA-256 雜湊，輸出離線稽核報告。VERIFIED 表示通過記錄的流程，不表示結論為真。 | PyPI 1.0.1 · public beta | [實際網站](https://f0909172434.github.io/examples/rigorgraph/math.html) |
-| **[Finite Witness](https://github.com/f0909172434/finite-witness-webmcp)** | 在瀏覽器裡窮舉 6 個頂點以內的小圖找反例，輸出可由獨立 Python 腳本重播的憑證。通過有限搜尋是證據，不是證明。 | educational tool · 8 WebMCP tools | [實際網站](https://f0909172434.github.io/finite-witness-webmcp/) |
-| **[SAIR Proof Press](https://github.com/f0909172434/sair-stage2-proof-press)** | 等式蘊涵求解器的公開伴隨站：輸出 Lean 檢查的證明或有限反模型。凍結產物在 1,669 / 1,669 個公開輸入上通過，最終執行沒有呼叫模型。 | released-input evaluation · frozen artifacts | [實際網站](https://f0909172434.github.io/sair-stage2-proof-press/) |
-| **[卜 ORACLE](https://github.com/f0909172434/ORACLE)** | 4 分 30 秒短片：凌晨三點，有人問 AI「她會好起來嗎？」Three.js 在無頭 Chromium 裡只用 CPU 渲染，配樂與音效用 Python 合成。README 為片中的史料註明出處，並標示哪些是重建。 | v3.0 release · Oct 2026 | [觀看](https://youtu.be/kQH1PZRkn00) |
-| **[RuleDiff negative result](https://github.com/f0909172434/rulediff-negative-result)** | 四頁技術報告：詞彙式政策影響預測器在開發集的 macro-F1 是 0.99，在一組保留資料上掉到 0.67。未經同儕審查。 | negative result · technical report | [原始碼](https://github.com/f0909172434/rulediff-negative-result) |
+- [dsh-tauri/deepseek-harness-desktop#740](https://github.com/dsh-tauri/deepseek-harness-desktop/pull/740) — 規範化符號連結的 worktree 路徑，避免重建 worktree 時誤判並刪除未提交的修改。 <sub>2026-09-26</sub>
+- [kenz1117/dsh-engram#4](https://github.com/kenz1117/dsh-engram/pull/4) — 追溯舊資料庫的宣稱，加入保守的遷移。 <sub>2026-09-21</sub>
+- [EmiyaKatuz/Codex-Dream-Skin-Needy-Girl-Overdose#10](https://github.com/EmiyaKatuz/Codex-Dream-Skin-Needy-Girl-Overdose/pull/10) — 讓 Windows 驗證失敗可區分：縮小原生視窗的降級判斷，修正獨立執行時的輔助模組載入。 <sub>2026-07-28</sub> · [案例](case-studies/windows-contribution.md)
 
-## 我怎麼工作
-
-**設定框架。** 我寫下問題、邊界，以及什麼才算完成：哪些測試、哪個重播、哪個雜湊。
-
-**執行。** Claude Code 與 Codex（含 Codex Cloud）在我審閱的分支上寫大部分的程式、測試與文件。這些倉庫裡大多數的行是 agent 打出來的；每一個主張都由我負責。
-
-**決定。** 由證據決定，不由信心決定：測試、獨立的重播檢查器、內容雜湊。負面結果和正面結果一樣，用同樣的標準留下來。
-
-這個網站與 GitHub 個人頁 README 由同一份目錄檔產生；兩者不一致時，建置會失敗。
-
-## 以程式完成的影片
-
-2026 年 10 月的三件作品：畫面、音樂與剪接全部是原始碼。每個倉庫都記錄了流程與限制。
-
-- **[卜 ORACLE](https://github.com/f0909172434/ORACLE)** — 4 分 30 秒短片：凌晨三點，有人問 AI「她會好起來嗎？」Three.js 在無頭 Chromium 裡只用 CPU 渲染，配樂與音效用 Python 合成。README 為片中的史料註明出處，並標示哪些是重建。 `Three.js r169 · SwiftShader (CPU) · numpy/scipy score` · [觀看](https://youtu.be/kQH1PZRkn00)
-- **[病名為AI · The Disease Called AI](https://github.com/f0909172434/The-Disease-Called-AI)** — 原創歌曲與手繪水彩 MV，3 分 35 秒，67 個鏡頭。樂譜是一支 Python 程式；DiffSinger 歌聲用固定種子逐位元重現；用 Whisper 聽寫檢查咬字。 `p5.js + p5.brush · DiffSinger · Kokoro · Whisper QA` · [觀看](https://youtu.be/ha-ANfqri6g)
-- **[world.execute(me); · Claude Code](https://github.com/f0909172434/world-execute-me-claude-code)** — 把 Mili 的 world.execute(me); 演成一場 Claude Code 會話，直接在終端機裡即時播放。純 Node、零依賴；每一格畫面都是歌曲時間的函數。非官方同人作品，承接 MisakaZentai 的 DeepSeek Harness 版；不含歌曲音檔。 `Node 20, zero dependencies · 24-bit ANSI · braille/sextant canvases` · [觀看](https://youtu.be/iEsGiRECytY)
-
-## 留下來的負面結果
-
-沒有照期望走的結果也公開，和成功的結果一樣附上凍結的產物。
-
-- **[RuleShift](https://github.com/f0909172434/ruleshift)** — 簡單檢索與較複雜的記憶策略表現相當；複雜度沒有換到成效。
-- **[RuleShift-Web](https://github.com/f0909172434/ruleshift-web)** — 在凍結的保留矩陣上，不用 LLM 的控制器勝過兩個模型。
-- **[RuleDiff negative result](https://github.com/f0909172434/rulediff-negative-result)** — 開發集 0.99、保留集 0.67；完整論文的後續依預先登錄的規則停止，凍結成這份報告。
-- **[Charlie Alpha 4B](https://github.com/f0909172434/Charlie-Alpha-4B)** — P-Bench 與 StatQA 沒有改善；只有模擬基準有變化。
-
-## 已合併的上游貢獻
-
-- [dsh-tauri/deepseek-harness-desktop](https://github.com/dsh-tauri/deepseek-harness-desktop/pull/740) — 規範化符號連結的 worktree 路徑，避免重建 worktree 時誤判並刪除未提交的修改。 (2026-09-26)
-- [kenz1117/dsh-engram](https://github.com/kenz1117/dsh-engram/pull/4) — 追溯舊資料庫的宣稱，加入保守的遷移。 (2026-09-21)
-- [EmiyaKatuz/Codex-Dream-Skin-Needy-Girl-Overdose](https://github.com/EmiyaKatuz/Codex-Dream-Skin-Needy-Girl-Overdose/pull/10) — 讓 Windows 驗證失敗可區分：縮小原生視窗的降級判斷，修正獨立執行時的輔助模組載入。 (2026-07-28) · [案例](case-studies/windows-contribution.md)
-
-## 其他作品
+<details>
+<summary><b>其他作品</b> — 還有 10 筆記錄</summary>
 
 **工具**
 
@@ -88,4 +86,8 @@
 
 - [DeepSeek Girl](https://github.com/f0909172434/deepseek-girl-codex-pet) — 同一份動畫圖集、兩個非官方宿主套件：Codex Desktop 的 16 方向動畫寵物，以及回應 Session 狀態的 DeepSeek Harness 外掛，離線運作。 *Codex v0.1.0 · Harness v0.2.0 · unofficial*
 
-<sub>由 <a href="https://github.com/f0909172434/f0909172434.github.io/blob/main/src/data/projects.json">projects.json</a> 經 <code>scripts/render-profile.mjs</code> 產生；手動修改會被覆蓋。</sub>
+</details>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/footer-zh-TW-dark.svg"><img src="assets/footer-zh-TW-light.svg" alt="exit" width="100%"></picture>
+
+<sub>由 <a href="https://github.com/f0909172434/f0909172434.github.io/blob/main/src/data/projects.json">projects.json</a> 經 <code>scripts/render-profile.mjs</code> 產生；手動修改會被覆蓋。動畫會遵守 <code>prefers-reduced-motion</code>。</sub>

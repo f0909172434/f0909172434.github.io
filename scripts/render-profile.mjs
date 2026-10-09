@@ -1,6 +1,10 @@
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { toZhCn as toCn } from './zh-cn.mjs';
+import { card, filmPlayer, footer, hero } from './profile/art.mjs';
+import { TAGLINES } from './profile/runs.mjs';
 
 const root = new URL('../', import.meta.url);
 const outDir = new URL('public/profile/', root);
@@ -52,135 +56,125 @@ for (const p of projects) {
 }
 
 // ---------- shared helpers ----------
-const MONTHS = {
-  en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-};
+const ui = JSON.parse(readFileSync(new URL('src/data/ui.json', root), 'utf8'));
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const formatMonth = (asOf, locale) => {
   const [year, month] = asOf.split('-');
-  return locale === 'en' ? `${MONTHS.en[Number(month) - 1]} ${year}` : `${year} 年 ${Number(month)} 月`;
+  return locale === 'en' ? `${MONTHS[Number(month) - 1]} ${year}` : `${year} 年 ${Number(month)} 月`;
 };
-const bySlug = (slug) => projects.find((p) => p.repo.endsWith(`/${slug}`));
+const slugOf = (p) => p.repo.split('/').at(-1);
+const bySlug = (slug) => projects.find((p) => slugOf(p) === slug);
 const pinned = catalog.pinOrder.map(bySlug);
 const films = projects.filter((p) => p.kind === 'creative');
 const negatives = projects.filter((p) => p.negative);
+const counts = { projects: projects.length, negatives: negatives.length, merged: profile.contributions.length };
+const sha = createHash('sha256').update(readFileSync(new URL('src/data/projects.json', root))).digest('hex');
 const SITE = 'https://f0909172434.github.io/';
 const SOURCE = 'https://github.com/f0909172434/f0909172434.github.io/blob/main/src/data/projects.json';
+const FILM_SCREEN = {
+  ORACLE: { id: 'oracle', file: 'oracle.mp4', length: '4:30' },
+  'The-Disease-Called-AI': { id: 'disease', file: 'the-disease-called-ai.mp4', length: '3:35' },
+  'world-execute-me-claude-code': { id: 'world', file: 'world.execute-me.cast', length: 'tty' },
+};
+const LOCALES = { en: 'en', 'zh-TW': 'zh', 'zh-CN': 'zh' };
 
 const STRINGS = {
   en: {
-    key: 'en',
-    other: 'English · [繁體中文](README.zh-TW.md) · [简体中文](README.zh-CN.md)',
-    links: `[Portfolio](${SITE}?lang=en) · [CV (PDF)](${SITE}Chih-Kai-Wang-CV.pdf) · [Email](mailto:f0909172434@gmail.com)`,
-    now: `Now · ${formatMonth(profile.now.asOf, 'en')}`,
-    selected: 'Selected work', head: '| Project | What it does | Status | Open |',
-    live: 'Live', watch: 'Watch', source: 'Source',
-    how: 'How I work', films: 'Films made as code', negatives: 'Negative results, kept',
-    merged: 'Merged upstream', caseStudy: 'case study', everything: 'Everything else',
+    other: '<b>English</b> · <a href="README.zh-TW.md">繁體中文</a> · <a href="README.zh-CN.md">简体中文</a>',
+    links: `<a href="${SITE}?lang=en">Portfolio</a> · <a href="${SITE}Chih-Kai-Wang-CV.pdf">CV (PDF)</a> · <a href="mailto:f0909172434@gmail.com">Email</a>`,
+    selected: 'Selected work', films: 'Films made as code', negatives: 'Negative results, kept', how: 'How I work',
+    now: (d) => `Now · ${d}`, merged: 'Merged upstream', caseStudy: 'case study', watch: 'Watch',
+    runsNote: 'Each terminal replays a real run against the commit it names; the output is copied, not written.',
+    everything: (n) => `<b>Everything else</b> — ${n} more records`,
     kinds: { tool: 'Tools', research: 'Research', learning: 'Learning', other: 'Other' },
-    note: `<sub>Generated from <a href="${SOURCE}">projects.json</a> by <code>scripts/render-profile.mjs</code>; edits by hand are overwritten.</sub>`,
-    sentence: (f) => `${f[1].en}. ${f[0].en}. ${f[2].en}.`,
+    heroAlt: 'Chih-Kai Wang — a terminal session that prints a short profile: Taipei; Python and TypeScript tools for inspectable AI and mathematical research; open to software and AI internships.',
+    note: `<sub>Generated from <a href="${SOURCE}">projects.json</a> by <code>scripts/render-profile.mjs</code>; edits by hand are overwritten. Motion respects <code>prefers-reduced-motion</code>.</sub>`,
     period: '.',
   },
   zh: {
-    key: 'zh',
-    other: '[English](README.md) · 繁體中文 · [简体中文](README.zh-CN.md)',
-    links: `[作品集](${SITE}?lang=zh-Hant) · [履歷 PDF](${SITE}Chih-Kai-Wang-CV.pdf) · [Email](mailto:f0909172434@gmail.com)`,
-    now: `近況 · ${formatMonth(profile.now.asOf, 'zh')}`,
-    selected: '精選作品', head: '| 專案 | 做什麼 | 狀態 | 開啟 |',
-    live: '實際網站', watch: '觀看', source: '原始碼',
-    how: '我怎麼工作', films: '以程式完成的影片', negatives: '留下來的負面結果',
-    merged: '已合併的上游貢獻', caseStudy: '案例', everything: '其他作品',
+    other: '<a href="README.md">English</a> · <b>繁體中文</b> · <a href="README.zh-CN.md">简体中文</a>',
+    links: `<a href="${SITE}?lang=zh-Hant">作品集</a> · <a href="${SITE}Chih-Kai-Wang-CV.pdf">履歷 PDF</a> · <a href="mailto:f0909172434@gmail.com">Email</a>`,
+    selected: '精選作品', films: '以程式完成的影片', negatives: '留下來的負面結果', how: '我怎麼工作',
+    now: (d) => `近況 · ${d}`, merged: '已合併的上游貢獻', caseStudy: '案例', watch: '觀看',
+    runsNote: '每個終端機畫面都重播一次對指定 commit 的真實執行；輸出是複製的，不是寫出來的。',
+    everything: (n) => `<b>其他作品</b> — 還有 ${n} 筆記錄`,
     kinds: { tool: '工具', research: '研究', learning: '學習', other: '其他' },
-    note: `<sub>由 <a href="${SOURCE}">projects.json</a> 經 <code>scripts/render-profile.mjs</code> 產生；手動修改會被覆蓋。</sub>`,
-    sentence: (f) => `${f[1].zh}。${f[0].zh}。${f[2].zh}。`,
+    heroAlt: '王治凱 — 一段終端機會話，印出簡短的自我介紹：台北；做可檢查的 AI 與數學研究工具（Python 與 TypeScript）；尋找軟體與 AI 實習。',
+    note: `<sub>由 <a href="${SOURCE}">projects.json</a> 經 <code>scripts/render-profile.mjs</code> 產生；手動修改會被覆蓋。動畫會遵守 <code>prefers-reduced-motion</code>。</sub>`,
     period: '。',
   },
 };
 
-function renderReadme(s) {
-  const L = s.key;
+const pic = (base, alt, width) => `<picture><source media="(prefers-color-scheme: dark)" srcset="assets/${base}-dark.svg"><img src="assets/${base}-light.svg" alt="${alt.replace(/"/g, '&quot;')}" width="${width}"></picture>`;
+const cmd = (c) => ` &nbsp;<sub><code>${c}</code></sub>`;
+
+function renderReadme(loc) {
+  const L = LOCALES[loc], s = STRINGS[L];
   const desc = (p) => (L === 'en' ? p.descEn : p.descZh);
-  const live = (p) => (L === 'en' ? p.live.replace('?lang=zh-Hant', '?lang=en') : p.live);
-  const open = (p) => (p.live ? `[${s.live}](${live(p)})` : p.watch ? `[${s.watch}](${p.watch})` : `[${s.source}](${p.repo})`);
-  const rows = pinned.map((p) => `| **[${p.name}](${p.repo})** | ${desc(p)} | ${p.status} | ${open(p)} |`);
-  const heroAlt = 'Chih-Kai Wang — claims, with the evidence attached. A four-cycle C4: four vertices of degree 2, zero triangles.';
+  const live = (p) => (L === 'en' && p.live ? p.live.replace('?lang=zh-Hant', '?lang=en') : p.live);
+  const cards = pinned.map((p) => {
+    const slug = slugOf(p);
+    const tag = L === 'en' ? TAGLINES[slug].en : TAGLINES[slug].zh;
+    return `<a href="${live(p) ?? p.watch ?? p.repo}">${pic(`card-${slug}-${loc}`, `${p.name} — ${tag}`, '49%')}</a>`;
+  });
+  const players = films.map((p) => `<a href="${p.watch}">${pic(`film-${FILM_SCREEN[slugOf(p)].id}`, p.name, '32%')}</a>`);
   const groups = ['tool', 'research', 'learning', 'other'].map((kind) => {
-    const items = projects.filter((p) => p.kind === kind && !catalog.pinOrder.includes(p.repo.split('/').at(-1)));
+    const items = projects.filter((p) => p.kind === kind && !catalog.pinOrder.includes(slugOf(p)));
     return items.length ? `**${s.kinds[kind]}**\n\n${items.map((p) => `- [${p.name}](${p.repo}) — ${desc(p)} *${p.status}*`).join('\n')}` : null;
   }).filter(Boolean);
+  const rest = projects.filter((p) => p.kind !== 'creative' && !catalog.pinOrder.includes(slugOf(p))).length;
   const sections = [
-    `<picture>\n  <source media="(prefers-color-scheme: dark)" srcset="assets/profile-hero-dark.svg">\n  <img src="assets/profile-hero.svg" alt="${heroAlt}" width="100%">\n</picture>`,
-    s.other,
-    '# Chih-Kai Wang 王治凱',
-    catalog.positioning[L],
-    s.sentence(profile.facts),
-    s.links,
-    `## ${s.now}\n\n${profile.now.items.map((item) => `- ${item[L]}`).join('\n')}`,
-    `## ${s.selected}\n\n${s.head}\n|---|---|---|---|\n${rows.join('\n')}`,
-    `## ${s.how}`,
-    ...profile.method.map((m) => `**${m.title[L]}${s.period}** ${m.body[L]}`),
-    profile.methodNote[L],
-    `## ${s.films}\n\n${profile.filmsIntro[L]}\n\n${films.map((p) => `- **[${p.name}](${p.repo})** — ${desc(p)} \`${p.made}\` · [${s.watch}](${p.watch})`).join('\n')}`,
-    `## ${s.negatives}\n\n${profile.negativesIntro[L]}\n\n${negatives.map((p) => `- **[${p.name}](${p.repo})** — ${p.negative[L]}`).join('\n')}`,
-    `## ${s.merged}\n\n${profile.contributions.map((c) => `- [${c.repo}](${c.url}) — ${c.title[L]} (${c.merged})${c.caseStudy ? ` · [${s.caseStudy}](case-studies/${c.caseStudy}.md)` : ''}`).join('\n')}`,
-    `## ${s.everything}\n\n${groups.join('\n\n')}`,
+    pic(`hero-${loc}`, s.heroAlt, '100%'),
+    `<p>${s.other} &nbsp;│&nbsp; ${s.links}</p>`,
+    `## ${s.selected}${cmd('ls -l --pinned')}\n\n<p>\n${cards.join('\n')}\n</p>\n\n<sub>${s.runsNote}</sub>`,
+    `## ${s.films}${cmd('ckw play --loop *')}\n\n${profile.filmsIntro[L]}\n\n<p>\n${players.join('\n')}\n</p>\n\n${films.map((p) => `- **[${p.name}](${p.repo})** — ${desc(p)} \`${p.made}\` · [▶ ${s.watch}](${p.watch})`).join('\n')}`,
+    `## ${s.negatives}${cmd('ckw verify --keep-negatives')}\n\n${profile.negativesIntro[L]}\n\n${negatives.map((p) => `- ✗ **[${p.name}](${p.repo})** — ${p.negative[L]}`).join('\n')}`,
+    `## ${s.how}${cmd('git log --graph')}\n\n${profile.method.map((m, i) => `**\`0${i + 1}\` ${m.title[L]}${s.period}** ${m.body[L]}`).join('\n\n')}\n\n${profile.methodNote[L]}`,
+    `## ${s.now(formatMonth(profile.now.asOf, L))}${cmd('ckw log --now')}\n\n${profile.now.items.map((item) => `- ${item[L]}`).join('\n')}`,
+    `## ${s.merged}${cmd('gh pr list --state merged')}\n\n${profile.contributions.map((c) => `- [${c.repo}#${c.url.match(/\/pull\/(\d+)/)?.[1] ?? ''}](${c.url}) — ${c.title[L]} <sub>${c.merged}</sub>${c.caseStudy ? ` · [${s.caseStudy}](case-studies/${c.caseStudy}.md)` : ''}`).join('\n')}`,
+    `<details>\n<summary>${s.everything(rest)}</summary>\n\n${groups.join('\n\n')}\n\n</details>`,
+    pic(`footer-${loc}`, 'exit', '100%'),
     s.note,
   ];
   return `${sections.join('\n\n')}\n`;
 }
 
-// ---------- hero SVG ----------
-const HERO_PALETTE = {
-  light: { bg: '#f6f3ec', ink: '#1c1b17', muted: '#6b675e', line: '#d9d4c8', accent: '#a8471f' },
-  dark: { bg: '#171613', ink: '#ebe6da', muted: '#948f84', line: '#35332d', accent: '#e0865c' },
-};
-const MONO = 'ui-monospace, Menlo, Consolas, "Courier New", monospace';
-const SERIF = 'Georgia, "Times New Roman", "Songti TC", serif';
-const SANS = '-apple-system, "Segoe UI", "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei", sans-serif';
-export function renderHero(theme) {
-  const c = HERO_PALETTE[theme];
-  const V = [[938, 56], [1082, 56], [1082, 200], [938, 200]];
-  const off = [[-18, 4], [18, 4], [18, 4], [-18, 4]];
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="t d">
-<title id="t">Chih-Kai Wang — claims, with the evidence attached</title>
-<desc id="d">A four-cycle C4 drawn as a counterexample: four vertices of degree two and no triangle.</desc>
-<rect width="1200" height="300" fill="${c.bg}"/>
-<path d="M56 256H1144" stroke="${c.line}" stroke-width="1"/>
-<text x="56" y="72" font-family='${MONO}' font-size="13" letter-spacing="2" fill="${c.muted}">CHIH-KAI WANG · 王治凱 · TAIPEI · NTUE 2028</text>
-<text font-family='${SERIF}' font-size="60" fill="${c.ink}"><tspan x="56" y="140">Claims, with the</tspan><tspan x="56" y="206">evidence attached.</tspan></text>
-<text x="56" y="240" font-family='${SANS}' font-size="17" fill="${c.muted}">Inspectable AI and mathematical research tools · Python &amp; TypeScript</text>
-<text x="56" y="282" font-family='${MONO}' font-size="11" letter-spacing="1.2" fill="${c.muted}">CLAIM → EVIDENCE → BOUNDARY · NEGATIVE RESULTS KEPT · BUILT WITH CLAUDE CODE AND CODEX</text>
-<path d="M938 56L1082 200M1082 56L938 200" stroke="${c.line}" stroke-width="1" stroke-dasharray="3 6"/>
-<path d="M938 56H1082V200H938Z" fill="none" stroke="${c.accent}" stroke-width="3" stroke-linejoin="round"/>
-${V.map(([x, y], i) => `<circle cx="${x}" cy="${y}" r="9" fill="${c.accent}"/><text x="${x + off[i][0]}" y="${y + off[i][1]}" font-family='${MONO}' font-size="12" fill="${c.muted}" text-anchor="${off[i][0] < 0 ? 'end' : 'start'}">v${i + 1}</text>`).join('\n')}
-<text x="1010" y="232" font-family='${MONO}' font-size="12" fill="${c.muted}" text-anchor="middle">C₄ · candidate 39 · min degree 2 · 0 triangles</text>
-<text x="1010" y="248" font-family='${MONO}' font-size="11" fill="${c.muted}" text-anchor="middle">one counterexample disproves a universal claim</text>
-</svg>
-`;
+// ---------- outputs ----------
+const toLocale = (loc) => (loc === 'zh-CN' ? toCn : (x) => x);
+const uiFor = (loc) => (loc === 'en' ? ui.en : ui['zh-Hant']);
+const zhTw = renderReadme('zh-TW');
+const zhCn = toCn(zhTw).replace(toCn(STRINGS.zh.other), '<a href="README.md">English</a> · <a href="README.zh-TW.md">繁體中文</a> · <b>简体中文</b>').replaceAll('-zh-TW-', '-zh-CN-').replaceAll('lang=zh-Hant', 'lang=zh-Hans');
+if (!zhCn.includes('<b>简体中文</b>')) throw new Error('zh-CN language line was not substituted');
+const outputs = { 'README.md': renderReadme('en'), 'README.zh-TW.md': zhTw, 'README.zh-CN.md': zhCn };
+for (const theme of ['dark', 'light']) {
+  for (const loc of ['en', 'zh-TW', 'zh-CN']) {
+    const args = { theme, locale: loc, ui: uiFor(loc), zh: toLocale(loc), catalog, counts, sha };
+    outputs[`assets/hero-${loc}-${theme}.svg`] = await hero(args);
+    outputs[`assets/footer-${loc}-${theme}.svg`] = await footer(args);
+    for (const [i, p] of pinned.entries()) outputs[`assets/card-${slugOf(p)}-${loc}-${theme}.svg`] = await card({ ...args, project: p, index: i + 1 });
+  }
+  for (const p of films) outputs[`assets/film-${FILM_SCREEN[slugOf(p)].id}-${theme}.svg`] = await filmPlayer({ theme, project: p, ...FILM_SCREEN[slugOf(p)] });
 }
 
-// ---------- outputs ----------
-// zh-CN is derived from the zh-TW render (phrase-level twp -> cn); the language line is restated explicitly.
-const zhTw = renderReadme(STRINGS.zh);
-const zhCn = toCn(zhTw).replace(toCn(STRINGS.zh.other), '[English](README.md) · [繁體中文](README.zh-TW.md) · 简体中文');
-if (!zhCn.includes('· 简体中文\n')) throw new Error('zh-CN language line was not substituted');
-const outputs = {
-  'README.md': renderReadme(STRINGS.en),
-  'README.zh-TW.md': zhTw,
-  'README.zh-CN.md': zhCn,
-  'profile-hero.svg': renderHero('light'),
-  'profile-hero-dark.svg': renderHero('dark'),
+const listFiles = (dir) => {
+  const out = [];
+  const walk = (d, pre) => { let ents = []; try { ents = readdirSync(d, { withFileTypes: true }); } catch { return; } for (const e of ents) { if (e.isDirectory()) walk(join(d, e.name), `${pre}${e.name}/`); else out.push(`${pre}${e.name}`); } };
+  walk(dir, '');
+  return out;
 };
-
+const outPath = fileURLToPath(outDir);
 if (process.argv.includes('--check')) {
   for (const [name, content] of Object.entries(outputs)) {
     let current = null;
     try { current = readFileSync(new URL(name, outDir), 'utf8'); } catch { /* missing counts as drift */ }
     if (current !== content) throw new Error(`public/profile/${name} is out of date. Run npm run profile to refresh it.`);
   }
+  const stale = listFiles(outPath).filter((f) => !(f in outputs));
+  if (stale.length) throw new Error(`public/profile has files the generator no longer writes: ${stale.join(', ')}`);
   console.log('Project catalog and generated profile are consistent.');
 } else {
-  mkdirSync(outDir, { recursive: true });
-  for (const [name, content] of Object.entries(outputs)) writeFileSync(new URL(name, outDir), content);
-  console.log(`Wrote ${Object.keys(outputs).length} files to ${fileURLToPath(outDir)}`);
+  for (const f of listFiles(outPath)) if (!(f in outputs)) rmSync(join(outPath, f));
+  let bytes = 0;
+  for (const [name, content] of Object.entries(outputs)) { mkdirSync(dirname(join(outPath, name)), { recursive: true }); writeFileSync(join(outPath, name), content); bytes += Buffer.byteLength(content); }
+  console.log(`Wrote ${Object.keys(outputs).length} files (${(bytes / 1024).toFixed(0)} KB) to ${outPath}`);
 }

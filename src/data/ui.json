@@ -5,101 +5,141 @@
       "description": "Python and TypeScript tools for inspectable AI and mathematical research: claims with evidence attached, negative results kept, boundaries stated. Chih-Kai Wang, Taipei; open to software and AI internships."
     },
     "nav": {
-      "skip": "Skip to the ledger",
-      "work": "Ledger",
-      "cases": "Case studies",
-      "method": "How I work",
-      "films": "Films",
-      "log": "Log",
-      "about": "About",
+      "skip": "Skip to the records",
+      "main": "Sections",
       "language": "Language",
-      "main": "Primary navigation"
+      "theme": "Switch colour theme",
+      "palette": "Open the command palette",
+      "top": "whoami",
+      "work": "records",
+      "negatives": "negatives",
+      "cases": "cases",
+      "method": "method",
+      "films": "films",
+      "log": "log",
+      "about": "about"
     },
     "common": {
-      "cv": "CV (PDF)",
-      "email": "Email",
-      "github": "GitHub"
+      "cv": "cv.pdf",
+      "email": "mail",
+      "github": "github",
+      "live": "live",
+      "watch": "watch",
+      "source": "source"
     },
     "hero": {
-      "kicker": "CHIH-KAI WANG · TAIPEI",
-      "title": "Claims, with the evidence attached.",
-      "primary": "Open the ledger",
-      "updated": "Catalog updated {date}"
-    },
-    "record": {
-      "title": "CATALOG RECORD",
-      "projects": "records",
-      "negatives": "negative results kept",
-      "merged": "merged upstream",
-      "films": "films made as code",
-      "asOf": "as of",
-      "hash": "SHA-256",
-      "source": "View on GitHub",
-      "raw": "Raw JSON"
+      "keys": {
+        "name": "name",
+        "study": "study",
+        "based": "based",
+        "stack": "stack",
+        "agents": "agents",
+        "records": "records",
+        "status": "status"
+      },
+      "stack": "Python · TypeScript · learning Lean 4",
+      "agents": "Claude Code · Codex · Codex Cloud",
+      "records": "{projects} projects · {negatives} negative results kept · {merged} merged upstream",
+      "status": "open to software & AI internships",
+      "primary": "open the records",
+      "hint": "/ commands · j k move · t theme",
+      "updated": "catalog updated {date}"
     },
     "ledger": {
-      "label": "LEDGER",
       "title": "Every project, as a record.",
-      "intro": "This page is rendered from one catalog file. Open a record to read its raw entry, follow the line link into the repository, and compare the file's hash with the one printed here.",
+      "intro": "Rendered from one catalog file. Open a record to read its raw entry, follow the line link into the repository, and compare the file's hash with the one printed here.",
       "filterLabel": "Filter records by kind",
       "filters": {
-        "all": "All",
-        "tool": "Tools",
-        "research": "Research",
-        "learning": "Learning",
-        "creative": "Films",
-        "other": "Other"
+        "all": "all",
+        "tool": "tool",
+        "research": "research",
+        "learning": "learning",
+        "creative": "film",
+        "other": "other"
       },
       "kinds": {
-        "tool": "Tool",
-        "research": "Research",
-        "learning": "Learning",
-        "creative": "Film",
-        "other": "Other"
+        "tool": "tool",
+        "research": "research",
+        "learning": "learning",
+        "creative": "film",
+        "other": "other"
+      },
+      "head": {
+        "kind": "KIND",
+        "name": "NAME",
+        "status": "STATUS"
       },
       "count": "{n} of {total} records",
       "hasNegative": "Has a negative result",
-      "live": "Live",
-      "watch": "Watch",
-      "source": "Source",
-      "rawHeading": "RAW RECORD",
+      "rawHeading": "raw record",
       "origin": "record {i} of {total}",
       "canonicalNote": "raw records are shown from the Traditional Chinese source file"
     },
     "negatives": {
-      "label": "NEGATIVE RESULTS, KEPT"
+      "title": "Negative results, kept.",
+      "tag": "KEPT",
+      "summary": "{n} negative results · 0 hidden · each with its frozen artifacts"
     },
     "cases": {
-      "label": "CASE STUDIES",
       "title": "The decisions behind seven results.",
       "intro": "Longer write-ups kept as Markdown in the profile repository: the problem, the observable result, the engineering decisions, and what the result does not show.",
-      "read": "Read the case study"
+      "read": "read"
     },
     "method": {
-      "label": "HOW I WORK",
       "title": "The human frames; agents execute; evidence decides.",
+      "branch": "agents work in branches I review",
       "tools": "Claude Code · Codex · Codex Cloud · GitHub Actions · pytest / vitest · Lean 4"
     },
     "films": {
-      "label": "FILMS MADE AS CODE",
-      "title": "Every frame a function of time."
+      "title": "Every frame a function of time.",
+      "note": "The loops on this page are drawn live in ASCII from the same idea as each film; the films themselves are on YouTube.",
+      "made": "made with"
     },
     "log": {
-      "label": "LOG",
       "title": "Now, and what was merged upstream.",
-      "caseStudy": "Case study",
+      "now": "now",
+      "merged": "merged",
+      "caseStudy": "case study",
       "note": "Only merged pull requests are listed. Dates come from the catalog, not from this page."
     },
     "about": {
-      "label": "ABOUT",
-      "name": "Chih-Kai Wang",
-      "contact": "INTERNSHIPS & COLLABORATION",
-      "readme": "Profile README"
+      "title": "Chih-Kai Wang",
+      "contact": "internships & collaboration",
+      "readme": "profile README"
+    },
+    "palette": {
+      "placeholder": "type a command — try “ls film” or “open honest-ci”",
+      "empty": "command not found: {q}",
+      "hint": "↑↓ select · ↵ run · esc close",
+      "label": "Command palette",
+      "cmds": {
+        "whoami": "go to the top",
+        "ls": "list every record",
+        "ls-kind": "list records of one kind",
+        "open": "open one record",
+        "negatives": "negative results, kept",
+        "cases": "case studies",
+        "method": "how I work",
+        "play": "films made as code",
+        "log": "now and merged upstream",
+        "about": "about and contact",
+        "cv": "download the CV (PDF)",
+        "mail": "write an email",
+        "github": "open GitHub",
+        "lang": "switch language",
+        "theme": "switch colour theme"
+      }
+    },
+    "status": {
+      "normal": "NORMAL",
+      "command": "COMMAND",
+      "catalog": "projects.json"
     },
     "footer": {
-      "top": "Back to top",
-      "colophon": "Preact · Vite · Newsreader, Geist, Noto Serif TC/SC, self-hosted · no analytics, no third-party requests · page, profile README and hero image are generated from one catalog; the build fails if they drift",
-      "source": "Source"
+      "exit": "[process completed]",
+      "colophon": "Preact · Vite · JetBrains Mono, Noto Sans TC/SC, self-hosted · no analytics, no third-party requests · this page and the profile README are generated from one catalog; the build fails if they drift",
+      "source": "source",
+      "top": "back to top"
     }
   },
   "zh-Hant": {
@@ -108,42 +148,49 @@
       "description": "用 Python 與 TypeScript 做可檢查的 AI 與數學研究工具：主張附上證據、負面結果留著、邊界說清楚。王治凱，台北；尋找軟體與 AI 實習。"
     },
     "nav": {
-      "skip": "跳到帳冊",
-      "work": "帳冊",
+      "skip": "跳到記錄",
+      "main": "章節",
+      "language": "語言",
+      "theme": "切換配色",
+      "palette": "開啟指令面板",
+      "top": "whoami",
+      "work": "記錄",
+      "negatives": "負面結果",
       "cases": "案例",
-      "method": "我怎麼工作",
+      "method": "方法",
       "films": "影片",
       "log": "日誌",
-      "about": "關於",
-      "language": "語言",
-      "main": "主要導覽"
+      "about": "關於"
     },
     "common": {
-      "cv": "履歷 PDF",
-      "email": "Email",
-      "github": "GitHub"
+      "cv": "履歷.pdf",
+      "email": "寄信",
+      "github": "github",
+      "live": "網站",
+      "watch": "觀看",
+      "source": "原始碼"
     },
     "hero": {
-      "kicker": "王治凱 · 台北",
-      "title": "主張，附上證據。",
-      "primary": "打開帳冊",
+      "keys": {
+        "name": "姓名",
+        "study": "就讀",
+        "based": "所在",
+        "stack": "技術",
+        "agents": "協作",
+        "records": "記錄",
+        "status": "狀態"
+      },
+      "stack": "Python · TypeScript · 正在學 Lean 4",
+      "agents": "Claude Code · Codex · Codex Cloud",
+      "records": "{projects} 個專案 · 留下 {negatives} 個負面結果 · {merged} 個上游合併",
+      "status": "尋找軟體與 AI 實習",
+      "primary": "打開記錄",
+      "hint": "/ 指令 · j k 移動 · t 配色",
       "updated": "目錄更新於 {date}"
     },
-    "record": {
-      "title": "目錄記錄",
-      "projects": "筆記錄",
-      "negatives": "筆留下的負面結果",
-      "merged": "個已合併的上游貢獻",
-      "films": "支以程式完成的影片",
-      "asOf": "截至",
-      "hash": "SHA-256",
-      "source": "在 GitHub 查看",
-      "raw": "原始 JSON"
-    },
     "ledger": {
-      "label": "帳冊",
       "title": "每個專案，都是一筆記錄。",
-      "intro": "這個頁面由一份目錄檔產生。打開任何一筆記錄可以讀到它的原始內容、沿著行號連結進倉庫，並把檔案的雜湊值和這裡印出的比對。",
+      "intro": "這一頁由一份目錄檔產生。打開任何一筆記錄，可以讀到它的原始內容、沿著行號連結進倉庫，並把檔案的雜湊值和這裡印出的比對。",
       "filterLabel": "依類型篩選記錄",
       "filters": {
         "all": "全部",
@@ -160,49 +207,82 @@
         "creative": "影片",
         "other": "其他"
       },
+      "head": {
+        "kind": "類型",
+        "name": "名稱",
+        "status": "狀態"
+      },
       "count": "顯示 {n} / {total} 筆記錄",
       "hasNegative": "附有負面結果",
-      "live": "實際網站",
-      "watch": "觀看",
-      "source": "原始碼",
       "rawHeading": "原始記錄",
       "origin": "第 {i} 筆，共 {total} 筆",
       "canonicalNote": "原始記錄以繁體中文來源檔顯示"
     },
     "negatives": {
-      "label": "留下來的負面結果"
+      "title": "負面結果，留著。",
+      "tag": "保留",
+      "summary": "{n} 個負面結果 · 0 個隱藏 · 每一個都附凍結產物"
     },
     "cases": {
-      "label": "案例",
       "title": "七個結果背後的選擇。",
       "intro": "放在個人頁倉庫裡的 Markdown 長文：問題、可觀察的結果、工程上的選擇，以及這個結果沒有證明的事。",
-      "read": "閱讀案例"
+      "read": "閱讀"
     },
     "method": {
-      "label": "我怎麼工作",
       "title": "人設定框架，agent 執行，證據決定。",
+      "branch": "agent 在我審閱的分支上工作",
       "tools": "Claude Code · Codex · Codex Cloud · GitHub Actions · pytest / vitest · Lean 4"
     },
     "films": {
-      "label": "以程式完成的影片",
-      "title": "每一格畫面，都是時間的函數。"
+      "title": "每一格畫面，都是時間的函數。",
+      "note": "這一頁上的循環動畫，是用 ASCII 即時畫出各部影片的同一個意象；影片本身在 YouTube。",
+      "made": "使用"
     },
     "log": {
-      "label": "日誌",
       "title": "近況，以及已合併到上游的貢獻。",
+      "now": "近況",
+      "merged": "已合併",
       "caseStudy": "案例",
       "note": "只列出已合併的 pull request。日期來自目錄檔，不是這個頁面。"
     },
     "about": {
-      "label": "關於",
-      "name": "王治凱",
+      "title": "王治凱",
       "contact": "實習與合作",
       "readme": "個人頁 README"
     },
+    "palette": {
+      "placeholder": "輸入指令，例如「ls film」或「open honest-ci」",
+      "empty": "找不到指令：{q}",
+      "hint": "↑↓ 選擇 · ↵ 執行 · esc 關閉",
+      "label": "指令面板",
+      "cmds": {
+        "whoami": "回到頂端",
+        "ls": "列出所有記錄",
+        "ls-kind": "列出某一類記錄",
+        "open": "打開一筆記錄",
+        "negatives": "留下來的負面結果",
+        "cases": "案例",
+        "method": "我怎麼工作",
+        "play": "以程式完成的影片",
+        "log": "近況與上游合併",
+        "about": "關於與聯絡",
+        "cv": "下載履歷 PDF",
+        "mail": "寄 Email",
+        "github": "打開 GitHub",
+        "lang": "切換語言",
+        "theme": "切換配色"
+      }
+    },
+    "status": {
+      "normal": "NORMAL",
+      "command": "COMMAND",
+      "catalog": "projects.json"
+    },
     "footer": {
-      "top": "回到頂端",
-      "colophon": "Preact · Vite · 自架字型 Newsreader、Geist、Noto Serif TC/SC · 沒有分析工具、沒有第三方請求 · 本頁、個人頁 README 與橫幅圖片由同一份目錄檔產生；不一致時建置會失敗",
-      "source": "原始碼"
+      "exit": "[行程結束]",
+      "colophon": "Preact · Vite · 自架字型 JetBrains Mono、Noto Sans TC/SC · 沒有分析工具、沒有第三方請求 · 本頁與個人頁 README 由同一份目錄檔產生；不一致時建置會失敗",
+      "source": "原始碼",
+      "top": "回到頂端"
     }
   }
 }

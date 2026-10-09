@@ -6,42 +6,49 @@
       "description": "用 Python 与 TypeScript 做可检查的 AI 与数学研究工具：主张附上证据、负面结果留着、边界说清楚。王治凯，台北；寻找软件与 AI 实习。"
     },
     "nav": {
-      "skip": "跳到账册",
-      "work": "账册",
+      "skip": "跳到记录",
+      "main": "章节",
+      "language": "语言",
+      "theme": "切换配色",
+      "palette": "打开指令面板",
+      "top": "whoami",
+      "work": "记录",
+      "negatives": "负面结果",
       "cases": "案例",
-      "method": "我怎么工作",
+      "method": "方法",
       "films": "影片",
       "log": "日志",
-      "about": "关于",
-      "language": "语言",
-      "main": "主要导航"
+      "about": "关于"
     },
     "common": {
-      "cv": "简历 PDF",
-      "email": "Email",
-      "github": "GitHub"
+      "cv": "简历.pdf",
+      "email": "寄信",
+      "github": "github",
+      "live": "网站",
+      "watch": "观看",
+      "source": "源代码"
     },
     "hero": {
-      "kicker": "王治凯 · 台北",
-      "title": "主张，附上证据。",
-      "primary": "打开账册",
+      "keys": {
+        "name": "姓名",
+        "study": "就读",
+        "based": "所在",
+        "stack": "技术",
+        "agents": "协作",
+        "records": "记录",
+        "status": "状态"
+      },
+      "stack": "Python · TypeScript · 正在学 Lean 4",
+      "agents": "Claude Code · Codex · Codex Cloud",
+      "records": "{projects} 个项目 · 留下 {negatives} 个负面结果 · {merged} 个上游合并",
+      "status": "寻找软件与 AI 实习",
+      "primary": "打开记录",
+      "hint": "/ 指令 · j k 移动 · t 配色",
       "updated": "目录更新于 {date}"
     },
-    "record": {
-      "title": "目录记录",
-      "projects": "笔记录",
-      "negatives": "笔留下的负面结果",
-      "merged": "个已合并的上游贡献",
-      "films": "支以程序完成的影片",
-      "asOf": "截至",
-      "hash": "SHA-256",
-      "source": "在 GitHub 查看",
-      "raw": "原始 JSON"
-    },
     "ledger": {
-      "label": "账册",
       "title": "每个项目，都是一笔记录。",
-      "intro": "这个页面由一份目录文件产生。打开任何一笔记录可以读到它的原始内容、沿着行号链接进仓库，并把文件的哈希值和这里显示的比对。",
+      "intro": "这一页由一份目录文件产生。打开任何一笔记录，可以读到它的原始内容、沿着行号链接进仓库，并把文件的哈希值和这里显示的比对。",
       "filterLabel": "依类型筛选记录",
       "filters": {
         "all": "全部",
@@ -58,49 +65,82 @@
         "creative": "影片",
         "other": "其他"
       },
+      "head": {
+        "kind": "类型",
+        "name": "名称",
+        "status": "状态"
+      },
       "count": "显示 {n} / {total} 笔记录",
       "hasNegative": "附有负面结果",
-      "live": "实际网站",
-      "watch": "观看",
-      "source": "源代码",
       "rawHeading": "原始记录",
       "origin": "第 {i} 笔，共 {total} 笔",
       "canonicalNote": "原始记录以繁体中文来源文件显示"
     },
     "negatives": {
-      "label": "留下来的负面结果"
+      "title": "负面结果，留着。",
+      "tag": "保留",
+      "summary": "{n} 个负面结果 · 0 个隐藏 · 每一个都附冻结产物"
     },
     "cases": {
-      "label": "案例",
       "title": "七个结果背后的选择。",
       "intro": "放在个人页仓库里的 Markdown 长文：问题、可观察的结果、工程上的选择，以及这个结果没有证明的事。",
-      "read": "阅读案例"
+      "read": "阅读"
     },
     "method": {
-      "label": "我怎么工作",
       "title": "人设定框架，agent 运行，证据决定。",
+      "branch": "agent 在我审阅的分支上工作",
       "tools": "Claude Code · Codex · Codex Cloud · GitHub Actions · pytest / vitest · Lean 4"
     },
     "films": {
-      "label": "以程序完成的影片",
-      "title": "每一格画面，都是时间的函数。"
+      "title": "每一格画面，都是时间的函数。",
+      "note": "这一页上的循环动画，是用 ASCII 实时画出各部影片的同一个意象；影片本身在 YouTube。",
+      "made": "使用"
     },
     "log": {
-      "label": "日志",
       "title": "近况，以及已合并到上游的贡献。",
+      "now": "近况",
+      "merged": "已合并",
       "caseStudy": "案例",
       "note": "只列出已合并的 pull request。日期来自目录文件，不是这个页面。"
     },
     "about": {
-      "label": "关于",
-      "name": "王治凯",
+      "title": "王治凯",
       "contact": "实习与合作",
       "readme": "个人页 README"
     },
+    "palette": {
+      "placeholder": "输入指令，例如「ls film」或「open honest-ci」",
+      "empty": "找不到指令：{q}",
+      "hint": "↑↓ 选择 · ↵ 运行 · esc 关闭",
+      "label": "指令面板",
+      "cmds": {
+        "whoami": "回到顶端",
+        "ls": "列出所有记录",
+        "ls-kind": "列出某一类记录",
+        "open": "打开一笔记录",
+        "negatives": "留下来的负面结果",
+        "cases": "案例",
+        "method": "我怎么工作",
+        "play": "以程序完成的影片",
+        "log": "近况与上游合并",
+        "about": "关于与联系",
+        "cv": "下载简历 PDF",
+        "mail": "寄 Email",
+        "github": "打开 GitHub",
+        "lang": "切换语言",
+        "theme": "切换配色"
+      }
+    },
+    "status": {
+      "normal": "NORMAL",
+      "command": "COMMAND",
+      "catalog": "projects.json"
+    },
     "footer": {
-      "top": "回到顶端",
-      "colophon": "Preact · Vite · 自架字体 Newsreader、Geist、Noto Serif TC/SC · 没有分析工具、没有第三方请求 · 本页、个人页 README 与横幅图片由同一份目录文件产生；不一致时构建会失败",
-      "source": "源代码"
+      "exit": "[进程结束]",
+      "colophon": "Preact · Vite · 自架字体 JetBrains Mono、Noto Sans TC/SC · 没有分析工具、没有第三方请求 · 本页与个人页 README 由同一份目录文件产生；不一致时构建会失败",
+      "source": "源代码",
+      "top": "回到顶端"
     }
   },
   "catalog": {
