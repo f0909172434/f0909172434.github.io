@@ -7,8 +7,8 @@
       "zh": "HonestCI：綠燈的流程可能一個測試都沒跑"
     },
     "summary": {
-      "en": "A runner exits 0 while its JUnit report records zero tests; HCI004_ZERO_TESTS blocks it. Why exit codes and test counts are different signals.",
-      "zh": "執行器退出碼 0，JUnit 報告卻記錄零個測試；HCI004_ZERO_TESTS 把它擋下來。為什麼退出碼與測試數是兩個不同的訊號。"
+      "en": "A test runner exits 0 while its JUnit report records zero tests — and HCI004_ZERO_TESTS stops it. Why an exit code and a test count are two different signals.",
+      "zh": "執行器回傳 0，JUnit 報告卻一個測試都沒有——HCI004_ZERO_TESTS 把它擋了下來。為什麼退出碼和測試數是兩個不同的訊號。"
     }
   },
   {
@@ -19,8 +19,8 @@
       "zh": "RigorGraph：讓主張和證據連在一起"
     },
     "summary": {
-      "en": "Changed evidence bytes surface as RG_HASH_MISMATCH; a changed claim invalidates its old acceptance. A hash answers identity, not sufficiency.",
-      "zh": "證據位元組改變會以 RG_HASH_MISMATCH 浮現；主張改變會讓舊的接受失效。雜湊回答的是同一性，不是充分性。"
+      "en": "Change the evidence and RG_HASH_MISMATCH appears; change the claim and its old acceptance no longer counts. A hash tells you the file is the same — not that it is enough.",
+      "zh": "證據一改，RG_HASH_MISMATCH 就出現；主張一改，舊的接受就不再算數。雜湊告訴你檔案沒變，但不告訴你證據夠不夠。"
     }
   },
   {
@@ -31,8 +31,8 @@
       "zh": "Finite Witness：讓反例可以被檢查"
     },
     "summary": {
-      "en": "Candidate 39 is C₄. The certificate records the prefix actually searched, not the range requested; people and WebMCP agents inspect the same engine.",
-      "zh": "第 39 個候選是 C₄。憑證記錄的是實際搜尋過的前綴，不是請求的範圍；人和 WebMCP agent 檢查同一個引擎。"
+      "en": "Candidate 39 is C₄. The certificate records the range it actually searched, not the one requested — and people and WebMCP agents look at the same engine.",
+      "zh": "第 39 個候選就是 C₄。憑證記下的是實際搜尋過的範圍，而不是被要求的範圍；人和 WebMCP agent 看的是同一個引擎。"
     }
   },
   {
@@ -43,8 +43,8 @@
       "zh": "ProofWeave：認證形式目標，但不誇大它的意義"
     },
     "summary": {
-      "en": "Lean certified one obligation; statement alignment stayed UNCONFIRMED. Formal validity and semantic alignment are separate axes and stay separate.",
-      "zh": "Lean 認證了一個義務；語意對齊仍是 UNCONFIRMED。形式有效性與語意對齊是兩個軸，而且保持分開。"
+      "en": "Lean certified one obligation; whether the statement means what was intended stayed UNCONFIRMED. Formal validity and meaning are different questions, and the tool keeps them apart.",
+      "zh": "Lean 認證了一個義務，但敘述是否符合原意仍是 UNCONFIRMED。形式上成立和意思對不對是兩個問題，這個工具把它們分開。"
     }
   },
   {
@@ -55,8 +55,8 @@
       "zh": "SAIR Proof Press：在有限搜尋中保住可檢查的答案"
     },
     "summary": {
-      "en": "Search routes propose candidates; Lean decides. Released-input results are bound to an evaluator commit, and the claim boundaries say what they do not show.",
-      "zh": "搜尋路線提出候選，由 Lean 決定。公開輸入的結果綁定到評測器的 commit，主張邊界說明它們沒有證明的事。"
+      "en": "Search proposes candidates; Lean decides. Results on the released inputs are tied to an evaluator commit, and the write-up says plainly what they do not show.",
+      "zh": "搜尋負責提出候選，Lean 負責決定。公開輸入的結果綁定到評測器的 commit，文中也直接寫出它們沒有證明的事。"
     }
   },
   {
@@ -67,8 +67,8 @@
       "zh": "MiniHarness：把課綱做成可執行的課程"
     },
     "summary": {
-      "en": "38 Traditional Chinese modules, fixed checker contracts, and a kept negative result: adaptation improved a dev score while worsening held-out perplexity.",
-      "zh": "38 個繁體中文模組、固定的檢查器契約，以及一個留下來的負面結果：微調讓開發分數上升，卻讓保留集的 perplexity 變差。"
+      "en": "38 Traditional Chinese modules, fixed checker contracts, and one negative result kept on purpose: fine-tuning raised a development score while making held-out perplexity worse.",
+      "zh": "38 個繁體中文單元、固定的檢查器契約，以及一個刻意留下的負面結果：微調讓開發分數上升，卻讓保留集的 perplexity 變差。"
     }
   },
   {
@@ -80,8 +80,8 @@
       "zh": "外部貢獻：讓 Windows 驗證失敗可區分"
     },
     "summary": {
-      "en": "A merged fix that narrows a native-window fallback so unrelated errors stay failures, and repairs standalone helper loading.",
-      "zh": "已合併的修正：縮小原生視窗的降級判斷，讓不相關的錯誤仍然是失敗，並修好獨立執行時的輔助模組載入。"
+      "en": "A merged fix in someone else’s project: a narrower native-window fallback so unrelated errors still count as failures, and standalone helper loading that works.",
+      "zh": "在別人專案裡被合併的修正：縮小原生視窗的降級判斷，讓不相關的錯誤仍然算失敗，並修好獨立執行時的輔助模組載入。"
     }
   }
 ]

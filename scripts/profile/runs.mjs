@@ -73,10 +73,10 @@ export const RUNS = {
 
 /** One line per card under the name; a shell comment in the card. */
 export const TAGLINES = {
-  'honest-ci': { en: 'Green CI should mean the tests you expected actually ran.', zh: '讓 CI 的綠燈代表：該跑的測試真的跑了。' },
-  rigorgraph: { en: 'Ties each claim to the bytes of its evidence; one edited byte fails the audit.', zh: '把每個主張綁到證據的位元組；改動一個位元組，稽核就失敗。' },
-  'finite-witness-webmcp': { en: 'Exhaustive counterexample search on small graphs, with certificates anyone can replay.', zh: '在小圖上窮舉反例，輸出任何人都能重播的憑證。' },
-  'sair-stage2-proof-press': { en: 'Lean-checked proofs or finite countermodels; 1,669 of 1,669 released inputs accepted.', zh: '輸出 Lean 檢查的證明或有限反模型；1,669 / 1,669 個公開輸入通過。' },
-  ORACLE: { en: 'A 4:30 short film rendered entirely from code: at 3 a.m., someone asks an AI a question.', zh: '完全由程式渲染的 4 分 30 秒短片：凌晨三點，有人問 AI 一個問題。' },
-  'rulediff-negative-result': { en: "0.99 on development, 0.67 held out. It didn't hold, so it was frozen and published.", zh: '開發集 0.99，保留集 0.67。結果沒有撐住，所以凍結並公開。' },
+  'honest-ci': { en: 'A green check should mean the tests you expected really ran.', zh: '讓綠燈代表：該跑的測試，真的跑了。' },
+  rigorgraph: { en: 'Every claim tied to the bytes of its evidence. Change one byte and the audit fails.', zh: '每個主張都綁著證據的位元組；改動一個位元組，稽核就失敗。' },
+  'finite-witness-webmcp': { en: 'Checks every small graph for a counterexample, then hands you a certificate to replay.', zh: '把小圖全部檢查一遍找反例，再交給你一張能重播的憑證。' },
+  'sair-stage2-proof-press': { en: 'Lean-checked proofs or finite countermodels — all 1,669 released inputs accepted.', zh: 'Lean 檢查過的證明或有限反模型；1,669 個公開輸入全數通過。' },
+  ORACLE: { en: 'At 3 a.m., someone asks an AI a question. A 4:30 film rendered entirely from code.', zh: '凌晨三點，有人問 AI 一個問題。一部完全由程式渲染的 4 分 30 秒短片。' },
+  'rulediff-negative-result': { en: "0.99 in development, 0.67 held out. It didn't hold, so I froze it and published it.", zh: '開發集 0.99，保留集 0.67。結果沒撐住，所以我把它凍結、公開。' },
 };
