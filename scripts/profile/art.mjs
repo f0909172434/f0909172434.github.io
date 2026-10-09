@@ -40,7 +40,7 @@ function prompt(doc, x, y, cwd, { size = 14, extra } = {}) {
 }
 
 // ---------------------------------------------------------------- hero
-export async function hero({ theme, locale, ui, catalog, counts, sha, zh }) {
+export async function hero({ theme, locale, ui, catalog, counts, sha, zh, month }) {
   const W = 1200;
   const doc = new Doc({ w: W, h: 700, theme, locale, title: 'Chih-Kai Wang — ckw whoami', desc: 'A terminal session: the name drawn as a dot matrix, then a short profile. Chih-Kai Wang, Taipei; Python and TypeScript tools for inspectable AI and mathematical research.' });
   const c = doc.c, L = (v) => (locale === 'en' ? v.en : zh(v.zh));
@@ -121,7 +121,7 @@ export async function hero({ theme, locale, ui, catalog, counts, sha, zh }) {
   body += `<g ${fadeIn(t2)}>${prompt(doc, RX, py, '~', { size: 13 })}${doc.t(RX + emWidth('ckw ~ ') * 13, py, '❯ ckw log --now | head -2', { size: 13, fill: c.ink })}</g>`;
   py += 26;
   catalog.profile.now.items.slice(0, 2).forEach((item, i) => {
-    const date = locale === 'en' ? 'Oct 2026' : '2026-10';
+    const date = locale === 'en' ? month : catalog.profile.now.asOf;
     const ind = emWidth(`● ${date}  `) * 13;
     const lines = wrap(L(item), (W - X - RX - ind) / 13);
     let g = doc.t(RX, py, '●', { size: 11, fill: c.amber }) + doc.t(RX + 13 * 1.2, py, date, { size: 13, fill: c.dim });
@@ -134,7 +134,7 @@ export async function hero({ theme, locale, ui, catalog, counts, sha, zh }) {
   const fy = Math.max(y + 16, py) + 46;
   doc.h = fy + 34;
   body += `<g ${fadeIn(t1 + 0.6)}>${prompt(doc, X, fy, '~', { size: 15 })}${doc.t(X + emWidth('ckw ~ ') * 15, fy, '❯', { size: 15, fill: c.amber })}<rect class="cur" x="${r(X + emWidth('ckw ~ ❯ ') * 15)}" y="${fy - 13}" width="9" height="17" fill="${c.amber}" style="animation-delay:${r(t1 + 0.6)}s"/></g>`;
-  body += doc.t(W - X, fy, zh(ui.hero.updated.replace('{date}', locale === 'en' ? 'Oct 2026' : '2026 年 10 月')), { size: 12, fill: c.faint, anchor: 'end', attrs: fadeIn(t1 + 0.6) });
+  body += doc.t(W - X, fy, zh(ui.hero.updated.replace('{date}', month)), { size: 12, fill: c.faint, anchor: 'end', attrs: fadeIn(t1 + 0.6) });
 
   body = chrome() + body;
   const css = `
@@ -248,7 +248,8 @@ function filmFrames(doc, id, x, y, cw, ch, fps) {
     }
     out += `<g class="${name}${k === posterK ? ' poster' : ''}" style="animation-delay:${r((k / n) * film.seconds - film.seconds)}s">${g}</g>`;
   }
-  const toneCss = TONES.map((t, i) => `.${name} .t${i}{fill:${doc.c[t]}}`).join('');
+  // braille glyphs are hairline dots; a thin stroke gives them the weight of the site's canvas dots
+  const toneCss = TONES.map((t, i) => `.${name} .t${i}{fill:${doc.c[t]}${id === 'world' ? `;stroke:${doc.c[t]};stroke-width:.45` : ''}}`).join('');
   const rowCss = `.${name} text{font-size:${r(ch / 1.22)}px;fill:${doc.c[TONES[0]]};white-space:pre;length-adjust:spacing}.${name} text{font-family:inherit}`;
   return { svg: `<g class="mono" style="white-space:pre" font-size="${r(ch / 1.22)}" fill="${doc.c[TONES[0]]}">${out.replaceAll('<text ', '<text lengthAdjust="spacing" xml:space="preserve" ')}</g>`, css: filmCss(name, n, film.seconds) + toneCss + rowCss };
 }

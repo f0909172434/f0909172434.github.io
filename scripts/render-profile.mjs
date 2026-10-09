@@ -148,7 +148,7 @@ if (!zhCn.includes('<b>简体中文</b>')) throw new Error('zh-CN language line 
 const outputs = { 'README.md': renderReadme('en'), 'README.zh-TW.md': zhTw, 'README.zh-CN.md': zhCn };
 for (const theme of ['dark', 'light']) {
   for (const loc of ['en', 'zh-TW', 'zh-CN']) {
-    const args = { theme, locale: loc, ui: uiFor(loc), zh: toLocale(loc), catalog, counts, sha };
+    const args = { theme, locale: loc, ui: uiFor(loc), zh: toLocale(loc), catalog, counts, sha, month: formatMonth(profile.now.asOf, LOCALES[loc]) };
     outputs[`assets/hero-${loc}-${theme}.svg`] = await hero(args);
     outputs[`assets/footer-${loc}-${theme}.svg`] = await footer(args);
     for (const [i, p] of pinned.entries()) outputs[`assets/card-${slugOf(p)}-${loc}-${theme}.svg`] = await card({ ...args, project: p, index: i + 1 });

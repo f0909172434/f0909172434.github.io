@@ -3,6 +3,7 @@
 import subsetFont from 'subset-font';
 import * as fontkit from 'fontkit';
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 
 const nm = (p) => new URL(`../../node_modules/${p}`, import.meta.url);
 
@@ -118,6 +119,10 @@ export class Doc {
     const faces = [];
     const classes = [];
     const cjkByW = new Map();             // weight -> Map(file -> Set(chars))
+    // Safari shares @font-face rules by family name across every SVG image on a page, so two images that both
+    // declare "j-mono" with different subsets would steal each other's glyphs. Name each subset by its content.
+    const uniq = (base, data) => `${base}-${createHash('sha256').update(data).digest('hex').slice(0, 10)}`;
+    const latinFamily = {};
     const braille = new Set();
     for (const [face, set] of Object.entries(this.used)) {
       if (!set.size) continue;
@@ -135,23 +140,27 @@ export class Doc {
           m.get(file).add(ch);
         } else throw new Error(`No font covers U+${cp.toString(16)} (${ch}) in face ${face}`);
       }
-      faces.push(`@font-face{font-family:j-${face};src:url(data:font/woff2;base64,${await subset(FACE_FILE[face], latin)}) format("woff2")}`);
+      const data = await subset(FACE_FILE[face], latin);
+      latinFamily[face] = uniq(`j-${face}`, data);
+      faces.push(`@font-face{font-family:${latinFamily[face]};src:url(data:font/woff2;base64,${data}) format("woff2")}`);
     }
     const cjkFamilies = new Map();
     for (const [wgt, files] of [...cjkByW].sort((a, b) => a[0] - b[0])) {
       const fams = [];
       let i = 0;
       for (const [file, chars] of [...files].sort((a, b) => a[0].localeCompare(b[0]))) {
-        const fam = `c${wgt}-${i++}`;
+        const data = await subset(nm(file), [...chars], { wght: wgt });
+        const fam = uniq(`c${wgt}-${i++}`, data);
         fams.push(fam);
-        faces.push(`@font-face{font-family:${fam};src:url(data:font/woff2;base64,${await subset(nm(file), [...chars], { wght: wgt })}) format("woff2")}`);
+        faces.push(`@font-face{font-family:${fam};src:url(data:font/woff2;base64,${data}) format("woff2")}`);
       }
       cjkFamilies.set(wgt, fams);
     }
-    if (braille.size) faces.push(`@font-face{font-family:br;src:url(data:font/woff2;base64,${await subset(BRAILLE_FILE, [...braille])}) format("woff2")}`);
+    let brFamily = '';
+    if (braille.size) { const data = await subset(BRAILLE_FILE, [...braille]); brFamily = uniq('br', data); faces.push(`@font-face{font-family:${brFamily};src:url(data:font/woff2;base64,${data}) format("woff2")}`); }
     for (const face of Object.keys(this.used)) {
       if (!this.used[face].size) continue;
-      const fams = [`j-${face}`, ...(cjkFamilies.get(FACE_CJK_WGHT[face]) ?? []), ...(braille.size ? ['br'] : [])];
+      const fams = [latinFamily[face], ...(cjkFamilies.get(FACE_CJK_WGHT[face]) ?? []), ...(brFamily ? [brFamily] : [])];
       classes.push(`.${face}{font-family:${fams.join(',')},ui-monospace,Menlo,Consolas,monospace${face === 'italic' ? ';font-style:normal' : ''}}`);
     }
     return faces.join('\n') + '\n' + classes.join('');
@@ -165,7 +174,9 @@ export class Doc {
 ${fonts}
 ${BASE_CSS}${css}
 </style>
+<g class="paint">
 ${body}
+</g>
 </svg>
 `;
   }
@@ -184,7 +195,9 @@ text{font-variant-ligatures:none}
 .cur{animation:blink 1.05s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 @keyframes caret{from{transform:translateX(var(--from));opacity:1}to{opacity:1}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+@media (prefers-reduced-motion:reduce){*:not(.paint){animation:none!important}}
+.paint{animation:paint .5s steps(1) 16}
+@keyframes paint{50%{opacity:.998}}
 `;
 
 /**
