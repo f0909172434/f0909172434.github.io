@@ -2,7 +2,7 @@
   "en": {
     "meta": {
       "title": "Chih-Kai Wang | Inspectable AI and mathematical research tools",
-      "description": "Chih-Kai Wang — a math student in Taipei who builds small tools you can check instead of trust, and short films made in code. Open to software and AI internships."
+      "description": "Python and TypeScript tools for inspectable AI and mathematical research: claims with evidence attached, negative results kept, boundaries stated. Chih-Kai Wang, Taipei; open to software and AI internships."
     },
     "nav": {
       "skip": "Skip to the records",
@@ -41,13 +41,13 @@
       "agents": "Claude Code · Codex · Codex Cloud",
       "records": "{projects} projects · {negatives} negative results kept · {merged} merged upstream",
       "status": "open to software & AI internships",
-      "primary": "see my work",
+      "primary": "open the records",
       "hint": "/ commands · j k move · t theme",
       "updated": "catalog updated {date}"
     },
     "ledger": {
-      "title": "Everything I've made, in one list.",
-      "intro": "Every project here comes from a single file. Open one to read its raw entry, jump to the exact lines on GitHub, and compare the file's hash with the one on this page.",
+      "title": "Every project, as a record.",
+      "intro": "Rendered from one catalog file. Open a record to read its raw entry, follow the line link into the repository, and compare the file's hash with the one printed here.",
       "filterLabel": "Filter records by kind",
       "filters": {
         "all": "all",
@@ -76,27 +76,27 @@
       "canonicalNote": "raw records are shown from the Traditional Chinese source file"
     },
     "negatives": {
-      "title": "What didn't work — and stays public.",
+      "title": "Negative results, kept.",
       "tag": "KEPT",
       "summary": "{n} negative results · 0 hidden · each with its frozen artifacts"
     },
     "cases": {
-      "title": "The thinking behind seven projects.",
-      "intro": "Longer write-ups, one per project: the problem, what you can observe, the decisions along the way — and what the result does not show.",
+      "title": "The decisions behind seven results.",
+      "intro": "Longer write-ups kept as Markdown in the profile repository: the problem, the observable result, the engineering decisions, and what the result does not show.",
       "read": "read"
     },
     "method": {
-      "title": "I frame the question, agents help build, evidence decides.",
+      "title": "The human frames; agents execute; evidence decides.",
       "branch": "agents work in branches I review",
       "tools": "Claude Code · Codex · Codex Cloud · GitHub Actions · pytest / vitest · Lean 4"
     },
     "films": {
-      "title": "Every frame is a function of time.",
-      "note": "The loops here are drawn live in ASCII, each from the idea behind its film. The films themselves are on YouTube.",
+      "title": "Every frame a function of time.",
+      "note": "The loops on this page are drawn live in ASCII from the same idea as each film; the films themselves are on YouTube.",
       "made": "made with"
     },
     "log": {
-      "title": "What I'm up to, and what got merged.",
+      "title": "Now, and what was merged upstream.",
       "now": "now",
       "merged": "merged",
       "caseStudy": "case study",
@@ -104,7 +104,7 @@
     },
     "about": {
       "title": "Chih-Kai Wang",
-      "contact": "open to internships & collaboration",
+      "contact": "internships & collaboration",
       "readme": "profile README"
     },
     "palette": {
@@ -145,7 +145,7 @@
   "zh-Hant": {
     "meta": {
       "title": "王治凱｜可檢查的 AI 與數學研究工具",
-      "description": "王治凱，在台北念數學。做「不必相信、可以自己檢查」的小工具，也用程式拍短片。正在找軟體與 AI 實習。"
+      "description": "用 Python 與 TypeScript 做可檢查的 AI 與數學研究工具：主張附上證據、負面結果留著、邊界說清楚。王治凱，台北；尋找軟體與 AI 實習。"
     },
     "nav": {
       "skip": "跳到記錄",
@@ -184,13 +184,13 @@
       "agents": "Claude Code · Codex · Codex Cloud",
       "records": "{projects} 個專案 · 留下 {negatives} 個負面結果 · {merged} 個上游合併",
       "status": "尋找軟體與 AI 實習",
-      "primary": "看看作品",
+      "primary": "打開記錄",
       "hint": "/ 指令 · j k 移動 · t 配色",
       "updated": "目錄更新於 {date}"
     },
     "ledger": {
-      "title": "我做過的東西，都在這裡。",
-      "intro": "這裡的每個專案都來自同一個檔案。打開任何一筆，可以讀到它的原始內容、跳到 GitHub 上的那幾行，並把檔案雜湊和這一頁印出的比對。",
+      "title": "每個專案，都是一筆記錄。",
+      "intro": "這一頁由一份目錄檔產生。打開任何一筆記錄，可以讀到它的原始內容、沿著行號連結進倉庫，並把檔案的雜湊值和這裡印出的比對。",
       "filterLabel": "依類型篩選記錄",
       "filters": {
         "all": "全部",
@@ -219,27 +219,27 @@
       "canonicalNote": "原始記錄以繁體中文來源檔顯示"
     },
     "negatives": {
-      "title": "沒成功的，也留著。",
+      "title": "負面結果，留著。",
       "tag": "保留",
       "summary": "{n} 個負面結果 · 0 個隱藏 · 每一個都附凍結產物"
     },
     "cases": {
-      "title": "七個專案背後的思考。",
-      "intro": "每個專案一篇長文：遇到的問題、看得到的結果、一路上的取捨，以及這個結果沒有證明的事。",
+      "title": "七個結果背後的選擇。",
+      "intro": "放在個人頁倉庫裡的 Markdown 長文：問題、可觀察的結果、工程上的選擇，以及這個結果沒有證明的事。",
       "read": "閱讀"
     },
     "method": {
-      "title": "我定問題，agent 幫忙做，證據來決定。",
+      "title": "人設定框架，agent 執行，證據決定。",
       "branch": "agent 在我審閱的分支上工作",
       "tools": "Claude Code · Codex · Codex Cloud · GitHub Actions · pytest / vitest · Lean 4"
     },
     "films": {
       "title": "每一格畫面，都是時間的函數。",
-      "note": "這裡的循環動畫，是用 ASCII 即時畫出每部影片背後的意象；影片本身在 YouTube 上。",
+      "note": "這一頁上的循環動畫，是用 ASCII 即時畫出各部影片的同一個意象；影片本身在 YouTube。",
       "made": "使用"
     },
     "log": {
-      "title": "最近在做的事，以及被合併的貢獻。",
+      "title": "近況，以及已合併到上游的貢獻。",
       "now": "近況",
       "merged": "已合併",
       "caseStudy": "案例",
@@ -247,7 +247,7 @@
     },
     "about": {
       "title": "王治凱",
-      "contact": "實習與合作，歡迎來信",
+      "contact": "實習與合作",
       "readme": "個人頁 README"
     },
     "palette": {
