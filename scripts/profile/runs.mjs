@@ -56,6 +56,19 @@ export const RUNS = {
       [[['PASS  PASS  ', 'green'], ['dist/final/marathon_aggressive/solver.py', 'ink']]],
     ],
   },
+  'proofweave-math-lab': {
+    commit: 'e597ea8', cwd: '~/proofweave-math-lab', exit: 0,
+    lines: [
+      ['$', 'python -m proofweave init > /dev/null'],
+      ['$', 'python -m proofweave run examples/simple_ring/theorem.md \\'],
+      ['>', "  | jq -c '{proof_status, alignment, cache_hit}, .invocations'"],
+      [[['{"proof_status":', 'dim'], ['"CERTIFIED"', 'green'], [',"alignment":', 'dim'], ['"UNCONFIRMED"', 'amber'], [',"cache_hit":', 'dim'], ['false', 'violet'], ['}', 'dim']]],
+      [[['{"certifier":', 'dim'], ['1', 'violet'], [',"model":', 'dim'], ['0', 'violet'], [',"semantic_extraction":', 'dim'], ['0', 'violet'], ['}', 'dim']]],
+      ['$', 'python -m proofweave run examples/simple_ring/theorem.md \\'],
+      ['>', "  | jq -c '{cache_hit} + .invocations'"],
+      [[['{"cache_hit":', 'dim'], ['true', 'amber'], [',"certifier":', 'dim'], ['0', 'violet'], [',"model":', 'dim'], ['0', 'violet'], [',"semantic_extraction":', 'dim'], ['0', 'violet'], ['}', 'dim']]],
+    ],
+  },
   'rulediff-negative-result': {
     commit: '519cca0', cwd: '~/rulediff-negative-result', exit: 0,
     lines: [
@@ -80,6 +93,7 @@ export const TAGLINES = {
   rigorgraph: { en: 'Ties each claim to the bytes of its evidence; one edited byte fails the audit.', zh: '把每個主張綁到證據的位元組；改動一個位元組，稽核就失敗。' },
   'finite-witness-webmcp': { en: 'Exhaustive counterexample search on small graphs, with certificates anyone can replay.', zh: '在小圖上窮舉反例，輸出任何人都能重播的憑證。' },
   'sair-stage2-proof-press': { en: 'Lean-checked proofs or finite countermodels; 1,669 of 1,669 released inputs accepted.', zh: '輸出 Lean 檢查的證明或有限反模型；1,669 / 1,669 個公開輸入通過。' },
-  ORACLE: { en: 'A 4:30 short film rendered entirely from code: at 3 a.m., someone asks an AI a question.', zh: '完全由程式渲染的 4 分 30 秒短片：凌晨三點，有人問 AI 一個問題。' },
+  'proofweave-math-lab': { en: 'Checks structured proofs against pinned Lean 4 / Mathlib; matching the prose is a human call.', zh: '以固定版本 Lean 4 / Mathlib 檢查結構化證明；語意對齊由人工確認。' },
+  ORACLE: { en:'A 4:30 short film rendered entirely from code: at 3 a.m., someone asks an AI a question.', zh: '完全由程式渲染的 4 分 30 秒短片：凌晨三點，有人問 AI 一個問題。' },
   'rulediff-negative-result': { en: "0.99 on development, 0.67 held out. It didn't hold, so it was frozen and published.", zh: '開發集 0.99，保留集 0.67。結果沒有撐住，所以凍結並公開。' },
 };

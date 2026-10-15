@@ -9,7 +9,7 @@
 <a href="https://f0909172434.github.io/examples/rigorgraph/math.html"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-rigorgraph-zh-TW-dark.svg"><img src="assets/card-rigorgraph-zh-TW-light.svg" alt="RigorGraph — 把每個主張綁到證據的位元組；改動一個位元組，稽核就失敗。" width="49%"></picture></a>
 <a href="https://f0909172434.github.io/finite-witness-webmcp/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-finite-witness-webmcp-zh-TW-dark.svg"><img src="assets/card-finite-witness-webmcp-zh-TW-light.svg" alt="Finite Witness — 在小圖上窮舉反例，輸出任何人都能重播的憑證。" width="49%"></picture></a>
 <a href="https://f0909172434.github.io/sair-stage2-proof-press/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-sair-stage2-proof-press-zh-TW-dark.svg"><img src="assets/card-sair-stage2-proof-press-zh-TW-light.svg" alt="SAIR Proof Press — 輸出 Lean 檢查的證明或有限反模型；1,669 / 1,669 個公開輸入通過。" width="49%"></picture></a>
-<a href="https://youtu.be/kQH1PZRkn00"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-ORACLE-zh-TW-dark.svg"><img src="assets/card-ORACLE-zh-TW-light.svg" alt="卜 ORACLE — 完全由程式渲染的 4 分 30 秒短片：凌晨三點，有人問 AI 一個問題。" width="49%"></picture></a>
+<a href="https://github.com/f0909172434/proofweave-math-lab"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-proofweave-math-lab-zh-TW-dark.svg"><img src="assets/card-proofweave-math-lab-zh-TW-light.svg" alt="ProofWeave Core — 以固定版本 Lean 4 / Mathlib 檢查結構化證明；語意對齊由人工確認。" width="49%"></picture></a>
 <a href="https://github.com/f0909172434/rulediff-negative-result"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-rulediff-negative-result-zh-TW-dark.svg"><img src="assets/card-rulediff-negative-result-zh-TW-light.svg" alt="RuleDiff negative result — 開發集 0.99，保留集 0.67。結果沒有撐住，所以凍結並公開。" width="49%"></picture></a>
 </p>
 
@@ -63,7 +63,7 @@
 - [EmiyaKatuz/Codex-Dream-Skin-Needy-Girl-Overdose#10](https://github.com/EmiyaKatuz/Codex-Dream-Skin-Needy-Girl-Overdose/pull/10) — 讓 Windows 驗證失敗可區分：縮小原生視窗的降級判斷，修正獨立執行時的輔助模組載入。 <sub>2026-07-28</sub> · [案例](case-studies/windows-contribution.md)
 
 <details>
-<summary><b>其他作品</b> — 還有 11 筆記錄</summary>
+<summary><b>其他作品</b> — 還有 10 筆記錄</summary>
 
 **工具**
 
@@ -73,7 +73,6 @@
 
 **研究**
 
-- [ProofWeave Core](https://github.com/f0909172434/proofweave-math-lab) — 把作者手寫的結構化 Markdown 證明交給固定版本的 Lean 4 / Mathlib 檢查，並把「已認證」與「人工確認語意對齊」分開回報。不做自然語言翻譯。 *experimental · Core 2*
 - [Goedel-Prover-V2 audit](https://github.com/f0909172434/goedel-prover-v2-audit) — 用官方釋出的流程重跑 Goedel-Prover-V2-8B 的 miniF2F-test：pass@32 為 201/244（82.38%），論文為 84.6%。repo 資料檔與論文所用版本有 4 題陳述不同；改正後多解出 1 題（202/244）。未經同儕審查。 *reproducibility audit · draft report*
 - [RuleShift](https://github.com/f0909172434/ruleshift) — 確定性的本機測試床，看 agent 記憶策略如何面對規則改變。這次先導實驗裡，簡單檢索與較複雜的策略表現相當（153 / 160），成本更低。 *research pilot · 800 paired tasks*
 - [RuleShift-Web](https://github.com/f0909172434/ruleshift-web) — Web 政策記憶稽核工作台：3,200 次模型執行與 1,600 次對照。不用 LLM 的控制器比兩個模型都強。草稿論文，未經審查。 *pre-submission research snapshot*
