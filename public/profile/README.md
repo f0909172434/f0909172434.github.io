@@ -9,7 +9,7 @@
 <a href="https://f0909172434.github.io/examples/rigorgraph/math.html"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-rigorgraph-en-dark.svg"><img src="assets/card-rigorgraph-en-light.svg" alt="RigorGraph — Ties each claim to the bytes of its evidence; one edited byte fails the audit." width="49%"></picture></a>
 <a href="https://f0909172434.github.io/finite-witness-webmcp/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-finite-witness-webmcp-en-dark.svg"><img src="assets/card-finite-witness-webmcp-en-light.svg" alt="Finite Witness — Exhaustive counterexample search on small graphs, with certificates anyone can replay." width="49%"></picture></a>
 <a href="https://f0909172434.github.io/sair-stage2-proof-press/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-sair-stage2-proof-press-en-dark.svg"><img src="assets/card-sair-stage2-proof-press-en-light.svg" alt="SAIR Proof Press — Lean-checked proofs or finite countermodels; 1,669 of 1,669 released inputs accepted." width="49%"></picture></a>
-<a href="https://youtu.be/kQH1PZRkn00"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-ORACLE-en-dark.svg"><img src="assets/card-ORACLE-en-light.svg" alt="卜 ORACLE — A 4:30 short film rendered entirely from code: at 3 a.m., someone asks an AI a question." width="49%"></picture></a>
+<a href="https://github.com/f0909172434/proofweave-math-lab"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-proofweave-math-lab-en-dark.svg"><img src="assets/card-proofweave-math-lab-en-light.svg" alt="ProofWeave Core — Checks structured proofs against pinned Lean 4 / Mathlib; matching the prose is a human call." width="49%"></picture></a>
 <a href="https://github.com/f0909172434/rulediff-negative-result"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-rulediff-negative-result-en-dark.svg"><img src="assets/card-rulediff-negative-result-en-light.svg" alt="RuleDiff negative result — 0.99 on development, 0.67 held out. It didn't hold, so it was frozen and published." width="49%"></picture></a>
 </p>
 
@@ -63,7 +63,7 @@ This site and the GitHub profile README are generated from one catalog file; the
 - [EmiyaKatuz/Codex-Dream-Skin-Needy-Girl-Overdose#10](https://github.com/EmiyaKatuz/Codex-Dream-Skin-Needy-Girl-Overdose/pull/10) — Keep Windows verification failures distinguishable: narrower native-window fallback, standalone helper loading. <sub>2026-07-28</sub> · [case study](case-studies/windows-contribution.md)
 
 <details>
-<summary><b>Everything else</b> — 11 more records</summary>
+<summary><b>Everything else</b> — 10 more records</summary>
 
 **Tools**
 
@@ -73,7 +73,6 @@ This site and the GitHub profile README are generated from one catalog file; the
 
 **Research**
 
-- [ProofWeave Core](https://github.com/f0909172434/proofweave-math-lab) — Checks author-written structured Markdown proofs against pinned Lean 4 / Mathlib, and reports certification separately from human-confirmed statement alignment. No natural-language translation. *experimental · Core 2*
 - [Goedel-Prover-V2 audit](https://github.com/f0909172434/goedel-prover-v2-audit) — Re-ran Goedel-Prover-V2-8B on miniF2F-test through its own released pipeline: pass@32 is 201/244 (82.38%), against the paper's 84.6%. The repository's dataset differs from the paper's in 4 statements; correcting them adds one problem (202/244). Not peer reviewed. *reproducibility audit · draft report*
 - [RuleShift](https://github.com/f0909172434/ruleshift) — Deterministic local testbed for how agent memory strategies cope with changing rules. In this pilot, simple retrieval matched more complex strategies (153 / 160) at lower cost. *research pilot · 800 paired tasks*
 - [RuleShift-Web](https://github.com/f0909172434/ruleshift-web) — Web-policy memory audit workbench: 3,200 model runs and 1,600 controls. The no-LLM controller was stronger than either model. Draft manuscript, not reviewed. *pre-submission research snapshot*
