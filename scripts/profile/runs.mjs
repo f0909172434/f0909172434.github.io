@@ -94,6 +94,6 @@ export const TAGLINES = {
   'finite-witness-webmcp': { en: 'Exhaustive counterexample search on small graphs, with certificates anyone can replay.', zh: '在小圖上窮舉反例，輸出任何人都能重播的憑證。' },
   'sair-stage2-proof-press': { en: 'Lean-checked proofs or finite countermodels; 1,669 of 1,669 released inputs accepted.', zh: '輸出 Lean 檢查的證明或有限反模型；1,669 / 1,669 個公開輸入通過。' },
   'proofweave-math-lab': { en: 'Checks structured proofs against pinned Lean 4 / Mathlib; matching the prose is a human call.', zh: '以固定版本 Lean 4 / Mathlib 檢查結構化證明；語意對齊由人工確認。' },
-  ORACLE: { en:'A 4:30 short film rendered entirely from code: at 3 a.m., someone asks an AI a question.', zh: '完全由程式渲染的 4 分 30 秒短片：凌晨三點，有人問 AI 一個問題。' },
+  ORACLE: { en: 'A 4:30 short film rendered entirely from code: at 3 a.m., someone asks an AI a question.', zh: '完全由程式渲染的 4 分 30 秒短片：凌晨三點，有人問 AI 一個問題。' },
   'rulediff-negative-result': { en: "0.99 on development, 0.67 held out. It didn't hold, so it was frozen and published.", zh: '開發集 0.99，保留集 0.67。結果沒有撐住，所以凍結並公開。' },
 };
