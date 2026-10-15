@@ -51,6 +51,7 @@ This site and the GitHub profile README are generated from one catalog file; the
 ## Now · Oct 2026 &nbsp;<sub><code>ckw log --now</code></sub>
 
 - Shipped three works made entirely as code: ORACLE, The Disease Called AI, and world.execute(me).
+- Audited Goedel-Prover-V2-8B on miniF2F with its own pipeline: 201/244 against the paper's 84.6%, plus a dataset mismatch found and reported upstream.
 - Froze the RuleDiff negative result as a technical report; the RuleShift-Web manuscript is pre-submission.
 - Two upstream fixes merged: DeepSeek Harness Desktop and dsh-engram.
 - Learning Lean 4 / Mathlib through ProofWeave and SAIR.
@@ -62,7 +63,7 @@ This site and the GitHub profile README are generated from one catalog file; the
 - [EmiyaKatuz/Codex-Dream-Skin-Needy-Girl-Overdose#10](https://github.com/EmiyaKatuz/Codex-Dream-Skin-Needy-Girl-Overdose/pull/10) — Keep Windows verification failures distinguishable: narrower native-window fallback, standalone helper loading. <sub>2026-07-28</sub> · [case study](case-studies/windows-contribution.md)
 
 <details>
-<summary><b>Everything else</b> — 10 more records</summary>
+<summary><b>Everything else</b> — 11 more records</summary>
 
 **Tools**
 
@@ -73,6 +74,7 @@ This site and the GitHub profile README are generated from one catalog file; the
 **Research**
 
 - [ProofWeave Core](https://github.com/f0909172434/proofweave-math-lab) — Checks author-written structured Markdown proofs against pinned Lean 4 / Mathlib, and reports certification separately from human-confirmed statement alignment. No natural-language translation. *experimental · Core 2*
+- [Goedel-Prover-V2 audit](https://github.com/f0909172434/goedel-prover-v2-audit) — Re-ran Goedel-Prover-V2-8B on miniF2F-test through its own released pipeline: pass@32 is 201/244 (82.38%), against the paper's 84.6%. The repository's dataset differs from the paper's in 4 statements; correcting them adds one problem (202/244). Not peer reviewed. *reproducibility audit · draft report*
 - [RuleShift](https://github.com/f0909172434/ruleshift) — Deterministic local testbed for how agent memory strategies cope with changing rules. In this pilot, simple retrieval matched more complex strategies (153 / 160) at lower cost. *research pilot · 800 paired tasks*
 - [RuleShift-Web](https://github.com/f0909172434/ruleshift-web) — Web-policy memory audit workbench: 3,200 model runs and 1,600 controls. The no-LLM controller was stronger than either model. Draft manuscript, not reviewed. *pre-submission research snapshot*
 - [Charlie Alpha 4B](https://github.com/f0909172434/Charlie-Alpha-4B) — Experimental Qwen3.5-4B MLX fine-tune that picks statistical procedures locally. Improves on a simulator benchmark (DGP-Regret −34%) but not on P-Bench or StatQA. *experimental v0.3.0 · mixed results*

@@ -51,6 +51,7 @@
 ## 近况 · 2026 年 10 月 &nbsp;<sub><code>ckw log --now</code></sub>
 
 - 发布三件全部以程序完成的作品：卜 ORACLE、病名为AI、world.execute(me)。
+- 用 Goedel-Prover-V2 官方流程审核 8B 模型的 miniF2F：201/244，论文为 84.6%；找到数据档版本不一致并回报上游。
 - 把 RuleDiff 的负面结果冻结成技术报告；RuleShift-Web 的论文仍在投稿前。
 - 两个上游修正已合并：DeepSeek Harness Desktop 与 dsh-engram。
 - 通过 ProofWeave 与 SAIR 学 Lean 4 / Mathlib。
@@ -62,7 +63,7 @@
 - [EmiyaKatuz/Codex-Dream-Skin-Needy-Girl-Overdose#10](https://github.com/EmiyaKatuz/Codex-Dream-Skin-Needy-Girl-Overdose/pull/10) — 让 Windows 验证失败可区分：缩小原生窗口的降级判断，修正独立运行时的辅助模块加载。 <sub>2026-07-28</sub> · [案例](case-studies/windows-contribution.md)
 
 <details>
-<summary><b>其他作品</b> — 还有 10 笔记录</summary>
+<summary><b>其他作品</b> — 还有 11 笔记录</summary>
 
 **工具**
 
@@ -73,6 +74,7 @@
 **研究**
 
 - [ProofWeave Core](https://github.com/f0909172434/proofweave-math-lab) — 把作者手写的结构化 Markdown 证明交给固定版本的 Lean 4 / Mathlib 检查，并把「已认证」与「人工确认语义对齐」分开回报。不做自然语言翻译。 *experimental · Core 2*
+- [Goedel-Prover-V2 audit](https://github.com/f0909172434/goedel-prover-v2-audit) — 用官方发布的流程重跑 Goedel-Prover-V2-8B 的 miniF2F-test：pass@32 为 201/244（82.38%），论文为 84.6%。repo 数据档与论文所用版本有 4 题陈述不同；改正后多解出 1 题（202/244）。未经同行评审。 *reproducibility audit · draft report*
 - [RuleShift](https://github.com/f0909172434/ruleshift) — 确定性的本机测试床，看 agent 记忆策略如何面对规则改变。这次先导实验里，简单检索与较复杂的策略表现相当（153 / 160），成本更低。 *research pilot · 800 paired tasks*
 - [RuleShift-Web](https://github.com/f0909172434/ruleshift-web) — Web 政策记忆审核工作台：3,200 次模型运行与 1,600 次对照。不用 LLM 的控制器比两个模型都强。草稿论文，未经审查。 *pre-submission research snapshot*
 - [Charlie Alpha 4B](https://github.com/f0909172434/Charlie-Alpha-4B) — 实验性的 Qwen3.5-4B MLX 微调，在本机挑选统计程序。在模拟基准有改善（DGP-Regret −34%），在 P-Bench 与 StatQA 没有。 *experimental v0.3.0 · mixed results*

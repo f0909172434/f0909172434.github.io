@@ -232,6 +232,10 @@
             "zh": "发布三件全部以程序完成的作品：卜 ORACLE、病名为AI、world.execute(me)。"
           },
           {
+            "en": "Audited Goedel-Prover-V2-8B on miniF2F with its own pipeline: 201/244 against the paper's 84.6%, plus a dataset mismatch found and reported upstream.",
+            "zh": "用 Goedel-Prover-V2 官方流程审核 8B 模型的 miniF2F：201/244，论文为 84.6%；找到数据档版本不一致并回报上游。"
+          },
+          {
             "en": "Froze the RuleDiff negative result as a technical report; the RuleShift-Web manuscript is pre-submission.",
             "zh": "把 RuleDiff 的负面结果冻结成技术报告；RuleShift-Web 的论文仍在投稿前。"
           },
@@ -351,6 +355,24 @@
         "descEn": "Checks author-written structured Markdown proofs against pinned Lean 4 / Mathlib, and reports certification separately from human-confirmed statement alignment. No natural-language translation.",
         "repo": "https://github.com/f0909172434/proofweave-math-lab",
         "links": []
+      },
+      {
+        "name": "Goedel-Prover-V2 audit",
+        "kind": "research",
+        "status": "reproducibility audit · draft report",
+        "descZh": "用官方发布的流程重跑 Goedel-Prover-V2-8B 的 miniF2F-test：pass@32 为 201/244（82.38%），论文为 84.6%。repo 数据档与论文所用版本有 4 题陈述不同；改正后多解出 1 题（202/244）。未经同行评审。",
+        "descEn": "Re-ran Goedel-Prover-V2-8B on miniF2F-test through its own released pipeline: pass@32 is 201/244 (82.38%), against the paper's 84.6%. The repository's dataset differs from the paper's in 4 statements; correcting them adds one problem (202/244). Not peer reviewed.",
+        "repo": "https://github.com/f0909172434/goedel-prover-v2-audit",
+        "links": [
+          {
+            "label": "Raw outputs",
+            "url": "https://github.com/f0909172434/goedel-prover-v2-audit/releases/tag/audit-2026-10-15"
+          },
+          {
+            "label": "Upstream issue #8",
+            "url": "https://github.com/Goedel-LM/Goedel-Prover-V2/issues/8#issuecomment-6185449509"
+          }
+        ]
       },
       {
         "name": "RuleShift",
